@@ -1,0 +1,25 @@
+.Knight-Rider-loader{line-height:0}
+
+.Knight-Rider-loader.centered{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+
+.Knight-Rider-loader.h-centered{position:absolute;top:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}
+
+.Knight-Rider-bar{display:none;height:20px;width:20px;margin:0 3px;opacity:.5;border-radius:5px;background-color:#000}
+
+.animate>.Knight-Rider-bar{display:inline-block;-webkit-animation:Knight-Rider-oscillate ease-in-out 300ms infinite alternate;animation:Knight-Rider-oscillate ease-in-out 300ms infinite alternate}
+
+.Knight-Rider-bar:nth-child(1){-webkit-animation-delay:-200ms;animation-delay:-200ms}
+
+.Knight-Rider-bar:nth-child(2){-webkit-animation-delay:-100ms;animation-delay:-100ms}
+
+@-webkit-keyframes Knight-Rider-oscillate{0%{opacity:.5;-webkit-transform:scaleY(1)}100%{opacity:1;-webkit-transform:scaleY(1.4)}}
+
+@keyframes Knight-Rider-oscillate{0%{opacity:.5;transform:scaleY(1)}100%{opacity:1;transform:scaleY(1.4)}}
+
+.file_upload .Knight-Rider-loader{display:none}
+
+.file_upload.loading .Knight-Rider-loader{display:block}
+
+.indash_header_wrapper .chrome .Knight-Rider-loader{display:none}
+
+.indash_header_wrapper .chrome .Knight-Rider-bar{background:#AAA!important;height:10px;margin:0 2px;width:10px;border-radius:2px}

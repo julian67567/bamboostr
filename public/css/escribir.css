@@ -1,0 +1,17 @@
+.redesImage{
+	width: 50px; 
+	display: table-cell;
+	vertical-align: middle;
+}
+.redesName{
+	font-size: 12px; 
+	padding-left: 5px; 
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+}
+.tableRedes{
+	width: 100%; 
+	display: table;
+	cursor: pointer;
+}

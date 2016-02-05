@@ -1,0 +1,12 @@
+[08-Sep-2015 18:20:32 America/Denver] PHP Fatal error:  require(): Failed opening required '../src/Instagram.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home2/scrapell/public_html/letstweet/instagram/instagram/index.php on line 2
+[08-Sep-2015 18:26:23 America/Denver] PHP Parse error:  syntax error, unexpected 'HTTP_HOST' (T_STRING), expecting ')' in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 20
+[08-Sep-2015 18:26:26 America/Denver] PHP Parse error:  syntax error, unexpected 'HTTP_HOST' (T_STRING), expecting ')' in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 20
+[08-Sep-2015 18:26:48 America/Denver] PHP Parse error:  syntax error, unexpected 'HTTP_HOST' (T_STRING), expecting ')' in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 14
+[08-Sep-2015 18:27:22 America/Denver] PHP Notice:  Undefined variable: data in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 38
+[08-Sep-2015 18:27:22 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 38
+[08-Sep-2015 18:29:39 America/Denver] PHP Notice:  Undefined variable: data in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 39
+[08-Sep-2015 18:29:39 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 39
+[08-Sep-2015 18:32:07 America/Denver] PHP Notice:  Undefined variable: data in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 34
+[08-Sep-2015 18:32:07 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 34
+[09-Sep-2015 18:43:36 America/Denver] PHP Notice:  Undefined variable: data in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 34
+[09-Sep-2015 18:43:36 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/letstweet/instagram/instagram/success.php on line 34

@@ -1,0 +1,343 @@
+[23-Dec-2015 00:23:43 America/Denver] PHP Warning:  file_get_contents(http://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=flower,bird,peacock&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 14
+[23-Dec-2015 00:23:43 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:23:43 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 00:23:59 America/Denver] PHP Warning:  file_get_contents(http://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=flower,bird,peacock&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 14
+[23-Dec-2015 00:23:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:23:59 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 00:24:07 America/Denver] PHP Warning:  file_get_contents(http://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=flower,bird,peacock&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 14
+[23-Dec-2015 00:24:07 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:24:07 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 00:24:53 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:24:53 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:24:53 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 00:24:59 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:24:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:24:59 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 00:25:31 America/Denver] PHP Warning:  file_get_contents(http://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=flower,bird,peacock&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:25:31 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 18
+[23-Dec-2015 00:25:31 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 24
+[23-Dec-2015 00:25:46 America/Denver] PHP Warning:  file_get_contents(http://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=flower,bird,peacock&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 00:25:46 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 18
+[23-Dec-2015 00:25:46 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 24
+[23-Dec-2015 00:31:39 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=putos&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 00:31:39 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 00:31:39 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 19:37:01 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 19:37:01 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 21:15:14 America/Denver] PHP Notice:  Undefined index: search in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 2
+[23-Dec-2015 21:15:14 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 21:15:14 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 21:15:14 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:14:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:14:59 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:07 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:07 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:10 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:10 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:10 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:10 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:10 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:10 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:11 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:11 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:11 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:11 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:11 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:11 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:15 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:15 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:44 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=leon&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:15:44 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:44 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:15:47 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=leon&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:15:47 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:15:47 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:16:23 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=darthvader&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:16:23 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:16:23 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:19:01 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=bamboo&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:19:01 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:19:01 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:31:56 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:31:56 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:38:03 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=frases%20de%20amor&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:38:03 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:38:03 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:41:53 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=tazas&amp;per_page=25&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:41:53 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:41:53 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:46:30 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=lentes%20de%20sol&amp;per_page=500&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:46:30 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:46:30 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 22:48:25 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=perro&amp;per_page=500&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 15
+[23-Dec-2015 22:48:25 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:48:25 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 22:53:04 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 22:53:11 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 22:54:09 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:54:31 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 22
+[23-Dec-2015 22:55:00 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:55:45 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 20
+[23-Dec-2015 22:57:30 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 22:57:35 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 22:58:06 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=perro&amp;per_page=500&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:58:06 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 22:58:06 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 22:59:13 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=frases%20de%20amor&amp;per_page=500&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 22:59:13 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 22:59:13 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 23:00:12 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=perro&amp;per_page=500&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 23:00:12 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 23:00:12 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 23:00:57 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=frases%20de%20amor&amp;per_page=500&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 23:00:57 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 23:00:57 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 23:02:02 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=frases%20de%20amor&amp;per_page=500&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 23:02:02 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 23:02:02 America/Denver] PHP Notice:  Undefined variable: photo_array in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 21
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Undefined offset: 499 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Undefined offset: 499 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Undefined offset: 499 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Undefined offset: 499 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[23-Dec-2015 23:05:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[23-Dec-2015 23:08:09 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=frases%20de%20amor&amp;per_page=1000&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 23:08:09 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 23:09:48 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=mamacita&amp;per_page=1000&amp;format=json&amp;nojsoncallback=1): failed to open stream: Connection timed out in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[23-Dec-2015 23:09:48 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[23-Dec-2015 23:17:48 America/Denver] PHP Notice:  Undefined variable: cadena in /home2/scrapell/public_html/bam/scripts/funciones.php on line 71
+[23-Dec-2015 23:18:19 America/Denver] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/scrapell/public_html/bam/scripts/funciones.php on line 72
+[23-Dec-2015 23:18:22 America/Denver] PHP Notice:  Undefined variable: cadena in /home2/scrapell/public_html/bam/scripts/funciones.php on line 71
+[23-Dec-2015 23:18:53 America/Denver] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/scrapell/public_html/bam/scripts/funciones.php on line 72
+[23-Dec-2015 23:22:20 America/Denver] PHP Notice:  Undefined variable: cadena in /home2/scrapell/public_html/bam/scripts/funciones.php on line 71
+[23-Dec-2015 23:23:28 America/Denver] PHP Notice:  Undefined variable: cadena in /home2/scrapell/public_html/bam/scripts/funciones.php on line 71
+[23-Dec-2015 23:24:35 America/Denver] PHP Notice:  Undefined variable: cadena in /home2/scrapell/public_html/bam/scripts/funciones.php on line 71
+[23-Dec-2015 23:43:39 America/Denver] PHP Notice:  Undefined index: hoja in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 4
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Undefined offset: 6 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Undefined offset: 6 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Undefined offset: 6 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Undefined offset: 6 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[23-Dec-2015 23:54:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[23-Dec-2015 23:55:13 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Undefined offset: 14 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Undefined offset: 14 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Undefined offset: 14 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Undefined offset: 14 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[24-Dec-2015 00:03:59 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[24-Dec-2015 00:11:44 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:44 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:45 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:45 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:45 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:45 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:46 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:46 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:46 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:46 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:47 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:47 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:47 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:47 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:47 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:47 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:48 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:48 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:48 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:48 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:49 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:49 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:50 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:50 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:56 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:56 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:56 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:56 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:57 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:57 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:57 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:57 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:58 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:58 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:59 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:11:59 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:00 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:00 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:00 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:00 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:01 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:01 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:01 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:01 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:02 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:02 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:03 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:03 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:12:42 America/Denver] PHP Notice:  Undefined index: search in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 2
+[24-Dec-2015 00:12:42 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:12:42 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:12:48 America/Denver] PHP Notice:  Undefined index: search in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 2
+[24-Dec-2015 00:12:48 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:12:48 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:12:50 America/Denver] PHP Notice:  Undefined index: search in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 2
+[24-Dec-2015 00:12:50 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:12:50 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:12:51 America/Denver] PHP Notice:  Undefined index: search in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 2
+[24-Dec-2015 00:12:52 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:12:52 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:13:19 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:19 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:19 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:19 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:20 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:20 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:20 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:20 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:22 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:22 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:22 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:22 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:23 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:23 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:23 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:23 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:24 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:24 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:24 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:24 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:25 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:25 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:25 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:13:25 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:25 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:25 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:26 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:26 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:26 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:26 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:27 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:27 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:28 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:28 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:28 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:28 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:29 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:29 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:29 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:29 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:30 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:30 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:31 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:31 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:31 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:31 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:32 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:15:32 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:07 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:07 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:08 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:08 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:09 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:09 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:09 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:09 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:10 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:10 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:11 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:11 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:11 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:11 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:12 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:12 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:13 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:13 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:13 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:13 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:14 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:14 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:14 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:16:14 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:31 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:31 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:31 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:31 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:32 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:32 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:33 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:33 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:33 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:33 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:34 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:34 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:35 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:35 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:35 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:35 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:36 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:36 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:37 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:37 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:38 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:38 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:38 America/Denver] PHP Notice:  Undefined variable: handle in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:20:38 America/Denver] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 44
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Undefined offset: 489 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 25
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Undefined offset: 489 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 26
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Undefined offset: 489 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 27
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Undefined offset: 489 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[24-Dec-2015 00:25:11 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 28
+[24-Dec-2015 00:31:31 America/Denver] PHP Notice:  Undefined index: search in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 2
+[24-Dec-2015 00:31:31 America/Denver] PHP Notice:  Undefined index: hoja in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 3
+[24-Dec-2015 00:31:31 America/Denver] PHP Notice:  Undefined property: stdClass::$photos in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:31:31 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[24-Dec-2015 00:49:40 America/Denver] PHP Fatal error:  [] operator not supported for strings in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 67
+[25-Dec-2015 20:14:32 America/Denver] PHP Warning:  file_get_contents(): SSL: crypto enabling timeout in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[25-Dec-2015 20:14:32 America/Denver] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[25-Dec-2015 20:14:32 America/Denver] PHP Warning:  file_get_contents(https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=ab414d73e6e55e78d15178d1dc5238f8&amp;tags=frases%20de%20amor&amp;per_page=1000&amp;format=json&amp;nojsoncallback=1): failed to open stream: operation failed in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 16
+[25-Dec-2015 20:14:32 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 17
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 29
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 29
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 30
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 30
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 31
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 31
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 32
+[26-Dec-2015 13:47:28 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 32
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 29
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 29
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 30
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 30
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 31
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 31
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 32
+[26-Dec-2015 13:48:44 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 32
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 29
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 29
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 30
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 30
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 31
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 31
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Undefined offset: 500 in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 32
+[30-Dec-2015 12:53:45 America/Denver] PHP Notice:  Trying to get property of non-object in /home2/scrapell/public_html/bam/scripts/flicker/search.php on line 32

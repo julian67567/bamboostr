@@ -1,0 +1,9 @@
+/* Styles specific to this particular page */
+.scroll-pane {
+	overflow: auto;
+	width: 100%;
+}
+.horizontal-only {
+	height: auto;
+	max-height: 200px;
+}

@@ -1,0 +1,45 @@
+<!--Profile column-->
+.column {
+	width: 300px;
+	float: left;
+	padding-bottom: 100px;
+}
+.portlet {
+	margin-left: 5px;
+	margin-bottom: 5px;
+	padding: 0em 0em 0em 0em;
+}
+.portlet-header {
+	padding: 0em;
+	position: relative;
+	cursor: move;
+	height: 30px;
+}
+.portlet-toggle {
+	position: absolute;
+	background: url("images/minus.png");
+	height: 100%;
+	width: 24px;
+	right: 24px;
+	display: inline-block; 
+	cursor: pointer;
+}
+.portlet-content {
+	padding: 0em;
+}
+.portlet-placeholder {
+    border: 3px dashed black;
+    box-sizing: border-box;
+}
+#sortable { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+}
+#sortable li { 
+	margin: 0px 0px 0px 0; 
+	padding: 0px; 
+	float: left; 
+	height: auto; 
+	text-align: left; 
+}

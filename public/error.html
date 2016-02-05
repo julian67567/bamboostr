@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Bamboostr. Vende más con redes sociales.</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <!--Icon-->
+    <link rel="icon" href="images/logo-bamboostr.ico" />
+    <link rel="shortcut icon" href="images/logo-bamboostr.ico" type="image/x-icon" />  
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="css/style.css">
+    <!-- Javascript -->          
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+    <script type="text/javascript" src="js/isMobile.min.js"></script>   
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>    
+    <script type="text/javascript" src="js/main.js"></script> 
+    <script type="text/javascript" src="js/animations.js"></script> 
+    <script type="text/javascript" src="js/global.js"></script>
+
+    <!--ICON-->
+    <link rel="stylesheet" href="font-brenda/landingPage/demo-files/demo.css">  
+    <link rel="stylesheet" href="font-brenda/landingPage/style.css">  
+
+    <script>
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66347903-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#error-modal').modal('show');
+            deleteAllCookies();
+        });
+    </script>
+    <script>
+      function registrarForm(){
+        if(!$("#nameForm").val()){
+          alert("Escribe tu Usuario");
+        } else if((!$("#mailForm").val() ||
+                   $("#mailForm").val().indexOf(".")=="-1" || 
+                   $("#mailForm").val().indexOf("@")=="-1")){
+          alert("Escribe tu mail correctamente");
+        } else if(!$("#passwordForm").val()){
+          alert("Escribe tu contraseña correctamente");
+        } else {
+          $.ajax({  data: { nombre:$("#nameForm").val(), mail:$("#mailForm").val(), password:$("#passwordForm").val()},
+                url:   "scripts/cuenta-nueva.php",
+                type:  'POST',
+                success:  function (response) {
+                  obj = JSON.parse(response);
+                  if(obj.success=="true"){
+                    window.location = "system.php";
+                  } else {
+                    alert(obj.text);
+                  }
+                }, error: function (response){
+                   alert("ERROR");
+                }
+          });
+        }
+      }
+      function ERRORForm(){
+         if(!$("#nameERRORForm").val()){
+          alert("Escribe tu usuario");
+        } else if(!$("#passwordERRORForm").val()){
+          alert("Escribe tu contraseña correctamente");
+        } else {
+          $.ajax({  data: { nombre:$("#nameERRORForm").val(), password:$("#passwordERRORForm").val()},
+                url:   "login.php",
+                type:  'POST',
+                success:  function (response) {
+                  obj = JSON.parse(response);
+                  if(obj.success=="true"){
+                    window.location = "system.php";
+                  } else {
+                    alert(obj.text);
+                  }
+                }, error: function (response){
+                   alert("ERROR");
+                }
+          });
+        }
+      }
+      function iniciarSesionForm(){
+        if(!$("#nameISForm").val()){
+          alert("Escribe tu usuario");
+        } else if(!$("#passwordISForm").val()){
+          alert("Escribe tu contraseña correctamente");
+        } else {
+          $.ajax({  data: { nombre:$("#nameISForm").val(), password:$("#passwordISForm").val()},
+                url:   "login.php",
+                type:  'POST',
+                success:  function (response) {
+                  obj = JSON.parse(response);
+                  if(obj.success=="true"){
+                    window.location = "system.php";
+                  } else {
+                    alert(obj.text);
+                  }
+                }, error: function (response){
+                   alert("ERROR");
+                }
+          });
+        }
+      }
+      function mostrarIS(){
+          $("#error-modal").modal("hide");
+          $("#signup-modal").modal("hide");
+          $("#login-modal").modal("show");
+      }
+      function mostrarSU(){
+          $("#error-modal").modal("hide");
+          $("#login-modal").modal("hide");
+          $("#signup-modal").modal("show");
+      }
+    </script>
+  </head> 
+
+<body style="overflow-x: hidden;" class="home-page">
+
+   
+        <!-- ******HEADER****** --> 
+        <header id="header" class="header">  
+            <div class="container">            
+                <h1 class="logo pull-left">
+                    <a href="http://bamboostr.com">
+                        <span class="logo-title" ><img style="margin-left: 1em; width: 200px;" src="images/mails/bamboostr7.png"></span>
+                    </a>
+                </h1><!--//logo-->              
+                <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button><!--//nav-toggle-->
+                    </div><!--//navbar-header-->            
+                    <div class="navbar-collapse collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item"><a href="#que_es">Conócenos</a></li>
+                            <li class="nav-item"><a href="#caracteristicas">Te ayudamos</a></li>
+                            <li class="nav-item"><a href="#portabilidad" data-toggle="modal" data-target="#login-modal">Inicia Sesión</a></li>                            
+                            <li class="nav-item nav-item-cta last"><button type="button" class="btn btn-cta btn-cta-primary" data-toggle="modal" data-target="#signup-modal">¡Comienza Gratis!</button></li>
+                        </ul><!--//nav-->
+                    </div><!--//navabr-collapse-->
+                </nav><!--//main-nav-->           
+            </div><!--//container-->
+        </header><!--//header-->
+  
+
+            
+        <!-- ******PROMO****** 
+        <section id="promo" class="promo section">  
+            <div style="margin-left: 2em;" class="container intro">
+              <div clas="row text-center">
+                <h2 class="title animated" >Genera una comunidad comprometida con tu negocio </h2>
+                <p class="summary animated fadeInRight delayp3" style="opacity: 0;">Bamboostr</p>
+                <a class="btn btn-cta btn-cta-secondary" href="#que_es">Comienza gratis por siempre</a>
+              </div>
+            </div><!--//intro-- 
+        </section><!--//promo-->
+
+
+
+      <section id="promo" class="promo section" style="background-color:black;">  
+            <div class="container intro text-center">
+              <div clas="row text-center">
+                <h2>Genera una comunidad comprometida con tu negocio </h2>
+              </div>
+
+              <div class="row text-center">
+                <br>
+                <h5>Publica contenido de interés a la hora correcta<br> y mejora tu presencia en redes sociales</h5>
+                <a style="color: white !important;" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal" href="#que_es">Comienza gratis por siempre</a>
+              </div>
+               
+              </div>
+            </div><!--//intro-->
+      </section><!--//promo-->
+
+
+      <section style="background: white;" id="intro">
+       <br>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"> <h3>Genera una comunidad comprometida con tu negocio</h3></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <p>Utiliza herramientas digitales que te ayudarán a generar mayor interacción e impacto en redes sociales y haz que la gente interesada en tu producto o servicio te conozcan más</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                  <h4><span class="icon-administra" style="color:#26a8ff;"></span> 
+                    Administra todas tus redes sociales en una sola plataforma
+                  </h4>
+              </div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8"> <p>Automatiza publicaciones con contenido de interés para la audiencia de una o más redes sociales</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <h4><span class="icon-buscar_actualizar" style="color:#26a8ff;"></span> 
+                Evalúa el impacto de tu campaña en redes sociales
+                </h4>
+              </div>
+            </div>            
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"><p>Apóyate con el asistente inteligente que te asesora dependiendo de las estadísticas que se obtengan en tu campaña</p></div>
+            </div>            
+          </div>
+          <div class="col-md-6 hidden-xs">
+            <img style="width: 100%;" src="images/Pantallas/Home.jpg">
+          </div>
+          
+
+      </section>
+        
+      <section style="background: white;" id="intro">
+       <br>
+
+        <div class="row">
+
+          <div class="col-md-6 hidden-xs">
+            <img style="width: 100%;" src="images/Pantallas/2.jpg">
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"> <h3>Contenido para tu comunidad</h3></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <p>Conoce fácilmente qué es lo qe le interesa a tu audencia y ponlo al alcance de tus usuarios.</p>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <h4><span class="icon-buscar" style="color:#26a8ff;"></span>
+                  Encuentra artículos de interés para tu comunidad</h4></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8"> <p>Automatiza y publica en redes sociales artículos que te sugerimos, a fines de tu negocio y a lo que quieren ver tus usuarios</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <h4><span class="icon-imagen" style="color:#26a8ff;"></span>
+                Busca,elige y modifica fotografías para tu contenido</h4></div>
+            </div>            
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"><p>Si ya tienes tu publicación atrae un poco más la atención de tus usuarios añadiendo una imagen relacionada</p></div>
+            </div>  
+
+          </div> 
+       </div>          
+
+      </section>
+
+      <section style="background: white;" id="intro">
+       <br>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"> <h3>Publica cuando debes</h3></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <p>Obten mejor respuesta de tu audencia conociendo a el día y la hora con mayor tráfico en tu página.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <h4><span class="icon-24" style="color:#26a8ff;"></span>
+                  Programa tus publicaciones</h4></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8"> <p>Ahorra tiempo y recursos seleccionando el días y la hora en la que se lance tu publicación</p></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 hidden-xs">
+            <img style="width: 100%;" src="images/Pantallas/3.jpg">
+          </div>
+          
+
+      </section>
+
+
+      <section style="background: white;" id="intro">
+       <br>
+        <div class="row">
+
+          <div class="col-md-6 hidden-xs">
+            <img style="width: 100%;" src="images/Pantallas/4.jpg">
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"> <h3>Tus redes sociales juntas</h3></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <p>Observa solo lo  que quieres y necesitas ver de tus cuentas en redes sociales.</p>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                  <h4><span class="icon-ver" style="color:#26a8ff;"></span>
+                      Mira lo que necesites y quieras ver</h4></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8"> <p>No pierdas el contacto con tu comunidad, ahorra tiempo en cambierte entre páginas y observa el contenido de tus diferentes cuentas en un solo lugar</p></div>
+            </div>
+            
+
+          </div>          
+
+      </section>
+
+      <section style="background: white;" id="intro">
+       <br>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"> <h3>Conoce a tu comunidad</h3></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <p>Mantente en contacto y cerca de tus usuarios. Toda sugerencia, duda o comentario deben ser escuchados y respondidos</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <h4><span class="icon-correo" style="color:#26a8ff;"></span>
+                  Manten organizados tus mensajes</h4></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8"> <p>Responde a tus usuarios en orden, marca los que tienen algún asunto pendiente y archiva los más trascendentes.</p></div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 hidden-xs">
+             <img style="width: 100%;" src="images/Pantallas/5.jpg">
+          </div>
+          
+
+      </section>      
+
+      <section style="background: white;" id="intro">
+       <br>
+        <div class="row">
+
+          <div class="col-md-6 hidden-xs">
+             <img style="width: 100%;" src="images/Pantallas/6.png">
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8"> <h3>Organiza tus publicaciones</h3></div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <p>Revisa y divide tus publicaciones, podrás mantener un orden y serán mucho más fáciles de encontrar.</p>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                  <h4><span class="icon-correo" style="color:#26a8ff;"></span>
+                    Manten organizados tus mensajes</h4>
+              </div>
+            </div>
+
+            <div class="row">
+             <div class="col-md-1"></div>
+              <div class="col-md-8"> <p>Responde a tus usuarios en orden, marca los tienen algún asunto pendiente y archiva los más trascendentes.</p></div>
+            </div>
+          </div>
+            
+
+          </div> 
+
+    <section style="background-color: #343434;">
+    <br>
+          <div class="row">
+              <div class="col-md-12 text-center" >
+                  <h2 style="color: white;">Únete a Bamboostr es <span class="gratis"> Gratis </span></h2>
+             </div>
+          </div>
+<br>
+          <div class="row "> 
+            <div class="col-md-2"></div>
+
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="nombre" placeholder="Tu Usuario" >
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="mail" placeholder="Tu Correo" >
+                </div>                
+              </div>
+
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="password" placeholder="Tu Contraseña" >
+                </div>                
+              </div>
+
+              <div class="col-md-3">
+                <button onclick="registrarForm()" type="button" class="btn btn-cta btn-cta-primary">¡Comienza gratis por siempre!</button>                
+              </div>
+
+          </div>
+          <br>
+    </section> 
+        
+    <!-- ******FOOTER****** --> 
+
+
+
+
+    <footer class="footer">
+
+
+      <div class="col-md-2">
+        <h2><span class="icon-panda" style="color:#d0d0d0;"> </h2>
+        <h6><span style="color:#d0d0d0;">Bamboostr 2015</span></h6>
+      </div>
+
+       <div class="col-md-1">
+        <h5 style="color:black">Síguenos! 
+          <br><br> 
+          <span class="icon-face" style="color:#26a8ff;">
+            <span class="icon-linkedin" style="color:#26a8ff;"> 
+              <span class="icon-twitter" style="color:#26a8ff;">
+        </h5>
+       </div>
+
+       <div class="col-md-2"></div>
+        <div class="col-md-6 text-right col-sm-12">
+
+                        <ul class="enlinea">
+                            <li ><a href="#que_es">Blog</a></li>
+                            <li class="nav-item"><a href="#caracteristicas">Sube de Nivel</a></li>
+                            <li class="nav-item"><a href="#portabilidad">Conócenos</a></li>                            
+                            <li class="nav-item"><a href="#que_es">Actualizaciones</a></li>
+                            <li class="nav-item"><a href="#caracteristicas">Te ayudamos</a></li>
+                        </ul>
+        </div>
+
+    </footer><!--//footer-->
+    
+    <!-- Login Modal -->
+    <div class="modal modal-signup" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="margin: 30px auto; padding-top: 30px; padding-bottom: 30px;">
+            <div class="modal-content" style="overflow-y: auto; ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 style="text-align: center; color: #a3a3a3;">Ingresar a bamboostr</h3>
+                    <!--<p class="intro text-center">It only takes 3 minutes!</p>-->
+                    <p></p>
+                </div>
+                <div style="height: 200px;" class="modal-body col-md-12">
+                  <div clas="row">
+                    <div class="text-center col-md-6">                        
+                        <ul style="margin: 0;" class="list-unstyled social-login">
+                            <li style="margin: 0;">
+                              <div class="input-group input-group-lg col s4">
+                                   <input id="nameISForm" style="padding-left: 10px; border: 1px solid #ccc; height: 37px; font-size: 13px;" type="text" class="form-control" placeholder="Usuario o mail" aria-describedby="sizing-addon1">
+                                   <span style="padding: 0px 9px 0px 8px; font-size: 12px; height: 30px; margin-top: 0px;" class="input-group-addon glyphicon glyphicon-user" id="sizing-addon1"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-group input-group-lg col s4">
+                                   <input id="passwordISForm" style="padding-left: 10px; border: 1px solid #ccc; height: 37px; font-size: 13px;" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+                                   <span style="padding: 0px 9px 0px 8px; font-size: 12px; height: 30px; margin-top: 0px;" class="input-group-addon glyphicon glyphicon-lock" id="sizing-addon1"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <button style="background-color: #26A8FF; margin-top: 10px;" onclick="iniciarSesionForm()" class="btn" type="button">Ingresar</button>
+                            </li>
+                            <li>
+                              <div class="row hidden-xs" style="margin-top: 10px;">
+                                <div class="col-md-12">
+                                  <a style="margin-left: -10px; cursor: pointer;" onclick="mostrarSU()">Registrarse</a>    
+                                </div>
+                              </div>
+                            </li>
+                            <!--<li><button class="google-btn btn" type="button"><i class="fa fa-google-plus"></i>Sign up with Google</button></li>-->
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center col-md-6">  
+                        <div style="padding-top: 20px;" class="hidden-sm hidden-md hidden-lg"></div>                      
+                        <ul style="margin: 0;" class="list-unstyled social-login">
+                            <li style="margin: 0;">
+                                <button style="height: 42px; width: 220px; margin-bottom: 10px;" onclick="window.location='facebook/redirect.php?liberar=1'" class="facebook-btn btn" type="button">
+                                <img style="margin-left: 6px; float: left; width: 10px; margin-right: 1em;" src="images/redes_sociales/f.png" />Sign up with Facebook</button>
+                            </li>
+                            <li style="margin: 0;">
+                                <button style="height: 42px; width: 220px; margin-bottom: 10px;" onclick="window.location='twitter/redirect.php?liberar=1'" class="twitter-btn btn" type="button">
+                                <img style="float: left; width: 25px;" src="images/redes_sociales/t.png" />Sign up with Twitter</button>
+                            </li>
+                            <!--<li><button class="google-btn btn" type="button"><i class="fa fa-google-plus"></i>Sign up with Google</button></li>-->
+                        </ul>
+                        <p style="text-align: left;" class="note">No te preocupes. Nosotros no publicamos nada sin tu permiso y no almacenamos contraseñas.</p>
+                    </div>
+                    <!--<div class="divider"><span>Or</span></div>--->
+                  </div> <!--fin row-->
+                </div><!--//modal-body-->
+                <!--
+                <div class="modal-footer">
+                    <p>Already have an account? <a class="login-link" id="login-link" href="http://themes.3rdwavemedia.com/tempo/1.4/#">Log in</a></p>                    
+                </div>--><!--//modal-footer-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog col-md-8-->
+        <div class="col-md-2"></div>
+    </div><!--//modal-->
+    
+    <!-- Signup Modal -->
+    <div class="modal modal-signup" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="margin: 30px auto; padding-top: 30px; padding-bottom: 30px;">
+            <div class="modal-content" style="overflow-y: auto; ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="signupModalLabel" class="modal-title text-center" style="color: #a3a3a3;">Empieza a promover tu negocio<span style="color: #26a8ff;"> GRATIS</span></h3>
+                    <h3 style="color: #a3a3a3;">Crea un usuario Bamboostr o entra a través de alguna red social</h3>
+                    <!--<p class="intro text-center">It only takes 3 minutes!</p>-->
+                    <p></p>
+                </div>
+                <div style="height: 250px;" class="modal-body col-md-12">
+                  <div clas="row">
+                    <div class="text-center col-md-6">                        
+                        <ul style="margin: 0;" class="list-unstyled social-login">
+                            <li style="margin: 0;">
+                              <div class="input-group input-group-lg col s4">
+                                   <input id="nameForm" style="padding-left: 10px; border: 1px solid #ccc; height: 37px; font-size: 13px;" type="text" class="form-control" placeholder="Usuario" aria-describedby="sizing-addon1">
+                                   <span style="padding: 0px 9px 0px 8px; font-size: 12px; height: 30px; margin-top: 0px;" class="input-group-addon glyphicon glyphicon-user" id="sizing-addon1"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-group input-group-lg col s4">
+                                   <input id="mailForm" style="padding-left: 10px; border: 1px solid #ccc; height: 37px; font-size: 13px;" type="text" class="form-control" placeholder="Mail" aria-describedby="sizing-addon1">
+                                   <span style="padding: 0px 9px 0px 8px; font-size: 12px; height: 30px; margin-top: 0px;" class="input-group-addon glyphicon glyphicon-envelope" id="sizing-addon1"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-group input-group-lg col s4">
+                                   <input id="passwordForm" style="padding-left: 10px; border: 1px solid #ccc; height: 37px; font-size: 13px;" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+                                   <span style="padding: 0px 9px 0px 8px; font-size: 12px; height: 30px; margin-top: 0px;" class="input-group-addon glyphicon glyphicon-lock" id="sizing-addon1"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <button style="background-color: #26A8FF; margin-top: 10px;" onclick="registrarForm()" class="btn" type="button">¡Comienza gratis por siempre!</button>
+                            </li>
+                            <li>
+                              <div class="row hidden-xs" style="margin-top: 10px;">
+                                <a style="cursor: pointer;" onclick="mostrarIS()">Iniciar Sesión</a>    
+                              </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center col-md-6">  
+                        <div style="padding-top: 20px;" class="hidden-sm hidden-md hidden-lg"></div>                      
+                        <ul style="margin: 0;" class="list-unstyled social-login">
+                            <li style="margin: 0;">
+                                <button style="height: 42px; width: 220px; margin-bottom: 10px;" onclick="window.location='facebook/redirect.php?liberar=1'" class="facebook-btn btn" type="button">
+                                <img style="margin-left: 6px; float: left; width: 10px; margin-right: 1em;" src="images/redes_sociales/f.png" />Sign up with Facebook</button>
+                            </li>
+                            <li style="margin: 0;">
+                                <button style="height: 42px; width: 220px; margin-bottom: 10px;" onclick="window.location='twitter/redirect.php?liberar=1'" class="twitter-btn btn" type="button">
+                                <img style="float: left; width: 25px;" src="images/redes_sociales/t.png" />Sign up with Twitter</button>
+                            </li>
+                            <!--<li><button class="google-btn btn" type="button"><i class="fa fa-google-plus"></i>Sign up with Google</button></li>-->
+                        </ul>
+                        <p style="text-align: left;" class="note">No te preocupes. Nosotros no publicamos nada sin tu permiso y no almacenamos contraseñas.</p>
+                    </div>
+                    <!--<div class="divider"><span>Or</span></div>--->
+                  </div> <!--fin row-->
+                </div><!--//modal-body-->
+                <!--
+                <div class="modal-footer">
+                    <p>Already have an account? <a class="login-link" id="login-link" href="http://themes.3rdwavemedia.com/tempo/1.4/#">Log in</a></p>                    
+                </div>--><!--//modal-footer-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog col-md-8-->
+        <div class="col-md-2"></div>
+    </div><!--//modal-->
+    
+    <!-- Error Modal -->
+    <div class="modal modal-signup" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="margin: 30px auto; padding-top: 30px; padding-bottom: 30px;">
+            <div class="modal-content" style="overflow-y: auto; ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 style="text-align: center; color: red;" id="signupModalLabel" class="modal-title text-center">ERROR al Ingresar.</h4>
+                    <h4 style="text-align: left; color: red;" id="signupModalLabel" class="modal-title text-center">Posibles Causas:</h4>
+                    <h4 style="text-align: left; color: red;" id="signupModalLabel" class="modal-title text-center">1. Expiró su sesión.</h4>
+                    <h4 style="text-align: left; color: red;" id="signupModalLabel" class="modal-title text-center">2. No aceptó todos los permisos de facebook.</h4>
+                    <h3 style="text-align: center; color: #a3a3a3;">Ingresar a bamboostr</h3>
+                    <!--<p class="intro text-center">It only takes 3 minutes!</p>-->
+                    <p></p>
+                </div>
+                <div style="height: 200px;" class="modal-body col-md-12">
+                  <div clas="row">
+                    <div class="text-center col-md-6">                        
+                        <ul style="margin: 0;" class="list-unstyled social-login">
+                            <li style="margin: 0;">
+                              <div class="input-group input-group-lg col s4">
+                                   <input id="nameERRORForm" style="padding-left: 10px; border: 1px solid #ccc; height: 37px; font-size: 13px;" type="text" class="form-control" placeholder="Usuario o mail" aria-describedby="sizing-addon1">
+                                   <span style="padding: 0px 9px 0px 8px; font-size: 12px; height: 30px; margin-top: 0px;" class="input-group-addon glyphicon glyphicon-user" id="sizing-addon1"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-group input-group-lg col s4">
+                                   <input id="passwordERRORForm" style="padding-left: 10px; border: 1px solid #ccc; height: 37px; font-size: 13px;" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+                                   <span style="padding: 0px 9px 0px 8px; font-size: 12px; height: 30px; margin-top: 0px;" class="input-group-addon glyphicon glyphicon-lock" id="sizing-addon1"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <button style="background-color: #26A8FF; margin-top: 10px;" onclick="ERRORForm()" class="btn" type="button">Ingresar</button>
+                            </li>
+                            <li>
+                              <div class="row hidden-xs" style="margin-top: 10px;">
+                                <div class="col-md-12">
+                                  <a style="margin-left: -10px; cursor: pointer;" onclick="mostrarSU()">Registrarse</a>    
+                                </div>
+                              </div>
+                            </li>
+                            <!--<li><button class="google-btn btn" type="button"><i class="fa fa-google-plus"></i>Sign up with Google</button></li>-->
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center col-md-6">  
+                        <div style="padding-top: 20px;" class="hidden-sm hidden-md hidden-lg"></div>                      
+                        <ul style="margin: 0;" class="list-unstyled social-login">
+                            <li style="margin: 0;">
+                                <button style="height: 42px; width: 220px; margin-bottom: 10px;" onclick="window.location='facebook/redirect.php?liberar=1'" class="facebook-btn btn" type="button">
+                                <img style="margin-left: 6px; float: left; width: 10px; margin-right: 1em;" src="images/redes_sociales/f.png" />Sign up with Facebook</button>
+                            </li>
+                            <li style="margin: 0;">
+                                <button style="height: 42px; width: 220px; margin-bottom: 10px;" onclick="window.location='twitter/redirect.php?liberar=1'" class="twitter-btn btn" type="button">
+                                <img style="float: left; width: 25px;" src="images/redes_sociales/t.png" />Sign up with Twitter</button>
+                            </li>
+                            <!--<li><button class="google-btn btn" type="button"><i class="fa fa-google-plus"></i>Sign up with Google</button></li>-->
+                        </ul>
+                        <p style="text-align: left;" class="note">No te preocupes. Nosotros no publicamos nada sin tu permiso y no almacenamos contraseñas.</p>
+                    </div>
+                    <!--<div class="divider"><span>Or</span></div>--->
+                  </div> <!--fin row-->
+                </div><!--//modal-body-->
+                <!--
+                <div class="modal-footer">
+                    <p>Already have an account? <a class="login-link" id="login-link" href="http://themes.3rdwavemedia.com/tempo/1.4/#">Log in</a></p>                    
+                </div>--><!--//modal-footer-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog col-md-8-->
+        <div class="col-md-2"></div>
+    </div><!--//modal-->
+
+</body>
+</html>

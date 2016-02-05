@@ -1,0 +1,13 @@
+[19-May-2015 16:05:32 America/Denver] PHP Parse error:  syntax error, unexpected '=' in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 9
+[19-May-2015 16:14:25 America/Denver] PHP Notice:  Undefined index: pagoAnual in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 8
+[19-May-2015 16:14:25 America/Denver] PHP Notice:  Undefined index: pagoMensual in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 9
+[19-May-2015 16:14:34 America/Denver] PHP Notice:  Undefined index: pagoAnual in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 8
+[19-May-2015 16:14:34 America/Denver] PHP Notice:  Undefined index: pagoMensual in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 9
+[11-Aug-2015 22:36:20 America/Denver] PHP Notice:  Undefined index: option in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 4
+[11-Aug-2015 22:36:20 America/Denver] PHP Notice:  Undefined variable: letra in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 13
+[11-Aug-2015 22:37:27 America/Denver] PHP Notice:  Undefined index: option in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 4
+[11-Aug-2015 22:37:27 America/Denver] PHP Notice:  Undefined variable: letra in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 13
+[11-Aug-2015 22:38:54 America/Denver] PHP Notice:  Undefined index: option in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 4
+[11-Aug-2015 22:38:54 America/Denver] PHP Notice:  Undefined variable: letra in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 13
+[11-Aug-2015 22:39:18 America/Denver] PHP Notice:  Undefined index: option in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 4
+[11-Aug-2015 22:39:18 America/Denver] PHP Notice:  Undefined variable: letra in /home2/scrapell/public_html/letstweet/scripts/cuenta/get-preciosDeCuenta.php on line 13

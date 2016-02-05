@@ -1,0 +1,155 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?vng4fp');
+	src:url('fonts/icomoon.eot?vng4fp#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?vng4fp') format('truetype'),
+		url('fonts/icomoon.woff?vng4fp') format('woff'),
+		url('fonts/icomoon.svg?vng4fp#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lato';
+	src:url('fonts/font-lato/Lato-Black.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-BlackItalic.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-Bold.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-BoldItalic.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-Hairline.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-HairlineItalic.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-Italic.ttf') format('truetype'), 
+            url('fonts/font-lato/Lato-Light.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-LightItalic.ttf') format('truetype'),
+            url('fonts/font-lato/Lato-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lato-regular';
+	src:url('fonts/font-lato/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'lato-bold';
+	src:url('fonts/font-lato/Lato-Bold.ttf') format('truetype');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-instagram:before {
+	content: "\e901";
+}
+.icon-facebook:before {
+	content: "\e903";
+}
+.icon-agregar2:before {
+	content: "\e90a";
+}
+.icon-menu:before {
+	content: "\e902";
+}
+.icon-agregarhover:before {
+	content: "\e900";
+}
+.icon-contenido4:before {
+	content: "\e904";
+}
+.icon-twitter:before {
+	content: "\e905";
+}
+.icon-subirpremium:before {
+	content: "\e906";
+}
+.icon-salir:before {
+	content: "\e907";
+}
+.icon-publicacion:before {
+	content: "\e908";
+}
+.icon-muros:before {
+	content: "\e909";
+}
+.icon-linkedin:before {
+	content: "\e90e";
+}
+.icon-herramientas:before {
+	content: "\e90f";
+}
+.icon-flecha:before {
+	content: "\e910";
+}
+.icon-face:before {
+	content: "\e911";
+}
+.icon-diseno:before {
+	content: "\e913";
+}
+.icon-inicio:before {
+	content: "\e914";
+}
+.icon-asistente:before {
+	content: "\e915";
+}
+.icon-mover-01:before {
+	content: "\e61e";
+}
+.icon-lupa-01:before {
+	content: "\e602";
+}
+.icon-mas-01:before {
+	content: "\e603";
+}
+.icon-refrescar-01:before {
+	content: "\e607";
+}
+.icon-tacha-01:before {
+	content: "\e60b";
+}
+.icon-check-01:before {
+	content: "\e611";
+}
+.icon-fecha-01:before {
+	content: "\e617";
+}
+.icon-alertas-01:before {
+	content: "\e61d";
+}
+.icon-stats-dots:before {
+	content: "\e90b";
+}
+.icon-eye:before {
+	content: "\e90c";
+}
+
+.lato-bold{
+  font-family: lato-bold;
+}
+
+.lato-regular{
+  font-family: lato-regular;
+}
+
+body{
+  font-family: lato-bold;
+}
+p{
+  font-family: lato-bold;
+}
+a{
+  font-family: lato-bold;
+}
+
+
