@@ -52,7 +52,7 @@ function headerMenu($user_image){
                         <div style="height: 300px; overflow-y: scroll;" class="dropdown-menu dropdown-menu-lg pull-right">
                             <div class="listview" id="notifications">
                                 <div class="lv-header">
-                                    Notification
+                                    Asistente Inteligente
                     
                                     <ul class="actions">
                                         <li class="dropdown">
@@ -100,7 +100,7 @@ function headerMenu($user_image){
                         <div style="height: 300px; overflow-y: scroll;" class="dropdown-menu dropdown-menu-lg pull-right">
                             <div class="listview" id="notifications">
                                 <div class="lv-header">
-                                    Asistente Inteligente
+                                    Notifications
                     
                                     <ul class="actions">
                                         <li class="dropdown">
