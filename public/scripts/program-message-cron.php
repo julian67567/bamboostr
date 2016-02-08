@@ -1,15 +1,10 @@
 <?PHP
-include ''.dirname(__FILE__).'/../app/config.php';
-include ''.dirname(__FILE__).'/funciones.php';
 ini_set('max_execution_time', 9000);
-function mifechagmt($fecha_timestamp,$gmt=0){
-	$timestamp=$fecha_timestamp; //puedes poner aqui la hora en formato "Unix timestamp" obtenida de una tabla
-	$diferenciahorasgmt = (date('Z', time()) / 3600 - $gmt) * 3600; //La diferencia de horas entre el GMT del servidor y el GMT que queremos, en mi caso mi servidor es GTM-4, y si quiero un GTM -5 la diferencia será de -1 hora
-	$timestamp_ajuste = $timestamp - $diferenciahorasgmt; //restamos a la hora actual la diferencia horaria en mi caso será -1 hora
-	$fecha = date("d-m-Y H:i", $timestamp_ajuste); //mostramos la fecha/hora
-	return $fecha;
-}
+
+include ''.dirname(__FILE__).'/../config.php';
 include ''.dirname(__FILE__).'/../conexioni.php';
+include ''.dirname(__FILE__).'/funciones.php';
+
 $fechaAS = strtotime(date("d-m-Y H:i"));
 $horarioAS =  substr(date("O"),0,strlen(date("O"))-2);
 echo 'Fecha Actual: '.date("d-m-Y H:i").' '.$horarioAS.'<br /><br />';

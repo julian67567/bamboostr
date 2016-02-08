@@ -10,6 +10,7 @@ $direccion_principal_config = "localhost/bamboostr/public";
 //$direccion_principal_config = "localhost:8000";
 //$direccion_principal_config = "bam.boogapp.com";
 //$direccion_principal_config = "bamboostr.com";
+//$direccion_principal_config = "betatest.bamboostr.com";
 /*Fin Dirección Principal*/
 
 

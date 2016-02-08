@@ -29,7 +29,7 @@ while($c!=12){
             ?>window.location = "facebook/clearsessions.php?access_token=<?PHP echo $_SESSION['access_token'] ?>&redirect=1";<?PHP
         }
         else if($c==11){
-            ?>window.location = "https://www.mercadopago.com/mlm/debits/new?preapproval_plan_id=6f0e9312cdb84654bcac3b2abf6045b2";<?PHP
+            ?>window.location = "https://www.mercadopago.com/mlm/debits/new?preapproval_plan_id=4a535e7b68be493ba1732ef2fab2e0d2";<?PHP
         }
         else{
             ?>toastr["info"](txt143);<?PHP
