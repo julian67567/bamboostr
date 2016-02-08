@@ -8,9 +8,9 @@
   $cont=0;
   $response_array = array();
   if($option==2){
-    $query = $conn->query("SELECT * FROM notificaciones WHERE id_token='".$id_token."' AND tipo='instagram' ORDER BY id DESC");
+    $query = $conn->query("SELECT * FROM notificaciones WHERE id_token='".$id_token."' AND tipo='instagram' OR tipo='asistente' ORDER BY id DESC");
   } else if($option==1 || $option==""){
-    $query = $conn->query("SELECT * FROM notificaciones WHERE receptor='".$identify."' AND red='".$red."' ORDER BY id DESC");
+    $query = $conn->query("SELECT * FROM notificaciones WHERE receptor='".$identify."' AND red='".$red."' AND tipo!='instagram' AND tipo!='asistente' ORDER BY id DESC");
   }
   if($query->num_rows>0) {
     while($row = $query->fetch_assoc()) {

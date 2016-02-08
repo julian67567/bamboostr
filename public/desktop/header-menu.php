@@ -18,7 +18,7 @@ function headerMenu($user_image){
                 </li>
                 
                 <li style="height: 38px;" class="pull-right hidden-xs">
-                  <a href="">
+                  <a href="preguntas-frecuentes.html">
                     <div style="height: 38px; margin-top: 5px; margin-left: 15px; margin-right: 15px; color: white;" class="pull-right">
                       <span style="padding-top: 0px; font-size: 20px; display: inline-block;" class="fa fa-question-circle"></span>
                       <p style="display: inline-block;">¿Necesitas Ayuda?</p>
@@ -27,7 +27,7 @@ function headerMenu($user_image){
                 </li>
                 
                 <li class="pull-right">
-                <ul class="top-menu">
+                <ul ng-controller="notsCtrl" class="top-menu">
                     <li style="width: 50px; top: 4px;  height: 35px; vertical-align: top;">
                       <div style="text-align: center;" class="dropdown">
                         <img onerror="this.src='images/logo-bamboostr.png'" class="round dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" alt="Perfil" title="Perfil" style="cursor: pointer; height: 30px; width: 30px;" src="<?PHP echo $user_image; ?>" />
@@ -44,13 +44,52 @@ function headerMenu($user_image){
                         <a class="tm-search" href=""></a>
                     </li>
                     -->
+                    <li style="cursor: pointer;" class="dropdown">
+                        <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center;" data-toggle="dropdown" class="fa fa-envelope">
+                          <i ng-show="!(notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{notificationsMessages2.length}}</i>
+                          <i ng-show="!(notificationsMessages | filter: { read:0}).length" class="tmn-counts">0</i>
+                        </a>
+                        <div style="height: 300px; overflow-y: scroll;" class="dropdown-menu dropdown-menu-lg pull-right">
+                            <div class="listview" id="notifications">
+                                <div class="lv-header">
+                                    Notification
+                    
+                                    <ul class="actions">
+                                        <li class="dropdown">
+                                            <a href="" data-clear="notification">
+                                                <i class="zmdi zmdi-check-all"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="lv-body">
+                                  <a ng-if="z.read=='0'" ng-repeat="z in notificationsMessages3 = (notificationsMessages | filter: { read:0})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(z,2)">
+                                    <div class="media">
+                                      <div class="pull-left">
+                                        <i ng-if="z.read=='0'" style="font-size: 15px;" class="fa fa-envelope-o"></i>
+                                        <img ng-if="z.read=='1'" style="width: 15px;" src="images/openEnvelop.png">
+                                      </div>
+                                      <div class="media-body">
+                                        <div class="lv-title">
+                                          {{z.titulo}}
+                                        </div>
+                                        <small ng-if="z.tipo=='asistente'" class="lv-small">Asistente</small>
+                                      </div>
+                                    </div>
+                                  </a>
+
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </li>
                     <li style="height: 38px; vertical-align: top;">
                       <a href="system.php" style="cursor: pointer; text-align: center; font-size: 21px; top: 7px; color: white;" class="fa fa-home"></a>
                     </li>
                     <li style="height: 38px; vertical-align: top;">
                       <a href="escribir.php" style="cursor: pointer; text-align: center; font-size: 21px; top: 7px; color: white;" class="fa fa-pencil"></a>
                     </li>
-                    <li ng-controller="notsCtrl" style="cursor: pointer;" class="dropdown">
+                    <li style="cursor: pointer;" class="dropdown">
                         <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center;" data-toggle="dropdown" class="fa fa-envelope">
                           <i ng-show="(inboxHeader | filter: { read:0}).length && (notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length + notificationsMessages2.length}}</i>
                           <i ng-show="(inboxHeader | filter: { read:0}).length && !(notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length}}</i>
