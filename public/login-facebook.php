@@ -170,7 +170,9 @@ if(isset($session)) {
 	} else {
         //si no existe el usuario
 		//si no esta, inserta al usuario en la bd y le agrega sus grupos y fan pages
-		$query2=$conn->query("INSERT INTO token (identify,link,red,ssid,foto,screen_name_bamboostr,access_token,social_networks,idioma,mail,first_ssid,last_ssid) VALUES ('".$_SESSION['identify']."','".$link."','facebook','".$_SESSION['sessionid']."','".$_SESSION['user_image']."','".$_SESSION['user_bamboostr']."','".$_SESSION['access_token']."','fa".$_SESSION['identify'].",','".getUserLanguage()."','".$_SESSION['mail']."','".date("d-m-Y")."','".date("d-m-Y")."')") OR DIE(mysqli_error($conn));
+        $userRand = ''.rand(1000000000,9999999999).''.$_SESSION['user_bamboostr'].'';
+        $passRand = rand(1000000000,9999999999);
+		$query2=$conn->query("INSERT INTO token (identify,link,red,ssid,foto,screen_name,password,screen_name_bamboostr,access_token,social_networks,idioma,mail,first_ssid,last_ssid) VALUES ('".$_SESSION['identify']."','".$link."','facebook','".$_SESSION['sessionid']."','".$_SESSION['user_image']."','".$userRand."','".encriptar($passRand)."','".$_SESSION['user_bamboostr']."','".$_SESSION['access_token']."','fa".$_SESSION['identify'].",','".getUserLanguage()."','".$_SESSION['mail']."','".date("d-m-Y")."','".date("d-m-Y")."')") OR DIE(mysqli_error($conn));
 		
 		$query2 = $conn->query("SELECT foto_bamboostr,screen_name_bamboostr,id FROM token WHERE identify='".$_SESSION['identify']."' AND red='facebook'") OR DIE(mysqli_error($conn));
 		//get id from token NOTA: Antes no existe el id
@@ -178,6 +180,9 @@ if(isset($session)) {
 		$_SESSION['id_token'] = $row2["id"];
         $_SESSION['user_bamboostr'] = $row2["screen_name_bamboostr"];
         $_SESSION['foto_bamboostr'] = $row2["foto_bamboostr"];
+        
+                //mandar mail de contraseña
+                $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$_SESSION['id_token']."','Bamboostr: datos de acceso','<br /><br />Muchas Felicidades por registrarte en bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /><br /><br />Te enviamos tus datos de acceso: User: ".$userRand." <br />Pass: ".$passRand."</center><br /><br />','1')") OR DIE(mysqli_error($conn));
       
                 //Insert tutos
                 $conn->query("INSERT INTO tutos (id_token) VALUES ('".$_SESSION['id_token']."')") OR DIE(mysqli_error($conn));

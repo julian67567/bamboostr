@@ -13,7 +13,7 @@ include ''.dirname(__FILE__).'/../conexioni.php';
 $fechaAS = strtotime(date("d-m-Y H:i"));
 $horarioAS =  substr(date("O"),0,strlen(date("O"))-2);
 echo 'Fecha Actual: '.date("d-m-Y H:i").' '.$horarioAS.'<br /><br />';
-$query=$conn->query("SELECT * FROM queue_msg ORDER BY fecha");
+$query=$conn->query("SELECT * FROM queue_msg ORDER BY fecha") OR DIE(mysqli_error($conn));
 if($query->num_rows>0){
   $c=1;
   while($row=$query->fetch_assoc()){
@@ -61,7 +61,7 @@ if($query->num_rows>0){
 			}
 		  }
 	  }
-	  $query4 = $conn->query("SELECT dev_token FROM token WHERE id='".$row["id_token"]."'");
+	  $query4 = $conn->query("SELECT dev_token FROM token WHERE id='".$row["id_token"]."'") OR DIE(mysqli_error($conn));
 	  $row2 = $query4->fetch_assoc();
 	  if($row2["dev_token"] && $row["red"]=="instagram"){
 		$title12 = 'Mensaje Programado';
@@ -70,10 +70,10 @@ if($query->num_rows>0){
 		$title12 = 'Mensaje Programado';
 		$body12 = 'Enviado Correctamente';
 		//Mensajes Publicados
-        $query2=$conn->query("INSERT INTO msg_publicados SELECT * FROM queue_msg WHERE id='".$row["id"]."'"); 
+        $query2=$conn->query("INSERT INTO msg_publicados SELECT * FROM queue_msg WHERE id='".$row["id"]."'") OR DIE(mysqli_error($conn));
         //Mandar Mail
-        $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')");
-		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')");
+        $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')") OR DIE(mysqli_error($conn));
+		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')") OR DIE(mysqli_error($conn));
 		print_r($fo);
 		echo "<br />";
 	  }
@@ -108,7 +108,7 @@ if($query->num_rows>0){
 		var_dump($result);
 	  }
 	  //Eliminar Llave
-	  $query2=$conn->query("DELETE FROM queue_msg WHERE id='".$row["id"]."'");
+	  $query2=$conn->query("DELETE FROM queue_msg WHERE id='".$row["id"]."'") OR DIE(mysqli_error($conn));
 	  $c++;
 	}/*fin hora*/
   } /*fin while*/

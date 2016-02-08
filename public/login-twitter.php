@@ -55,8 +55,11 @@ if(!$_SESSION['sessionid'] || !$_SESSION['user_bamboostr']){
 		  $query2=$conn->query("UPDATE token SET expire_token=0, identify='".$user_info->id_str."', ssid='".$_SESSION['sessionid']."', foto='".$user_info->profile_image_url."', oauth_token='".$credentials['oauth_token']."', oauth_token_secret='".$credentials['oauth_token_secret']."', last_ssid='".date("d-m-Y")."' WHERE identify='".$user_info->id_str."' AND red='twitter'") OR DIE(mysqli_error($conn));
 		header('Location: http://'.getDirUrl(1).'/system.php');
 		} else { 
+          //si no existe usuario
+          $userRand = ''.rand(1000000000,9999999999).''.$_SESSION['user_bamboostr'].'';
+          $passRand = rand(1000000000,9999999999);
 		  //si no existe usuario
-		  $query2=$conn->query("INSERT INTO token (identify,red,ssid,foto,screen_name_bamboostr,oauth_token,oauth_token_secret,social_networks,idioma,first_ssid,last_ssid) VALUES ('".$user_info->id_str."','twitter','".$_SESSION['sessionid']."','".$user_info->profile_image_url."','".$user_info->screen_name."','".$credentials['oauth_token']."','".$credentials['oauth_token_secret']."','tw".$user_info->id_str.",','".getUserLanguage()."','".date("d-m-Y")."','".date("d-m-Y")."')") OR DIE(mysqli_error($conn));
+		  $query2=$conn->query("INSERT INTO token (identify,red,ssid,foto,screen_name,password,screen_name_bamboostr,oauth_token,oauth_token_secret,social_networks,idioma,first_ssid,last_ssid) VALUES ('".$user_info->id_str."','twitter','".$_SESSION['sessionid']."','".$user_info->profile_image_url."','".$userRand."','".encriptar($passRand)."','".$user_info->screen_name."','".$credentials['oauth_token']."','".$credentials['oauth_token_secret']."','tw".$user_info->id_str.",','".getUserLanguage()."','".date("d-m-Y")."','".date("d-m-Y")."')") OR DIE(mysqli_error($conn));
 		  
 		  $query2 = $conn->query("SELECT foto_bamboostr,screen_name_bamboostr,id FROM token WHERE identify='".$user_info->id_str."' AND red='twitter'") OR DIE(mysqli_error($conn));
 		  //get id from token NOTA: Antes no existe el id
@@ -64,6 +67,9 @@ if(!$_SESSION['sessionid'] || !$_SESSION['user_bamboostr']){
 		  $_SESSION['id_token'] = $row["id"];
           $_SESSION['user_bamboostr'] = $row["screen_name_bamboostr"];
           $_SESSION['foto_bamboostr'] = $row["foto_bamboostr"];
+          
+                  //mandar mail de contraseña
+                $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$_SESSION['id_token']."','Bamboostr: datos de acceso','<br /><br />Muchas Felicidades por registrarte en bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /><br /><br />Te enviamos tus datos de acceso: User: ".$userRand." <br />Pass: ".$passRand."</center><br /><br />','1')") OR DIE(mysqli_error($conn));
           
                   //insert tutos
                   $conn->query("INSERT INTO tutos (id_token) VALUES ('".$_SESSION['id_token']."')") OR DIE(mysqli_error($conn));
