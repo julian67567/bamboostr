@@ -45,7 +45,7 @@ function headerMenu($user_image){
                     </li>
                     -->
                     <li style="cursor: pointer;" class="dropdown">
-                        <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center;" data-toggle="dropdown" class="fa fa-envelope">
+                        <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center; background: url('images/panda-as.png') no-repeat top center / 30px 24px transparent;" data-toggle="dropdown">
                           <i ng-show="(notificationsMessages3 | filter: { read:0, tipo:'asistente'}).length" class="tmn-counts">{{notificationsMessages4.length}}</i>
                           <i ng-show="!(notificationsMessages3 | filter: { read:0, tipo:'asistente'}).length" class="tmn-counts">0</i>
                         </a>
@@ -90,7 +90,7 @@ function headerMenu($user_image){
                     <li style="height: 38px; vertical-align: top;">
                       <a href="escribir.php" style="cursor: pointer; text-align: center; font-size: 21px; top: 7px; color: white;" class="fa fa-pencil"></a>
                     </li>
-                    <li style="cursor: pointer;" class="dropdown">
+                    <li style="cursor: pointer; vertical-align: top;" class="dropdown">
                         <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center;" data-toggle="dropdown" class="fa fa-envelope">
                           <i ng-show="(inboxHeader | filter: { read:0}).length && (notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length + notificationsMessages2.length}}</i>
                           <i ng-show="(inboxHeader | filter: { read:0}).length && !(notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length}}</i>
@@ -100,7 +100,7 @@ function headerMenu($user_image){
                         <div style="height: 300px; overflow-y: scroll;" class="dropdown-menu dropdown-menu-lg pull-right">
                             <div class="listview" id="notifications">
                                 <div class="lv-header">
-                                    Notification
+                                    Asistente Inteligente
                     
                                     <ul class="actions">
                                         <li class="dropdown">
