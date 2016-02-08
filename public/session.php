@@ -7,7 +7,7 @@ session_set_cookie_params($lifetime);
 ini_set("session.cookie_lifetime",$lifetime);
 ini_set("session.gc_maxlifetime",$lifetime);
 ini_set('max_execution_time', $lifetime);
-if($_SESSION['user']){
+if($_SESSION['id_token']){
   setcookie("id_token", $_SESSION['id_token'], time()+$lifetime);
   setcookie("sessionid", $_SESSION['sessionid'], time()+$lifetime);
   setcookie("identify", $_SESSION['identify'], time()+$lifetime);
@@ -21,7 +21,7 @@ if($_SESSION['user']){
 } else {
   // debe de tener cookie si no los primeros sign in fallan
   
-  if($_COOKIE['user']){
+  if($_COOKIE['id_token']){
 	$_SESSION['id_token'] = $_COOKIE['id_token'];
 	$_SESSION['sessionid'] = $_COOKIE['sessionid'];
 	$_SESSION['identify'] = $_COOKIE['identify'];
