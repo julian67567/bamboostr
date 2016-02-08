@@ -46,8 +46,8 @@ function headerMenu($user_image){
                     -->
                     <li style="cursor: pointer;" class="dropdown">
                         <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center;" data-toggle="dropdown" class="fa fa-envelope">
-                          <i ng-show="!(notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{notificationsMessages2.length}}</i>
-                          <i ng-show="!(notificationsMessages | filter: { read:0}).length" class="tmn-counts">0</i>
+                          <i ng-show="(notificationsMessages3 | filter: { read:0}).length" class="tmn-counts">{{notificationsMessages4.length}}</i>
+                          <i ng-show="!(notificationsMessages3 | filter: { read:0}).length" class="tmn-counts">0</i>
                         </a>
                         <div style="height: 300px; overflow-y: scroll;" class="dropdown-menu dropdown-menu-lg pull-right">
                             <div class="listview" id="notifications">
@@ -63,7 +63,7 @@ function headerMenu($user_image){
                                     </ul>
                                 </div>
                                 <div class="lv-body">
-                                  <a ng-if="z.read=='0'" ng-repeat="z in notificationsMessages3 = (notificationsMessages | filter: { read:0})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(z,2)">
+                                  <a ng-if="z.read=='0'" ng-repeat="z in notificationsMessages4 = (notificationsMessages3 | filter: { read:0, tipo:'asistente'})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(z,3)">
                                     <div class="media">
                                       <div class="pull-left">
                                         <i ng-if="z.read=='0'" style="font-size: 15px;" class="fa fa-envelope-o"></i>
@@ -74,6 +74,7 @@ function headerMenu($user_image){
                                           {{z.titulo}}
                                         </div>
                                         <small ng-if="z.tipo=='asistente'" class="lv-small">Asistente</small>
+                                        <small ng-if="z.tipo=='asistente'" class="lv-small">{{z.mensaje}}</small>
                                       </div>
                                     </div>
                                   </a>
@@ -91,10 +92,10 @@ function headerMenu($user_image){
                     </li>
                     <li style="cursor: pointer;" class="dropdown">
                         <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center;" data-toggle="dropdown" class="fa fa-envelope">
-                          <i ng-show="(inboxHeader | filter: { read:0}).length && (notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length + notificationsMessages2.length}}</i>
-                          <i ng-show="(inboxHeader | filter: { read:0}).length && !(notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length}}</i>
-                          <i ng-show="!(inboxHeader | filter: { read:0}).length && (notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{notificationsMessages2.length}}</i>
-                          <i ng-show="!(inboxHeader | filter: { read:0}).length && !(notificationsMessages | filter: { read:0}).length" class="tmn-counts">0</i>
+                          <i ng-show="(inboxHeader | filter: { read:0}).length && (notificationsMessages | filter: { read:0, tipo:'instagram'}).length" class="tmn-counts">{{inboxHeader2.length + notificationsMessages2.length}}</i>
+                          <i ng-show="(inboxHeader | filter: { read:0}).length && !(notificationsMessages | filter: { read:0, tipo:'instagram'}).length" class="tmn-counts">{{inboxHeader2.length}}</i>
+                          <i ng-show="!(inboxHeader | filter: { read:0}).length && (notificationsMessages | filter: { read:0, tipo:'instagram'}).length" class="tmn-counts">{{notificationsMessages2.length}}</i>
+                          <i ng-show="!(inboxHeader | filter: { read:0}).length && !(notificationsMessages | filter: { read:0, tipo:'instagram'}).length" class="tmn-counts">0</i>
                         </a>
                         <div style="height: 300px; overflow-y: scroll;" class="dropdown-menu dropdown-menu-lg pull-right">
                             <div class="listview" id="notifications">
@@ -110,7 +111,7 @@ function headerMenu($user_image){
                                     </ul>
                                 </div>
                                 <div class="lv-body">
-                                  <a ng-if="x.read=='0'" ng-repeat="x in notificationsMessages2 = (notificationsMessages | filter: { read:0})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(x,2)">
+                                  <a ng-if="x.read=='0'" ng-repeat="x in notificationsMessages2 = (notificationsMessages | filter: { read:0, tipo:'instagram'})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(x,2)">
                                     <div class="media">
                                       <div class="pull-left">
                                         <i ng-if="x.read=='0'" style="font-size: 15px;" class="fa fa-envelope-o"></i>
@@ -121,7 +122,7 @@ function headerMenu($user_image){
                                           {{x.titulo}}
                                         </div>
                                         <small ng-if="x.tipo=='instagram'" class="lv-small">Instagram a atender</small>
-                                        <small ng-if="x.tipo!='instagram'" class="lv-small">{{x.mensaje}}</small>
+                                        <small ng-if="x.tipo=='instagram'" class="lv-small">{{x.mensaje}}</small>
                                       </div>
                                     </div>
                                   </a>

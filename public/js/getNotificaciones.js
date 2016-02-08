@@ -1,12 +1,20 @@
 // JavaScript Document
 var objetoNot123;
 var objetoNot1234;
+var objetoNot12345;
 var notInterval = 100000;
 function abrirNot(cont, option){
-  var obj = objetoNot123.data[cont];
-  console.log("Abrir Notificacion Nueva");
-  console.log(obj);
-  console.log(option);
+  if(option==1){
+    var obj = objetoNot123.data[cont];
+    console.log("Abrir Notificacion Nueva");
+    console.log(obj);
+    console.log(option);
+  } else {
+    var obj = cont;
+    console.log("Abrir Notificacion Nueva");
+    console.log(obj);
+    console.log(option); 
+  }
   /*Ajax para marcar leído*/
   if(obj.read==0){
     var parametros = { id:obj.id};
@@ -84,8 +92,6 @@ function notificaciones(option){
              obj = JSON.parse(response);
              if(option==1)
                objetoNot123 = obj;
-             if(option==2)
-               objetoNot1234 = obj;
              if(obj.data){
                if(option==1)
                  $("#notBadget").html(obj.cont);

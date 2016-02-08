@@ -27,6 +27,18 @@ app.controller('notsCtrl', function($rootScope, $scope, evt, $filter){
 		   /*ERROR*/
 		   toastr["error"]("Inténtelo de nuevo más tarde", "ERROR");
 	 });
+     evt.getNotificationsMessages2().then(function (response) {
+		   /*recibir respuesta de Nots*/
+		   if(response.data){
+			 console.log("getNotificationsMessages2");
+			 console.log(response.data);
+			 $rootScope.notificationsMessages3 = response.data.data;
+    
+		   } 		   
+	 }, function (response) {
+		   /*ERROR*/
+		   toastr["error"]("Inténtelo de nuevo más tarde", "ERROR");
+	 });
      $scope.abrirNotMsg23D = function(x,option){
        console.log("Abrir Notificacion Nueva");
        console.log(x);

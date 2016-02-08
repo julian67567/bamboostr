@@ -71,6 +71,10 @@ app.factory('evt',function($http){
             var url = "thread-sys.php?identify="+identify+"&red="+red+"&option=notificaciones&option3="+2+"&id_token="+id_token+"";
 			return $http.get(url, { cache: false })
 	    },
+        getNotificationsMessages2:function(){
+            var url = "thread-sys.php?identify="+identify+"&red="+red+"&option=notificaciones&option3="+3+"&id_token="+id_token+"";
+			return $http.get(url, { cache: false })
+	    },
 		readNotifications:function(id){
             var url = "scripts/leidoNotificacion.php";
 			return $http.post(url, { cache: false, params: { id:id} })
