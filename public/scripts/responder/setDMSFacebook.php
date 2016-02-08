@@ -28,7 +28,7 @@ $id_token = $_GET["id_token"];
 $identify = $_GET["identify"];
 $identify_sender = $_GET["identify_sender"];
 //limite de mensajes
-$limit = 2;
+$limit = 10;
 	        
 //fan pages while para sacar las fan pages de todas tus cuentas facebook secundarias
 $query3=$conn->query("SELECT tipo,perms,admin,red,name,identify,identify_account FROM social_share 

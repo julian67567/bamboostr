@@ -8,7 +8,7 @@ session_start();
 $id_token = $_GET["id_token"];
 $identify = $_GET["identify"];
 //limite de mensajes
-$limit = 2;
+$limit = 10;
 $query2=$conn->query("SELECT id,red,screen_name,foto,oauth_token,oauth_token_secret,access_token,identify FROM token WHERE identify='".$identify."' AND red='twitter'") or die(mysqli_error($conn));
 if($query2->num_rows>0){
 	$row2=$query2->fetch_assoc();
