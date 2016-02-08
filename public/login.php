@@ -19,6 +19,8 @@ if($query->num_rows>0){
   $_SESSION['red'] = "no";
   $_SESSION['id_token'] = $row["id"];
   $_SESSION['foto_bamboostr'] = $row["foto_bamboostr"];
+  //actualizamos fecha
+  $conn->query("UPDATE token SET last_ssid='".date("d-m-Y")."' WHERE id='".$_SESSION['id_token']."'") OR die(mysqli_error($conn));
   //insertar SSID
   $conn->query("INSERT INTO ssid (id_token,ssid,screen_name,fecha) 
             VALUES ('".$_SESSION['id_token']."','".$_SESSION['sessionid']."','".$_SESSION['user']."','".date('d-m-Y H:i')."') ") OR DIE(mysqli_error($conn));

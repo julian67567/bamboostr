@@ -106,12 +106,12 @@ $(document).ready(function(){
                 html +='</div>';
                   
                 html +='<div class="col-md-6">';
-                  html +='<a href="stats.php">';
+                  html +='<a href="preguntas-frecuentes.html">';
                     html +='<div class="card" style="background-color: #4C7AD8;">';
                     
                         html +='<div class="card-content" style="height: 120px; padding-top: 12px;">';
-                          html +='<span style="color: white; font-size: 50px;" class="icon-stats-dots"></span>';
-                          html +='<p style="color: white; font-size: 20px; padding-top: 10px;">Mis estadísticas</p>';
+                          html +='<span style="color: white; font-size: 50px;" class="fa fa-question-circle"></span>';
+                          html +='<p style="color: white; font-size: 20px; padding-top: 10px;">¿Necesitas Ayuda?</p>';
                         html +='</div>';
                         
                     html +='</div>';
