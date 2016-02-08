@@ -124,6 +124,7 @@ $(document).ready(function(){
 			  $("#tableSys6").css("display","none");
 			  $("#tableSys7").css("display","none");
 			  $("#tableSys9").css("display","none");
+              $("#tableSys12").css("display","none");
 
 			  $("#bloques").html(html);
 			} else {

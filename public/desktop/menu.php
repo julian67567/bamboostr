@@ -19,7 +19,7 @@ function menu(){
                         <li>
                             <a href="responder.php" style="cursor: pointer;" id="tableSys4"><i class="fa fa-envelope"></i> Mis mensajes</a>
                         </li>
-                        <li>
+                        <li id="tableSys12">
                             <a href="stats.php" style="cursor: pointer;" id="tableSys5"><i class="icon-stats-dots"></i> Mis estadísticas</a>
                         </li>
                         <li id="tableSys11">
