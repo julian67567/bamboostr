@@ -1,5 +1,5 @@
 <?PHP
-
+//WARNING: checa bien que no se repitan funciones declaradas
 function getDirUrl($option){
   include ''.dirname(__FILE__).'/../config.php';
   if($option==1){
