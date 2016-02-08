@@ -13,5 +13,4 @@ Check the server logs, fix the problem, then try again.
   echo `$fixer`;
 ?>
 
-
 </body></html>
