@@ -431,7 +431,7 @@ function enviarBotonComenta2(opcion){
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
   } else if((!fechaGlobalProgramada && horaGlobalProgramada) || 
-            (fechaGlobalProgramada && !horaGlobalProgramada)){
+            (fechaGlobalProgramada && !horaGlobalProgramada) && opcion!=1){
 	toastr["warning"](txt83);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
@@ -511,8 +511,8 @@ function enviarBotonComenta2(opcion){
 		});
 	}
   } else if(opcion==1){
-        ga('send', 'event', 'Mensaje Programado', 'click', 'Mensaje Programado');
-        //programados
+    ga('send', 'event', 'Mensaje Programado', 'click', 'Mensaje Programado');
+    //programados
 	var timePrArray = horaGlobalProgramada;
 	timePr = timePrArray.split(":");
 	timePrH = timePr[0];
