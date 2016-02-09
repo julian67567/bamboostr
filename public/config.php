@@ -1,7 +1,7 @@
 <?PHP
 
 /*Versión Bamboostr*/
-$version_bamboostr = "V 2.162";
+$version_bamboostr = "V 2.163";
 /*Fin Versión Bamboostr*/
 
 /*Dirección Principal*/

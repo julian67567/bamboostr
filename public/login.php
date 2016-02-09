@@ -14,7 +14,7 @@ if($query->num_rows>0){
   $_SESSION['sessionid'] = session_id(); 
   $_SESSION['user'] = $row["screen_name"];
   $_SESSION['user_bamboostr'] = $row["screen_name_bamboostr"];
-  $_SESSION['identify'] = $row["id"];
+  $_SESSION['identify'] = $row["identify"];
   $_SESSION['mail'] = $row["mail"];
   $_SESSION['red'] = "no";
   $_SESSION['id_token'] = $row["id"];
