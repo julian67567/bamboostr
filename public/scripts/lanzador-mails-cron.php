@@ -1,19 +1,19 @@
 <?PHP
 ini_set('max_execution_time', 9999999);
 include '../conexioni.php';
-$query = $conn->query("SELECT qm.*,tk.screen_name,tk.mail FROM queue_mail as qm INNER JOIN token as tk ON qm.id_token=tk.id ORDER BY qm.prioridad");
+$query = $conn->query("SELECT qm.*,tk.screen_name_bamboostr,tk.mail FROM queue_mail as qm INNER JOIN token as tk ON qm.id_token=tk.id ORDER BY qm.prioridad");
 if($query->num_rows>0){
   require '../PHPMailer/class.phpmailer.php';
   $server  = "bluehost";
   while($row=$query->fetch_assoc()){
-        $body ='<div style="width: 700px; text-align: center;" id="contenedor">  <a href="http://bamboostr.com"><img style="width: 400px;" src="http://bamboostr.com/images/mails/bamboostr7.png"></a><br><br>  <img style="width: 700px;" src="http://bamboostr.com/images/mails/image.png">  <div id="contenedor_ciudad" style="background: url(http://bamboostr.com/images/mails/ciudad.png) no-repeat; text-align: center;">    <p style="padding-bottom: 1em; font-size: 1em; color: black; text-align: left; width: 45em; padding-top: 4em; padding-left: 2em;">Hola '.$row["screen_name"].'
+        $body ='<div style="width: 700px; text-align: center;" id="contenedor">  <a href="http://bamboostr.com"><img style="width: 400px;" src="http://bamboostr.com/images/mails/bamboostr7.png"></a><br><br>  <img style="width: 700px;" src="http://bamboostr.com/images/mails/image.png">  <div id="contenedor_ciudad" style="background: url(http://bamboostr.com/images/mails/ciudad.png) no-repeat; text-align: center;">    <p style="padding-bottom: 1em; font-size: 1em; color: black; text-align: left; width: 45em; padding-top: 4em; padding-left: 2em;">Hola '.$row["screen_name_bamboostr"].'
 <br><br>
 '.$row["mensaje"].'
 </p>  </div>  <img style="width: 700px;" src="http://bamboostr.com/images/mails/image.png">  <div style="width: 100%; padding-top: .5em; text-align: center; display: table;">      <div style="text-align: center; display: table-row;">        <div style="width: 50%; text-align: center; display: table-cell;">          <a href="http://bamboostr.com"><img style="width: 300px;" src="http://bamboostr.com/images/mails/bamboostr7.png"></a>        </div>        <div style="width: 50%; vertical-align: top; text-align: center; display: table-cell;">          <p>Síguenos en Redes Sociales</p>        </div>      </div>      <div style="text-align: center; display: table-row;">        <div style="width: 50%; text-align: center; display: table-cell;">          <i style="color: blue;">Copyright © 2015 Bamboostr, All rights reserved.</i>        </div>        <div style="width: 50%; text-align: center; display: table-cell;">          <a href="https://facebook.com/bamboostr"><img src="http://bamboostr.com/images/mails/facebook.png"></a>          <a href="https://twitter.com/bamboostr"><img src="http://bamboostr.com/images/mails/twitter.png"></a>          <a href="https://instagram.com/bamboostr"><img src="http://bamboostr.com/images/mails/instagram.png"></a>        </div>      </div>  </div></div>';
 
         $body=utf8_decode($body);
 	$bodyHTML= $body;
-	$nombre  = $row["screen_name"];
+	$nombre  = $row["screen_name_bamboostr"];
 	$asunto  = $row["titulo"];
 	$mensaje = $row["mensaje"];
 	$mailDes = $row["mail"];                                // Mail Destino(a mandar)
@@ -45,7 +45,8 @@ if($query->num_rows>0){
 	  $mail->Password = 'rh2MdhYLZFpIphC5bMl-Ew';           // Password OJO! Es confidencial
 	}
 	$mail->From = $from;
-	$mail->FromName = ''.$nombre.'';
+	$mail->FromName = 'Bamboostr';
+    $mail->addAddress($mailDes, $nombre);
 	$mail->AddBCC('manlioelnum1@hotmail.com');                          // Agregar Destinatario
 	// mail->AddAttachment("Sismo_".date("dmY").".pdf");    // Para que pongas el attachment
 	$mail->IsHTML(true);                                                                                                 // Formato HTML

@@ -32,10 +32,10 @@ if($_SESSION['identify'] && $_SESSION['sessionid']){
     //echo "<!--1".print_r($session)."-->";
   } catch(FacebookRequestException $ex) {
     // When Facebook returns an error
-    echo "<!--2".print_r($ex)."-->";
+    //echo "<!--2".print_r($ex)."-->";
   } catch(\Exception $ex) {
     // When validation fails or other local issues
-    echo "<!--3".print_r($ex)."-->";
+    //echo "<!--3".print_r($ex)."-->";
   }
 if(isset($session)) {
   echo "<!--prueba56324 ".$_SESSION['red']."-->";

@@ -15,6 +15,8 @@ $connection = new TwitterOAuth($consumer_key, $consumer_secret);
  
 /* Get temporary credentials (Redirect). */
 if($_SESSION['sessionid'] && $_SESSION['identify']){
+  /* Limitar número de cuentas a vincular
+  
   $query = $conn->query("SELECT tipo,social_networks FROM token WHERE id='".$_SESSION['id_token']."'");
   $row = $query->fetch_assoc();
   $num_redes = explode(",",$row['social_networks']);
@@ -31,6 +33,8 @@ if($_SESSION['sessionid'] && $_SESSION['identify']){
     header('Location: http://'.getDirUrl(1).'/system.php?agregarRed=error'); 
     die();
   }
+  */
+  $request_token = $connection->getRequestToken('http://'.getDirUrl(1).'/system.php?agregarRed=twitter');
 
 } else {
   $_SESSION['red'] = "twitter";
