@@ -81,7 +81,7 @@ app.controller('profilesCtrl', function($scope, evt, $rootScope){
     } else if(!$("#password52").val() && !$("#passwordConf52").val()){
       //actualizar sin password
       console.log("actualizar sin password");
-      evt.actualizarDetails($("#username52").val(), $("#nombre52").val(), $("#mail52").val(), $("#categoria52").val(), $("#password52").val(), 1).then(function (response) {
+      evt.actualizarDetails($("#username52").val(), $("#nombre52").val(), $("#mail52").val(), $("#categoria52").val(), $("#password52").val(), '', 1).then(function (response) {
 		if(response.data.success=="true"){
           toastr["success"]("Datos Guardados");
           $scope.details = response.data;
