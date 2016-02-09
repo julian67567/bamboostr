@@ -430,8 +430,8 @@ function enviarBotonComenta2(opcion){
 	toastr["warning"](txt66);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
-  } else if((!fechaGlobalProgramada && horaGlobalProgramada) || 
-            (fechaGlobalProgramada && !horaGlobalProgramada) && opcion!=1){
+  } else if(((!fechaGlobalProgramada && horaGlobalProgramada) || 
+            (fechaGlobalProgramada && !horaGlobalProgramada)) && $("input[name=group1]:checked").val()=="fecha"){
 	toastr["warning"](txt83);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
