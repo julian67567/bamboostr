@@ -1,10 +1,10 @@
 <?PHP
-include ''.dirname(__FILE__).'/conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 include ''.dirname(__FILE__).'/funciones.php';
 $name = base_de_datos_scape($conn,$_POST["nombre"]);
 $contraseña = base_de_datos_scape($conn,encriptar($_POST["password"]));
 $mail = base_de_datos_scape($conn,$_POST["mail"]);
-$query = $conn->query("SELECT id FROM token WHERE screen_name='".$name."'");
+$query = $conn->query("SELECT id FROM token WHERE screen_name='".$name."'") OR die(mysqli_error($conn));
 if($query->num_rows==0){
     $query = $conn->query("INSERT INTO token (password,screen_name,screen_name_bamboostr,mail,red,idioma,first_ssid,last_ssid) VALUES ('".$contraseña."','".$name."','".$name."','".$mail."','no','es','".date("d-m-Y")."','".date("d-m-Y")."')") OR die(mysqli_error($conn));
     if($query===true){
