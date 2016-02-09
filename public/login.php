@@ -16,7 +16,7 @@ if($query->num_rows>0){
   $_SESSION['user_bamboostr'] = $row["screen_name_bamboostr"];
   $_SESSION['identify'] = $row["identify"];
   $_SESSION['mail'] = $row["mail"];
-  $_SESSION['red'] = "no";
+  $_SESSION['red'] = $row["red"];
   $_SESSION['id_token'] = $row["id"];
   $_SESSION['foto_bamboostr'] = $row["foto_bamboostr"];
   //actualizamos fecha

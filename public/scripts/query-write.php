@@ -81,8 +81,9 @@ foreach($social_networks_parts as &$item){
 		  }
 		  $feed_array_escribir[$c][7]=$row2["identify"];
 		  $feed_array_escribir[$c][9]="cuenta";
-                  $feed_array_escribir[$c][10]=1;
-                  $feed_array_escribir[$c][11]=$item;
+          $feed_array_escribir[$c][10]=1;
+          $feed_array_escribir[$c][11]=$item;
+          $feed_array_escribir[$c][12]=''.$identify.'-'.$id_token.'';
 		  $c++;	
 	  }/*fin if else $c==0 */
   }/*if $item!=0*/
