@@ -141,7 +141,7 @@ var parametros = { id:id_msgPro};
 			  if(response.indexOf("FALSE")!="-1"){
 				toastr["error"](txt129, "ERROR");
 			  } else if(response.indexOf("TRUE")!="-1") {
-				toastr["success"](txt130, "ERROR");
+				toastr["success"](txt130);
 			  } else {
 				toastr["error"](txt92);
 			  }
