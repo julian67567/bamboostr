@@ -299,8 +299,8 @@ document.write(unescape("%3C%73%63%72%69%70%74%20%74%79%70%65%3D%22%74%65%78%74%
                     <option ng-if="details.categoria=='6'" value="6" selected>Entretenimiento</option>
                     <option value="7">Belleza y Moda</option>
                     <option ng-if="details.categoria=='7'" value="7" selected>Belleza y Moda</option>
-                    <option value="8">Ejecicio</option>
-                    <option ng-if="details.categoria=='8'" value="8" selected>Ejecicio</option>
+                    <option value="8">Ejercicio</option>
+                    <option ng-if="details.categoria=='8'" value="8" selected>Ejercicio</option>
                     <option value="9">Comida y Bebida</option>
                     <option ng-if="details.categoria=='9'" value="9" selected>Comida y Bebida</option>
                     <option value="10">Salud</option>

@@ -326,7 +326,7 @@ document.write(unescape("%3C%73%63%72%69%70%74%20%74%79%70%65%3D%22%74%65%78%74%
                             <option value="5">Educación</option>
                             <option value="6">Entretenimiento</option>
                             <option value="7">Belleza y Moda</option>
-                            <option value="8">Ejecicio</option>
+                            <option value="8">Ejercicio</option>
                             <option value="9" selected>Comida y Bebida</option>
                             <option value="10">Salud</option>
                             <option value="11">Música</option>
