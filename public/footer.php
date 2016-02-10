@@ -13,11 +13,11 @@ function footer(){
                 </div>
                 <div class="col-md-5" style="text-align:right;">
                     <ul style="font-size:11px; font-family:lato-bold; color:#787878;" class="f-menu">
-                        <li><a href="">NOSOTROS</a></li>
+                        <li><a href="ayuda.php">NOSOTROS</a></li>
                         <li>|</li>
-                        <li><a href="">AYUDA</a></li>
+                        <li><a href="ayuda.php">AYUDA</a></li>
                         <li>|</li>
-                        <li style="padding-right:25px;"><a href="">CONTACTO</a></li>
+                        <li style="padding-right:25px;"><a href="ayuda.php">CONTACTO</a></li>
 
                         <li><a href="https://www.facebook.com/bamboostr/" target="blank;"><img style="padding:0; padding-bottom:2px; width:15px;" src="images/facebook-logo.png"></img></a></li>
                         <li><a href="https://twitter.com/bamboostr/" target="blank;"><img style="padding:0; padding-bottom:1px; width:15px;" src="images/twitter-logo.png"></img></a></li>

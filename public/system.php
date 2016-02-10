@@ -106,7 +106,7 @@ $(document).ready(function(){
                 html +='</div>';
                   
                 html +='<div class="col-md-6">';
-                  html +='<a href="preguntas-frecuentes.html">';
+                  html +='<a href="ayuda.php">';
                     html +='<div class="card" style="background-color: #4C7AD8;">';
                     
                         html +='<div class="card-content" style="height: 120px; padding-top: 12px;">';
@@ -125,7 +125,7 @@ $(document).ready(function(){
 			  $("#tableSys7").css("display","none");
 			  $("#tableSys9").css("display","none");
               $("#tableSys12").css("display","none");
-
+              
 			  $("#bloques").html(html);
 			} else {
 			  /***************************EXPERTOS****************************/

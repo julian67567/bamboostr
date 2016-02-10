@@ -18,7 +18,7 @@ function headerMenu($user_image){
                 </li>
                 
                 <li style="height: 38px;" class="pull-right hidden-xs">
-                  <a href="preguntas-frecuentes.html">
+                  <a href="ayuda.php">
                     <div style="height: 38px; margin-top: 5px; margin-left: 15px; margin-right: 15px; color: white;" class="pull-right">
                       <span style="padding-top: 0px; font-size: 20px; display: inline-block;" class="fa fa-question-circle"></span>
                       <p style="display: inline-block;">¿Necesitas Ayuda?</p>

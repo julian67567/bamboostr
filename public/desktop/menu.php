@@ -29,7 +29,7 @@ function menu(){
                             <a href="" style="cursor: pointer;" id="tableSys7"><i class="fa fa-cogs"></i> Herramientas</a>
                         </li>
                         <li>
-                            <a href="" style="cursor: pointer;" id="tableSys8"><i class="fa fa-question-circle"></i> Necesito ayuda</a>
+                            <a href="ayuda.php" style="cursor: pointer;" id="tableSys8"><i class="fa fa-question-circle"></i> Necesito ayuda</a>
                         </li>
                         <li>
                             <a href="" style="cursor: pointer;" id="tableSys9"><i class="icon-subirpremium"></i> Conviértete a GOLD</a>
