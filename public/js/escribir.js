@@ -220,16 +220,16 @@ function getCat(categoria){
               /*for(var hgn=1; hgn<=50; hgn++){
                 $("#main-feed"+hgn+"").parent().parent().css("display","none");
               }*/
-                        htmlC = '<div class="col-md-12">'
-                          +'<div class="col-md-6">'
-                              +'<div class="col-md-3" style="vertical-align: top;">'
+                        htmlC = '<div class="col-lg-12">'
+                          +'<div class="col-lg-6">'
+                              +'<div class="col-lg-3" style="vertical-align: top; padding:0;">'
                                 +'<img src="' + obj[0].img + '" class="recoImages" id="">'
                               +'</div>'
-                              +'<a href="' + obj[0].link + '" target="_blank"><div class="col-md-9" style="cursor:pointer;">'
-                                +'<div style="margin-bottom: 0;" class="row">'
+                              +'<a href="' + obj[0].link + '" target="_blank"><div class="col-lg-9" style="cursor:pointer; padding:0;">'
+                                +'<div style="margin-bottom: 0; padding-left: 25px;" class="row">'
                                   +'<span style="color: #0a6ebd; padding-top: 3px; padding-left: 0px; font-size: 18px;" id="">' + obj[0].title + '</span>'
                                 +'</div>'
-                                +'<div class="row">'
+                                +'<div class="row" style="padding-left: 25px;">'
                                   +'<span style="color: #929292; padding-top: 3px; padding-left: 0px; font-size: 16px;" id="">';
                                     if(obj[0].description.length>50)
                                        htmlC += '' + obj[0].description.substr(0,50) + '...';
@@ -240,15 +240,15 @@ function getCat(categoria){
                               +'</div></a>'
                             +'</div>'
 
-                            +'<div class="col-md-6">'
-                              +'<div class="col-md-3" style="vertical-align: top;">'
+                            +'<div class="col-lg-6">'
+                              +'<div class="col-lg-3" style="vertical-align: top; padding:0;">'
                                 +'<img src="' + obj[1].img + '" class="recoImages" id="">'
                               +'</div>'
-                              +'<a href="' + obj[1].link + '" target="_blank"><div class="col-md-9" style="cursor:pointer;">'
-                                +'<div style="margin-bottom: 0;" class="row">'
+                              +'<a href="' + obj[1].link + '" target="_blank"><div class="col-lg-9" style="cursor:pointer; padding:0;">'
+                                +'<div style="margin-bottom: 0; padding-left: 25px;" class="row">'
                                   +'<span style="color: #0a6ebd; padding-top: 3px; padding-left: 0px; font-size: 18px;" id="">' + obj[1].title + '</span>'
                                 +'</div>'
-                                +'<div class="row">'
+                                +'<div class="row" style="padding-left: 25px;">'
                                   +'<span style="color: #929292; padding-top: 3px; padding-left: 0px; font-size: 16px;" id="">';
                                     if(obj[1].description.length>50)
                                        htmlC += '' + obj[1].description.substr(0,50) + '...';
@@ -261,16 +261,16 @@ function getCat(categoria){
                             +'</div>'
                           +'</div>'
                                   
-                          +'<div class="col-md-12">'  
-                            +'<div class="col-md-6">'
-                              +'<div class="col-md-3" style="vertical-align: top;">'
+                          +'<div class="col-lg-12">'  
+                            +'<div class="col-lg-6">'
+                              +'<div class="col-lg-3" style="vertical-align: top; padding:0;">'
                                 +'<img src="' + obj[2].img + '" class="recoImages" id="">'
                               +'</div>'
-                              +'<a href="' + obj[2].link + '" target="_blank"><div class="col-md-9" style="cursor:pointer;">'
-                                +'<div style="margin-bottom: 0;" class="row">'
+                              +'<a href="' + obj[2].link + '" target="_blank"><div class="col-lg-9" style="cursor:pointer; padding:0;">'
+                                +'<div style="margin-bottom: 0; padding-left: 25px;" class="row">'
                                   +'<span style="color: #0a6ebd; padding-top: 3px; padding-left: 0px; font-size: 18px;" id="">' + obj[2].title + '</span>'
                                 +'</div>'
-                                +'<div class="row">'
+                                +'<div class="row" style="padding-left: 25px;">'
                                   +'<span style="color: #929292; padding-top: 3px; padding-left: 0px; font-size: 16px;" id="">';
                                     if(obj[2].description.length>50)
                                        htmlC += '' + obj[2].description.substr(0,50) + '...';
@@ -281,15 +281,15 @@ function getCat(categoria){
                               +'</div></a>'
                             +'</div>'
 
-                            +'<div class="col-md-6">'
-                              +'<div class="col-md-3" style="vertical-align: top;">'
+                            +'<div class="col-lg-6">'
+                              +'<div class="col-lg-3" style="vertical-align: top; padding:0;">'
                                 +'<img src="' + obj[3].img + '" class="recoImages" id="">'
                               +'</div>'
-                              +'<a href="' + obj[3].link + '" target="_blank"><div class="col-md-9" style="cursor:pointer;">'
-                                +'<div style="margin-bottom: 0;" class="row">'
+                              +'<a href="' + obj[3].link + '" target="_blank"><div class="col-lg-9" style="cursor:pointer; padding:0;">'
+                                +'<div style="margin-bottom: 0; padding-left: 25px;" class="row">'
                                   +'<span style="color: #0a6ebd; padding-top: 3px; padding-left: 0px; font-size: 18px;" id="">' + obj[3].title + '</span>'
                                 +'</div>'
-                                +'<div class="row">'
+                                +'<div class="row" style="padding-left: 25px;">'
                                   +'<span style="color: #929292; padding-top: 3px; padding-left: 0px; font-size: 16px;" id="">';
                                     if(obj[3].description.length>50)
                                        htmlC += '' + obj[3].description.substr(0,50) + '...';
@@ -511,8 +511,8 @@ function enviarBotonComenta2(opcion){
 		});
 	}
   } else if(opcion==1){
-    ga('send', 'event', 'Mensaje Programado', 'click', 'Mensaje Programado');
-    //programados
+        ga('send', 'event', 'Mensaje Programado', 'click', 'Mensaje Programado');
+        //programados
 	var timePrArray = horaGlobalProgramada;
 	timePr = timePrArray.split(":");
 	timePrH = timePr[0];
