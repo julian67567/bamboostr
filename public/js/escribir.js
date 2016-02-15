@@ -398,6 +398,7 @@ function contadorTeclasCalc(){
 	}
 }
 function enviarBotonComenta2(opcion){
+  $('body').attr("class","loading");
   if(document.getElementById("timepicker").value && $("input[name=horasp]:checked").val()=="Otro"){
     horaGlobalProgramada = document.getElementById("timepicker").value;
   }
@@ -412,29 +413,36 @@ function enviarBotonComenta2(opcion){
 	toastr["warning"](txt65);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
+    $('body').addClass('loaded');
   } else if((contador.length==0 || contador==txt64) && imagenesAgregadasArray.length==1){
 	toastr["warning"](txt67);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
+    $('body').addClass('loaded');
   } else if($("#contIn").css("display")=="block" && imagenesAgregadasArray.length==1){
     toastr["warning"]("Instagram necesita mínimo una imágen.");
+    $('body').addClass('loaded');
   } else if ( ((contador.length>=141 || contador.length<0) && $("#contTw").css("display")=="block") || ((imagenesAgregadas!="" && contador.length+24>=141) && $("#contTw").css("display")=="block")){
 	toastr["warning"](txt66);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
+    $('body').addClass('loaded');
   } else if( ((contador.length>=2001 || contador.length<0) && $("#contFa").css("display")=="block") ){
 	toastr["warning"](txt66);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
+    $('body').addClass('loaded');
   }  else if( ((contador.length>=2001 || contador.length<0) && $("#contIn").css("display")=="block") ){
 	toastr["warning"](txt66);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
-  } else if(((!fechaGlobalProgramada && horaGlobalProgramada) || 
-            (fechaGlobalProgramada && !horaGlobalProgramada)) && $("input[name=group1]:checked").val()=="fecha"){
+    $('body').addClass('loaded');
+  } else if((!fechaGlobalProgramada && horaGlobalProgramada) || 
+            (fechaGlobalProgramada && !horaGlobalProgramada)){
 	toastr["warning"](txt83);
 	$('#enviarBotonComenta').css("display","inline-block");
 	$('#loadingEscribir').css('display','none');
+    $('body').addClass('loaded');
   }
   else if($("input[name=group1]:checked").val()=="ahora" && opcion==1){
         ga('send', 'event', 'Mensaje Normal', 'click', 'Mensaje Normal');
@@ -491,10 +499,11 @@ function enviarBotonComenta2(opcion){
 						} else if(response.indexOf("false")!="-1" && response.indexOf("created_at")=="-1") {
 						  toastr["error"](txt90 +" "+ responseArray[1]);
 						} 
-						finishSend++;
+						 finishSend++;
 						if(finishSend==redesAdd.length){
                           rastrear('publicaciones');
-						  toastr["success"](txt91);
+                          $('body').addClass('loaded');
+						  toastr["success"]("",txt91);
 						  $('#enviarBotonComenta').css("display","inline-block");
 						  $('#loadingEscribir').css('display','none');
                           document.getElementById("comparte").value = "";
@@ -503,6 +512,7 @@ function enviarBotonComenta2(opcion){
 						}
 					},
 					error: function (response){
+                      $('body').addClass('loaded');
 					  toastr["error"](txt92);
 					  $('#enviarBotonComenta').css("display","inline-block");
 					  $('#loadingEscribir').css('display','none');
@@ -582,9 +592,11 @@ function enviarBotonComenta2(opcion){
 						url:   urlPostMassive,
 						type:  'GET',
 						success:  function (response) {
+                                                        
 							finishSend++;
 							if(finishSend==redesAdd.length){
                               rastrear('publicaciones');
+                              $('body').addClass('loaded');
 							  if(urlPathActual=="system")
 							    getMsgsProgram(''+window["feedMsgsProgramCol"]+'');
 							  toastr["success"](txt84);
@@ -597,6 +609,7 @@ function enviarBotonComenta2(opcion){
 							}
 						},
 						error: function (response){
+                          $('body').addClass('loaded');
 						  toastr["error"](txt92);
 						  $('#enviarBotonComenta').css("display","inline-block");
 						  $('#loadingEscribir').css('display','none');
@@ -605,11 +618,13 @@ function enviarBotonComenta2(opcion){
 			});
 		}//fin for
 	  } else {
+        $('body').addClass('loaded');
 	    toastr["warning"](txt124);
 		$('#enviarBotonComenta').css("display","inline-block");
 	    $('#loadingEscribir').css('display','none');
 	  }
 	} else {
+      $('body').addClass('loaded');
 	  toastr["warning"](txt132);
 	  $('#enviarBotonComenta').css("display","inline-block");
 	  $('#loadingEscribir').css('display','none');
@@ -682,8 +697,10 @@ function enviarBotonComenta2(opcion){
 						url:   urlPostMassive,
 						type:  'GET',
 						success:  function (response) {
+                                                        
 							finishSend++;
 							if(finishSend==redesAdd.length){
+                              $('body').addClass('loaded');
 							  if(urlPathActual=="system")
 							    getDraftsProgram(''+window["feedDraftsProgramCol"]+'');
 							  toastr["success"](txt142);
@@ -696,6 +713,7 @@ function enviarBotonComenta2(opcion){
 							}
 						},
 						error: function (response){
+                          $('body').addClass('loaded');
 						  toastr["error"](txt92);
 						  $('#enviarBotonComenta').css("display","inline-block");
 						  $('#loadingEscribir').css('display','none');

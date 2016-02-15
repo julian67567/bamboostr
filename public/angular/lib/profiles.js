@@ -23,12 +23,14 @@ app.controller('profilesCtrl', function($scope, evt, $rootScope){
     });/*fin getcuentas*/
 
   $scope.cambiarImagen = function(){
+        $('body').attr("class","loading");
         ga('send', 'event', 'Subir Imágen Profile', 'click', 'Subir Imágen Profile');
         var rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
         if (document.getElementById("fileImage").files.length === 0) { return; }
         var oFile = document.getElementById("fileImage").files[0];
-        if (!rFilter.test(oFile.type)) 
-        {  toastr["error"](txt125, "ERROR");
+        if (!rFilter.test(oFile.type))
+        {   $('body').addClass('loaded');
+            toastr["error"](txt125, "ERROR");
             return; 
         }
         var fd = new FormData();
@@ -40,23 +42,32 @@ app.controller('profilesCtrl', function($scope, evt, $rootScope){
                     processData: false,
                     contentType: false,
                     success:  function (response2) {
+                        
                         if(response2.indexOf("ERROR")=="-1"){
 
                             evt.actualizarDetails(null, null, null, null, null, response2, 3).then(function (response) {
-		                         if(response.data.success == "true"){ 
+          
+		                      if(response.data.success == "true"){ 
+                                 $('body').addClass('loaded');
                                  $('#foto_perfil').css("background", "url('"+response2+"') no-repeat scroll center center / 100% 100%");
                                  window.location = "profiles.php";
-                              }
-                              else
+                              } else {
+                                 $('body').addClass('loaded');
                                  toastr["error"]("Inténtelo de nuevo más tarde", "ERROR");
+                              }
 	                      }, function (response) {
+                            
 	                        /*ERROR*/
+                                $('body').addClass('loaded');
 	                        toastr["error"]("Inténtelo de nuevo más tarde", "ERROR");
                             });/*fin getcuentas*/
 
                         } else {
+                          $('body').addClass('loaded');
                           toastr["error"](txt126, "ERROR");
                         }
+ 
+                        
                     }
         });
   };
@@ -81,7 +92,7 @@ app.controller('profilesCtrl', function($scope, evt, $rootScope){
     } else if(!$("#password52").val() && !$("#passwordConf52").val()){
       //actualizar sin password
       console.log("actualizar sin password");
-      evt.actualizarDetails($("#username52").val(), $("#nombre52").val(), $("#mail52").val(), $("#categoria52").val(), $("#password52").val(), '', 1).then(function (response) {
+      evt.actualizarDetails($("#username52").val(), $("#nombre52").val(), $("#mail52").val(), $("#categoria52").val(), $("#password52").val(), 1).then(function (response) {
 		if(response.data.success=="true"){
           toastr["success"]("Datos Guardados");
           $scope.details = response.data;
