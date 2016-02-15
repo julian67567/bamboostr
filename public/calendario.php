@@ -79,19 +79,7 @@ $(document).ready(function(){
 //JQUERY
 $(document).ready(function(){
   <?PHP
-
     include 'menu-javaScript.php';
-  ?>
-  <?PHP
-	$c=1;
-	while($c<=$totalRedes){
-	  ?>
-	  $('#redes<?PHP echo $c; ?>').hover(function(){
-	  },function(){
-	  });
-	  <?PHP
-	  $c++;
-	}
   ?>
   <!--Llamadas iniciales a las funciones-->
   <!-- getUserDetails(); -->

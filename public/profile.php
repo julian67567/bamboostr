@@ -29,32 +29,6 @@ if($identify){
 }
 ?>
 <link type="text/css" href="css/escribir.css" rel="stylesheet" media="all" />
-<style>
-<?PHP $c=0;
-while($c!=50) {
- ?> #main-feed<?PHP echo $c;
-?> {
- width: 100%;
- margin:auto;
- font-family: Arial, Helvetica, sans-serif;
- margin-top: 0px;
- padding: 0px;
- border-radius: 0px;
- background-color:#FFF;
- color:#333;
-}
- #main-feed<?PHP echo $c;
-?> h1 {
- color:#5F5F5F;
- margin:0px;
- padding:9px 0px 9px 0px;
- font-size:18px;
- font-weight:lighter;
-}
- <?PHP $c++;
-}
-?>
-</style>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/huso-horario.js"></script>
 <script type="text/javascript">
@@ -68,124 +42,15 @@ while($c!=50) {
   var id_token = '<?PHP echo $_SESSION['id_token']; ?>';
   var urlPathActual = 'profile';
 </script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#login').click(function(){
-	  window.location = "login.php";
-   });
-});
+<script>
+    <?PHP include 'logins.php'; ?>
 </script>
 <script type="text/javascript">
 //JQUERY
 $(document).ready(function(){
-	<?PHP
-	$c=0;
-	 ?>
 	 
-	   var htmlSignIn = $('#main-feed<?PHP echo $c; ?>').html();
-	   htmlSignIn += '<table style="width: 100%; text-align: center;">';
-	     htmlSignIn += '<tr>';
-	       htmlSignIn += '<td style="font-size: 1.1em; color: #FFFFFF; width: 100%; text-align: center;"><?PHP echo $txt["txt56"]; ?><br /><br /></td>';
-		 htmlSignIn += '</tr>';
-		 htmlSignIn += '<tr>';
-		 htmlSignIn += '<td><img onclick="help('+comilla+'1'+comilla+','+comilla+'agregar'+comilla+');" style="width: 10em;" src="images/agregar2.png" alt="<?PHP echo $txt["txt75"]; ?>" title="<?PHP echo $txt["txt75"]; ?>" /><br /><br /></td>';
-		 htmlSignIn += '</tr>';
-		 htmlSignIn += '<tr>';
-		 <?PHP
-                 /*Twitter login Conditions*/
-		 if($redSocial=="facebook"){
-		   ?>htmlSignIn += '<td style="width: 100%; text-align: center;"><a href="twitter/redirect.php?identify=<?PHP echo $identify; ?>&ssid=<?PHP echo $ssid; ?>"><img class="imgNoRadius" title ="'+txt76+'" alt="'+txt76+'" src="images/twitter-signin.png"></a></td>';<?php
-		 } else if($redSocial=="twitter") {
-		   ?>htmlSignIn += '<td style="width: 100%; text-align: center;"><a href="twitter/redirect.php?identify=<?PHP echo $identify; ?>&ssid=<?PHP echo $ssid; ?>"><img class="imgNoRadius" title ="'+txt76+'" alt="'+txt76+'" src="images/twitter-signin.png"></a></td>';<?php
-		 } 
-		 ?>
-	     htmlSignIn += '</tr>';
-		 htmlSignIn += '<tr>';
-		   <?PHP
-                   /*Facebook login Conditions*/
-		   if($redSocial=="facebook"){
-		     ?>htmlSignIn += '<td style="width: 100%; text-align: center;"><a href="facebook/clearsessions.php?redirect=2&access_token=<?PHP echo $_SESSION["access_token"];?>"><img class="imgNoRadius" title ="'+txt77+'" alt="'+txt77+'" src="images/facebook-signin.png"></a></td>';<?PHP
-		   } else if($redSocial=="twitter"){
-		     ?>htmlSignIn += '<td style="width: 100%; text-align: center;"><a href="facebook/redirect.php?redirect=1&identify=<?PHP echo $identify; ?>&ssid=<?PHP echo $ssid; ?>"><img class="imgNoRadius" title ="'+txt77+'" alt="'+txt77+'" src="images/facebook-signin.png"></a></td>';<?PHP
-		   }
-		   ?>
-	     htmlSignIn += '</tr><tr><td><br /></td></tr>';
-	   htmlSignIn += '</table>';
-       $('#main-feed<?PHP echo $c; ?>').html(htmlSignIn);
-	   $('#main-feed0').parent().css("background-color","#2e70b9");
-	   $('#main-feed1').parent().css("background-color","#2e70b9");
-	 
-   <?PHP
-	$c=1;
-	while($c!=$totalIconosMenu){
-  ?>
-  $('#textosSys<?PHP echo $c; ?>').css("display","none");
-  $('#textosSys<?PHP echo $c; ?>').css("width","0%");
-  <?PHP
-	  $c++;
-	}
-  ?>
-  <?PHP
-  $c=1;
-  while($c!=$totalIconosMenu){
-  ?>
-  $('#tableSys<?PHP echo $c; ?>').hover(function(){
-	 $('#tableSys<?PHP echo $c; ?>').css("border-left","5px solid #FFF");
-	 $('#tableSys<?PHP echo $c; ?>').css("cursor","pointer");
-	 $('#expandirSys').css("width","20%");
-  }, function(){
-	 $('#tableSys<?PHP echo $c; ?>').css("border-left","5px solid #283147");
-  });
-  <?PHP
-	  $c++;
-	}
-  ?>
-  $('#expandirSys').hover(function(){
-  <?PHP
-	$c=1;
-	while($c!=$totalIconosMenu){
-  ?>
-	  $('#botonesSys<?PHP echo $c; ?>').css("width","50px");
-	  $('#textosSys<?PHP echo $c; ?>').css("display","block");
-	  $('#textosSys<?PHP echo $c; ?>').css("width","95%");
-  <?PHP
-	  $c++;
-	}
-  ?>
-      $('#expandirSys').css("z-index","3");
-	  $('#expandirSys').css("width","20%");
-	  }, function(){
-  <?PHP
-	$c=1;
-	while($c!=$totalIconosMenu){
-  ?>
-		$('#botonesSys<?PHP echo $c; ?>').css("width","50px");
-		$('#textosSys<?PHP echo $c; ?>').css("display","none");
-		$('#textosSys<?PHP echo $c; ?>').css("width","0%");
-  <?PHP
-	  $c++;
-	}
-  ?>
-    $('#expandirSys').css("z-index","1");
-	$('#expandirSys').css("width","50px");
-  });
   <?PHP
     include 'menu-javaScript.php';
-  ?>
-  <?PHP
-	$c=1;
-	while($c<=$totalRedes){
-	  ?>
-	  $('#redes<?PHP echo $c; ?>').hover(function(){
-		$('#redes<?PHP echo $c; ?>').css("background-color","#283147");
-		$('#redes<?PHP echo $c; ?>').css("color","#FFFFFF");
-	  },function(){
-		$('#redes<?PHP echo $c; ?>').css("background-color","#FFFFFF");
-		$('#redes<?PHP echo $c; ?>').css("color","#000000");
-	  });
-	  <?PHP
-	  $c++;
-	}
   ?>
   <!--Llamadas iniciales a las funciones-->
   <!-- getUserDetails(); -->
@@ -266,12 +131,12 @@ document.write(unescape("%3C%6C%69%6E%6B%20%74%79%70%65%3D%22%74%65%78%74%2F%63%
                                 $link=$row2["link"];
                                 $screen_name_tmp=$row2["screen_name"];
                                 $foto=$row2["foto"];
-				$expire_token=$row2["expire_token"];
-				$feed_programados=$row2["feed_programados"];
-				$feed_drafts=$row2["feed_drafts"];
-				$feed_events=$row2["feed_events"];
-				$feed_refresh=$row2["feed_refresh"];
-				$notificaciones=$row2["notificaciones"];
+                                $expire_token=$row2["expire_token"];
+                                $feed_programados=$row2["feed_programados"];
+                                $feed_drafts=$row2["feed_drafts"];
+                                $feed_events=$row2["feed_events"];
+                                $feed_refresh=$row2["feed_refresh"];
+                                $notificaciones=$row2["notificaciones"];
                                 $grupos++;
                               ?>
 
@@ -366,10 +231,10 @@ document.write(unescape("%3C%6C%69%6E%6B%20%74%79%70%65%3D%22%74%65%78%74%2F%63%
                                 $link=$row2["link"];
                                 $screen_name_tmp=$row2["screen_name"];
                                 $foto=$row2["foto"];
-				$expire_token=$row2["expire_token"];
-				$id=$row2["id"];
+                                $expire_token=$row2["expire_token"];
+                                $id=$row2["id"];
                                 $id2=$row2["identor"];
-				$identifyFa=$row2["identify"];
+				                $identifyFa=$row2["identify"];
                                 $grupos++;
                               }
                               ?>
@@ -399,11 +264,11 @@ document.write(unescape("%3C%6C%69%6E%6B%20%74%79%70%65%3D%22%74%65%78%74%2F%63%
                                 <table style=" width: 100%; text-align: center;">
                                 <tr>
                                     <td style="text-align: center;">
-                                    <?PHP
-					  if($expire_token==1){
-					    echo $txt["txt524"];
-					  }
-				    ?>
+                                        <?PHP
+                                        if($expire_token==1){
+                                            echo $txt["txt524"];
+                                        }
+                                        ?>
                                     </td>
                                   </tr>
                                   <tr>

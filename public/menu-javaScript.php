@@ -5,34 +5,57 @@ while($c!=12){
     $('#tableSys<?PHP echo $c; ?>').click(function(){
       <?PHP
         if($c==1){
-          ?>window.location = "/system";<?PHP
-        }
-        else if($c==2){
-        ?>window.location = "/statistics";<?PHP
-        }
-        else if($c==3){
-        ?>window.location = "/share";<?PHP
-        }
-        else if($c==4){
-        ?>window.location = "/tools";<?PHP
-        }
-        else if($c==5){
-        ?>window.location = "/crm";<?PHP
-        }
-        else if($c==10 && $redSocial=="no"){
-            ?>window.location = "twitter/clearsessions.php";<?PHP
-        }
-        else if($c==10 && $redSocial=="twitter"){
-            ?>window.location = "twitter/clearsessions.php";<?PHP
-        }
-        else if($c==10 && $redSocial=="facebook"){
-            ?>window.location = "facebook/clearsessions.php?access_token=<?PHP echo $_SESSION['access_token'] ?>&redirect=1";<?PHP
-        }
-        else if($c==11){
-            ?>window.location = "https://www.mercadopago.com/mlm/debits/new?preapproval_plan_id=4a535e7b68be493ba1732ef2fab2e0d2";<?PHP
-        }
-        else{
-            ?>toastr["info"](txt143);<?PHP
+          ?>
+            ga('send', 'event', 'Menu Izquierdo System', 'click', 'Menu Izquierdo System');
+            window.location = "system.php";
+          <?PHP
+        } else if($c==2){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Escribir', 'click', 'Menu Izquierdo Escribir');
+            window.location = "escribir.php";
+          <?PHP
+        } else if($c==3){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Calendario', 'click', 'Menu Izquierdo Calendario');
+            window.location = "calendario.php";
+          <?PHP
+        } else if($c==4){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Responder', 'click', 'Menu Izquierdo Responder');
+            window.location = "responder.php";
+          <?PHP
+        } else if($c==5){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Crm', 'click', 'Menu Izquierdo Crm');
+            window.location = "/crm";
+          <?PHP
+        } else if($c==8){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Ayuda', 'click', 'Menu Izquierdo Ayuda');
+            window.location = "ayuda.php";
+          <?PHP
+        }  else if($c==10 && $redSocial=="no"){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Salir', 'click', 'Menu Izquierdo Salir');
+            window.location = "twitter/clearsessions.php";
+          <?PHP
+        } else if($c==10 && $redSocial=="twitter"){
+           ?>
+             ga('send', 'event', 'Menu Izquierdo Salir', 'click', 'Menu Izquierdo Salir');
+             window.location = "twitter/clearsessions.php";
+           <?PHP
+        } else if($c==10 && $redSocial=="facebook"){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Salir', 'click', 'Menu Izquierdo Salir');
+            window.location = "facebook/clearsessions.php?access_token=<?PHP echo $_SESSION['access_token'] ?>&redirect=1";
+          <?PHP
+        } else if($c==11){
+          ?>
+            ga('send', 'event', 'Menu Izquierdo Pago', 'click', 'Menu Izquierdo Pago');
+            window.location = "https://www.mercadopago.com/mlm/debits/new?preapproval_plan_id=4a535e7b68be493ba1732ef2fab2e0d2";
+          <?PHP
+        } else {
+          ?>toastr["info"](txt143);<?PHP
         }
       ?>
     });
@@ -40,12 +63,3 @@ while($c!=12){
     $c++;
 }
 ?>
-$('#logOut123').click(function(){
-  <?PHP
-        if($redSocial=="twitter"){
-          ?>window.location = "twitter/clearsessions.php";<?PHP
-        } else if($redSocial=="facebook"){
-          ?>window.location = "facebook/clearsessions.php?access_token=<?PHP echo $_SESSION['access_token'] ?>&redirect=1";<?PHP
-        }
-  ?>
-});

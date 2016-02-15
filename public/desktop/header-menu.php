@@ -1,7 +1,7 @@
 <?PHP
 function headerMenu($user_image){
 ?>
-<header style="background-color: #2167a3;" id="header">
+<header ng-controller="notsCtrl" style="background-color: #2167a3;" id="header">
             <ul class="header-inner">
                 <li id="menu-trigger" data-trigger="#sidebar" class="">
                     <div class="line-wrap">
@@ -13,12 +13,14 @@ function headerMenu($user_image){
             
                 <li class="logo hidden-xs">
                   <div>
-                    <img style="width:150px;" src="images/bamboostr7-blanco.png"/>
+                    <a ng-click="rastrearHeaders('logo');" href="system.php">
+                      <img style="width:150px;" src="images/bamboostr7-blanco.png"/>
+                    </a>
                   </div>
                 </li>
                 
                 <li style="height: 38px;" class="pull-right hidden-xs">
-                  <a href="ayuda.php">
+                  <a ng-click="rastrearHeaders('ayuda');" href="ayuda.php">
                     <div style="height: 38px; margin-top: 5px; margin-left: 15px; margin-right: 15px; color: white;" class="pull-right">
                       <span style="padding-top: 0px; font-size: 20px; display: inline-block;" class="fa fa-question-circle"></span>
                       <p style="display: inline-block;">¿Necesitas Ayuda?</p>
@@ -27,14 +29,14 @@ function headerMenu($user_image){
                 </li>
                 
                 <li class="pull-right">
-                <ul ng-controller="notsCtrl" class="top-menu">
+                <ul class="top-menu">
                     <li style="width: 50px; top: 4px;  height: 35px; vertical-align: top;">
-                      <div style="text-align: center;" class="dropdown">
+                      <div ng-click="rastrearHeaders('profile');" id="profileButton" style="text-align: center;" class="dropdown">
                         <img onerror="this.src='images/logo-bamboostr.png'" class="round dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" alt="Perfil" title="Perfil" style="cursor: pointer; height: 30px; width: 30px;" src="<?PHP echo $user_image; ?>" />
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a style="cursor: pointer;" href="profiles.php">Perfil</a></li>
-                            <li><a style="cursor: pointer;" onclick="abrirSignUpModal();">Agregar otra red social</a></li>  
-                            <li><a class="modal-trigger" data-target="news" style="cursor: pointer;">News<span id="notBadget" class="new badge">4</span></a></li>         
+                            <li><a ng-click="rastrearHeaders('profileProfile');" style="cursor: pointer;" href="profiles.php">Perfil</a></li>
+                            <li><a ng-click="rastrearHeaders('profileAgregarRed');" style="cursor: pointer;" onclick="abrirSignUpModal();">Agregar otra red social</a></li>  
+                            <li><a ng-click="rastrearHeaders('profileNews');" class="modal-trigger" data-target="news" style="cursor: pointer;">News<span id="notBadget" class="new badge">4</span></a></li>         
                             <!--<li><a style="cursor: pointer;" id="logOut123">Salir</a></li> -->
                         </ul>
                       </div>
@@ -44,7 +46,7 @@ function headerMenu($user_image){
                         <a class="tm-search" href=""></a>
                     </li>
                     -->
-                    <li style="cursor: pointer;" class="dropdown">
+                    <li ng-click="rastrearHeaders('ai');" id="aiButton" style="cursor: pointer;" class="dropdown">
                         <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center; background: url('images/panda-as.png') no-repeat top center / 30px 24px transparent;" data-toggle="dropdown">
                           <i ng-show="(notificationsMessages3 | filter: { read:0, tipo:'asistente'}).length" class="tmn-counts">{{notificationsMessages4.length}}</i>
                           <i ng-show="!(notificationsMessages3 | filter: { read:0, tipo:'asistente'}).length" class="tmn-counts">0</i>
@@ -85,12 +87,12 @@ function headerMenu($user_image){
                         </div>
                     </li>
                     <li style="height: 38px; vertical-align: top;">
-                      <a href="system.php" style="cursor: pointer; text-align: center; font-size: 21px; top: 7px; color: white;" class="fa fa-home"></a>
+                      <a ng-click="rastrearHeaders('home');" href="system.php" style="cursor: pointer; text-align: center; font-size: 21px; top: 7px; color: white;" class="fa fa-home"></a>
                     </li>
                     <li style="height: 38px; vertical-align: top;">
-                      <a href="escribir.php" style="cursor: pointer; text-align: center; font-size: 21px; top: 7px; color: white;" class="fa fa-pencil"></a>
+                      <a ng-click="rastrearHeaders('escribir');" href="escribir.php" style="cursor: pointer; text-align: center; font-size: 21px; top: 7px; color: white;" class="fa fa-pencil"></a>
                     </li>
-                    <li style="cursor: pointer; vertical-align: top;" class="dropdown">
+                    <li ng-click="rastrearHeaders('nots');" id="notsButton" style="cursor: pointer; vertical-align: top;" class="dropdown">
                         <a style="color: white; font-size: 20px; margin-top: 8px; text-align: center;" data-toggle="dropdown" class="fa fa-envelope">
                           <i ng-show="(inboxHeader | filter: { read:0}).length && (notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length + notificationsMessages2.length}}</i>
                           <i ng-show="(inboxHeader | filter: { read:0}).length && !(notificationsMessages | filter: { read:0}).length" class="tmn-counts">{{inboxHeader2.length}}</i>

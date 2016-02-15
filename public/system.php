@@ -251,21 +251,6 @@ $(document).ready(function(){
 
     include ''.dirname(__FILE__).'/menu-javaScript.php';
   ?>
-  <?PHP
-	$c=1;
-	while($c<=$totalRedes){
-	  ?>
-	  $('#redes<?PHP echo $c; ?>').hover(function(){
-		$('#redes<?PHP echo $c; ?>').css("background-color","#283147");
-		$('#redes<?PHP echo $c; ?>').css("color","#FFFFFF");
-	  },function(){
-		$('#redes<?PHP echo $c; ?>').css("background-color","#FFFFFF");
-		$('#redes<?PHP echo $c; ?>').css("color","#000000");
-	  });
-	  <?PHP
-	  $c++;
-	}
-  ?>
   <!--Llamadas iniciales a las funciones-->
   <!-- getUserDetails(); -->
   <!-- dejaDeSeguirCont(); -->

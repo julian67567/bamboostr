@@ -92,17 +92,6 @@ $(document).ready(function(){
 
     include ''.dirname(__FILE__).'/menu-javaScript.php';
   ?>
-  <?PHP
-	$c=1;
-	while($c<=$totalRedes){
-	  ?>
-	  $('#redes<?PHP echo $c; ?>').hover(function(){
-	  },function(){
-	  });
-	  <?PHP
-	  $c++;
-	}
-  ?>
   <!--Llamadas iniciales a las funciones-->
   <!-- getUserDetails(); -->
   <!-- dejaDeSeguirCont(); -->
@@ -212,11 +201,11 @@ document.write(unescape("%3C%73%63%72%69%70%74%20%74%79%70%65%3D%22%74%65%78%74%
                     <div class="card-content">
                       <!--1 Selecciona cuentas-->
                       <p class="lato-bold" style="color: #0a6ebd; padding-left: 10px; font-size: 20px; display: inline-block;">1. </p>
-                      <p class="lato-bold" style="color: #929292; padding-left: 5px; font-size: 18px; display: inline-block;">Seleccionar Cuenta(s)</p><p style="color: #929292; padding-left: 50px; font-size: 17px; display: inline-block;" class="hidden-xs hidden-md hidden-lg lato-bold">Total: <?PHP echo $totalRedes-2; ?></p><br /><br />
+                      <p class="lato-bold" style="color: #929292; padding-left: 5px; font-size: 18px; display: inline-block;">Seleccionar Cuenta(s)</p><p style="color: #929292; padding-left: 50px; font-size: 17px; display: inline-block;" class="hidden-xs hidden-md hidden-lg lato-bold">Total: <?PHP echo $totalRedes; ?></p><br /><br />
                       <div class="row">
                         <?PHP
                             //si no hay cuentas vinculadas muestra texto
-                            if($totalRedes-2==0){
+                            if($totalRedes==0){
                               ?>
                               <p style="text-align: center; color: red;" class="lato-bold">No tienes redes sociales agregadas</p>
                               <p style="text-align: center;">

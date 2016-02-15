@@ -87,17 +87,6 @@ $(document).ready(function(){
 
     include 'menu-javaScript.php';
   ?>
-  <?PHP
-	$c=1;
-	while($c<=$totalRedes){
-	  ?>
-	  $('#redes<?PHP echo $c; ?>').hover(function(){
-	  },function(){
-	  });
-	  <?PHP
-	  $c++;
-	}
-  ?>
   <!--Llamadas iniciales a las funciones-->
   <!-- getUserDetails(); -->
   <!-- dejaDeSeguirCont(); -->

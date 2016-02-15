@@ -97,7 +97,9 @@ foreach($social_networks_parts as &$item){
 	  }/*fin if else $c==0 */
   }/*if $item!=0*/
 }
-
+if($c==0){
+  //si no hay ninguna cuenta que pasa?
+}
 echo json_encode($feed_array_escribir);
 
 ?>

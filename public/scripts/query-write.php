@@ -88,8 +88,5 @@ foreach($social_networks_parts as &$item){
 	  }/*fin if else $c==0 */
   }/*if $item!=0*/
 }
-if($redSocial=="no"){
-  $c=$c-1;    
-}
-$totalRedes=$c+2;
+$totalRedes=$c;
 ?>

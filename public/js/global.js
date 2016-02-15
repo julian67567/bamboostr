@@ -105,6 +105,9 @@ function restaFechas(f1,f2){
   return dias;
 }
 function deleteAllCookies() {
+    /* NOTA: revisa si el dominio coincide ya que si no no se borrarán */
+    console.log("Show Cookies");
+    console.log(document.cookie);
     var cookies = document.cookie.split(";");
 
     for (var i = 0; i < cookies.length; i++) {
@@ -113,6 +116,7 @@ function deleteAllCookies() {
     	var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
     	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
+    console.log("finish deleteAllCookies");
 }
 function getCookie(cname) {
     var name = cname + "=";
