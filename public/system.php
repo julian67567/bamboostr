@@ -44,6 +44,22 @@ $(document).ready(function(){
 });
 </script>
 <script>
+<?PHP
+if($_GET["action"]=="newUser"){
+  ga('send', 'event', 'Nuevos Usuarios Total', 'click', 'Nuevos Usuarios Total');  
+}
+if($_GET["action"]=="newUserTwitter"){
+  ga('send', 'event', 'Nuevos Usuarios Twitter', 'click', 'Nuevos Usuarios Twitter');  
+}
+if($_GET["action"]=="newUserFacebook"){
+  ga('send', 'event', 'Nuevos Usuarios Facebook', 'click', 'Nuevos Usuarios Facebook');  
+}
+if($_GET["action"]=="newUserNo"){
+  ga('send', 'event', 'Nuevos Usuarios Bamboostr', 'click', 'Nuevos Usuarios Bamboostr');  
+}
+?>
+</script>
+<script>
 $(document).ready(function(){
 	$.ajax({  data: { id:id_token },
 		  url:   "scripts/get-nivel.php",

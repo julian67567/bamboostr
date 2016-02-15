@@ -1,10 +1,10 @@
 <?PHP
 /*EXAMPLE FACEBOK SDK V5.0*/
 session_start();
-include '../scripts/detectLanguageExplorer.php';
-include '../conexioni.php';
-require_once('../facebook-4.5/src/Facebook/config.php');
-require_once('../facebook-4.5/src/Facebook/autoload.php');
+include ''.dirname(__FILE__).'/../scripts/detectLanguageExplorer.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
+require_once(''.dirname(__FILE__).'/../facebook-4.5/src/Facebook/config.php');
+require_once(''.dirname(__FILE__).'/../facebook-4.5/src/Facebook/autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;

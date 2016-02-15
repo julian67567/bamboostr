@@ -92,7 +92,7 @@ if(!$_SESSION['sessionid'] || !$_SESSION['user_bamboostr']){
 
 		  //estadisticas
 		  $query2=$conn->query("INSERT INTO estadisticas_twitter (id_token, identify, red, seguidores, siguiendo, mlistas, tweets, tusfavoritos) VALUES ('".$row["id"]."','".$user_info->id_str."','twitter','".$user_info->followers_count."|".date('d-m-Y:H-i').",','".$user_info->friends_count."|".date('d-m-Y:H-i').",','".$user_info->listed_count."|".date('d-m-Y:H-i').",','".$user_info->statuses_count."|".date('d-m-Y:H-i').",','".$user_info->favourites_count."|".date('d-m-Y:H-i').",')") OR DIE(mysqli_error($conn));
-		header('Location: http://'.getDirUrl(1).'/system.php?action=newUser');
+		header('Location: http://'.getDirUrl(1).'/system.php?action=newUserTwitter');
 		}
 		$status = 'OK';
 	} else {
@@ -143,7 +143,7 @@ if(!$_SESSION['sessionid'] || !$_SESSION['user_bamboostr']){
 		  $query2=$conn->query("INSERT INTO estadisticas_twitter (id_token, identify, red, seguidores, siguiendo, mlistas, tweets, tusfavoritos) VALUES ('".$id_token."','".$user_info->id_str."','twitter','".$user_info->followers_count."|".date('d-m-Y:H-i').",','".$user_info->friends_count."|".date('d-m-Y:H-i').",','".$user_info->listed_count."|".date('d-m-Y:H-i').",','".$user_info->statuses_count."|".date('d-m-Y:H-i').",','".$user_info->favourites_count."|".date('d-m-Y:H-i').",')") OR DIE(mysqli_error($conn));
 		}
 		if($_SESSION['identify'] && $_SESSION['sessionid'])
-	          header('Location: http://'.getDirUrl(1).'/system.php');
+	    header('Location: http://'.getDirUrl(1).'/system.php');
 		$status = 'OK';
 	}
 	else{

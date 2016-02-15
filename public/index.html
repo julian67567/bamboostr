@@ -69,7 +69,7 @@
                 success:  function (response) {
                   obj = JSON.parse(response);
                   if(obj.success=="true"){
-                    window.location = "system.php";
+                    window.location = "system.php?action=newUserNo";
                   } else {
                     alert(obj.text);
                   }

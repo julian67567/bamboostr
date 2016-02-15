@@ -268,7 +268,7 @@ if(isset($session)) {
 								  WHERE identify='' 
 								  AND identify_account='".$_SESSION['identify']."'
 								  AND id_token='".$row2['id']."'") OR DIE(mysqli_error($conn));
-          header('Location: http://'.getDirUrl(1).'/system.php?action=newUser');
+          header('Location: http://'.getDirUrl(1).'/system.php?action=newUserFacebook');
 	}// fin else si no existe el usuario
     $status="OK"; 
     //header('Location: http://'.getDirUrl(1).'/system.php');
