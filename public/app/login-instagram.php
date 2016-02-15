@@ -1,14 +1,14 @@
 <?PHP
 session_start();
-include '../scripts/detectLanguageExplorer.php';
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../scripts/detectLanguageExplorer.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 
 $access_token = $_GET["access_token"];
 $secundaria = $_GET["secundaria"];
 
 //PHP Version 5.4.34
-include '../instagram/config-sample.php';
-include '../instagram/instagram/src/Instagram.php';
+include ''.dirname(__FILE__).'/../instagram/config-sample.php';
+include ''.dirname(__FILE__).'/../instagram/instagram/src/Instagram.php';
 use MetzWeb\Instagram\Instagram;
 // initialize class
 
@@ -53,7 +53,7 @@ if($secundaria=="si"){
 	  if($query->num_rows>0){
 		  $query2=$conn->query("UPDATE token SET expire_token=0, foto='".$result->data->profile_picture."', access_token='".$access_token."' WHERE identify='".$result->data->id."' AND red='instagram'") OR die("Error: ".mysqli_error($conn));
 	  } else {
-		$query2=$conn->query("INSERT INTO token (identify,social_networks,red,idioma,foto,screen_name,access_token,mail) VALUES ('".$result->data->id."','in".$result->data->id.",','instagram','".getUserLanguage()."','".$result->data->profile_picture."','".$result->data->full_name."','".$access_token."','')") OR die("Error: ".mysqli_error($conn));
+		$query2=$conn->query("INSERT INTO token (identify,social_networks,red,idioma,foto,screen_name_bamboostr,access_token,mail) VALUES ('".$result->data->id."','in".$result->data->id.",','instagram','".getUserLanguage()."','".$result->data->profile_picture."','".$result->data->full_name."','".$access_token."','')") OR die("Error: ".mysqli_error($conn));
                 $query = $conn->query("SELECT id FROM token WHERE identify='".$result->data->id."' AND red='instagram'") OR die("Error: ".mysqli_error($conn));
                 $row=$query->fetch_assoc();
                 
@@ -83,7 +83,7 @@ if($secundaria=="si"){
 								  pages_name='".$pages_names."'
 							  WHERE identify='' 
 							  AND identify_account='".$result->data->id."'
-							  AND id_token='".$row['id']."'");
+							  AND id_token='".$row['id']."'") OR DIE(mysqli_error($conn));
 		*/
 							  
 		/*sacar id del nuevo usuario*/
@@ -103,7 +103,7 @@ if($secundaria=="si"){
 								  pages_name='".$pages_names."'
 							  WHERE identify='' 
 							  AND identify_account='".$result->data->id."'
-							  AND id_token='".$row['id']."'");
+							  AND id_token='".$row['id']."'") OR DIE(mysqli_error($conn));
 		*/			  
 	  }// fin else si si esta usuario secundario en primario
 	} else {
@@ -134,7 +134,7 @@ if($secundaria=="si"){
 								  pages_name='".$pages_names."'
 							  WHERE identify='' 
 							  AND identify_account='".$identify."'
-							  AND id_token='".$row['id']."'");
+							  AND id_token='".$row['id']."'") OR DIE(mysqli_error($conn));
 		  */
 	  }
 	}
