@@ -46,16 +46,16 @@ $(document).ready(function(){
 <script>
 <?PHP
 if($_GET["action"]=="newUser"){
-  ga('send', 'event', 'Nuevos Usuarios Total', 'click', 'Nuevos Usuarios Total');  
+  ?>ga('send', 'event', 'Nuevos Usuarios Total', 'click', 'Nuevos Usuarios Total');<?PHP
 }
 if($_GET["action"]=="newUserTwitter"){
-  ga('send', 'event', 'Nuevos Usuarios Twitter', 'click', 'Nuevos Usuarios Twitter');  
+  ?>ga('send', 'event', 'Nuevos Usuarios Twitter', 'click', 'Nuevos Usuarios Twitter');  <?PHP
 }
 if($_GET["action"]=="newUserFacebook"){
-  ga('send', 'event', 'Nuevos Usuarios Facebook', 'click', 'Nuevos Usuarios Facebook');  
+  ?>ga('send', 'event', 'Nuevos Usuarios Facebook', 'click', 'Nuevos Usuarios Facebook');  <?PHP
 }
 if($_GET["action"]=="newUserNo"){
-  ga('send', 'event', 'Nuevos Usuarios Bamboostr', 'click', 'Nuevos Usuarios Bamboostr');  
+  ?>ga('send', 'event', 'Nuevos Usuarios Bamboostr', 'click', 'Nuevos Usuarios Bamboostr'); <?PHP 
 }
 ?>
 </script>
