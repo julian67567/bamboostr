@@ -7,7 +7,6 @@ $query = $conn->query("SELECT * FROM token WHERE (screen_name='".$nombreOmail."'
 if($query->num_rows>0){
   $obj = new stdclass();
   $obj->success = "true";
-  echo json_encode($obj);
   session_start();
   session_regenerate_id();
   $row=$query->fetch_assoc();
@@ -27,6 +26,12 @@ if($query->num_rows>0){
   $conn->query("INSERT INTO ssid_story (id_token,ssid,screen_name,fecha) 
             VALUES ('".$_SESSION['id_token']."','".$_SESSION['sessionid']."','".$_SESSION['user']."','".date('d-m-Y H:i')."') ") OR DIE(mysqli_error($conn));
 
+	$obj->id_token = $_SESSION['id_token'];
+	$obj->user = $_SESSION['user_bamboostr'];
+	$obj->identify = $_SESSION['identify'];
+    $obj->image_red = $_SESSION['foto_bamboostr'];
+	$obj->cuenta = "primaria";
+	echo json_encode($obj);
 } else {
   $obj = new stdclass();
   $obj->success = "false";
