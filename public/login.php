@@ -1,8 +1,14 @@
 <?PHP
 include ''.dirname(__FILE__).'/conexioni.php';
 include ''.dirname(__FILE__).'/scripts/funciones.php';
-$nombreOmail = base_de_datos_scape($conn,$_POST["nombre"]);
-$password = base_de_datos_scape($conn,encriptar($_POST["password"]));
+$nombre_123vd = $_POST["nombre"];
+$pass_123vd = $_POST["password"];
+if($nombre_123vd=="" && $pass_123vd==""){
+  $nombre_123vd = $_GET["nombre"];
+  $pass_123vd = $_GET["password"];
+}
+$nombreOmail = base_de_datos_scape($conn,$nombre_123vd);
+$password = base_de_datos_scape($conn,encriptar($pass_123vd));
 $query = $conn->query("SELECT * FROM token WHERE (screen_name='".$nombreOmail."' OR mail='".$nombreOmail."') AND password='".$password."'") OR DIE(mysqli_error($conn));
 if($query->num_rows>0){
   $obj = new stdclass();
