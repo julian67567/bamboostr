@@ -22,8 +22,22 @@ function menu(){
                         <li id="tableSys12">
                             <a href="stats.php" style="cursor: pointer;" id="tableSys5"><i class="icon-stats-dots"></i> Mis estadísticas</a>
                         </li>
-                        <li id="tableSys11">
-                            <a href="" style="cursor: pointer;"><i class="fa fa-shopping-cart"></i> Pagar</a>
+                        <li>
+                          <div style="cursor: pointer;" class="dropdown">
+                            <a class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="" style="cursor: pointer; padding: 14px 20px 14px 52px; display: block; color: #4C4C4C; font-weight: 500; position: relative;"><i class="fa fa-shopping-cart" style="position: absolute; left: 16px; font-size: 20px; top: 0; width: 25px; text-align: center; padding: 13px 0;"></i> Pagar</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <li id="tableSys11"><a style="cursor: pointer;" href="">Pagar por MercadoPago</a></li>
+                                <li style="text-align: center; cursor: default;">ó</li>
+                                <li style="text-align: center;">Pagar por PayPal
+                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                        <input type="hidden" name="hosted_button_id" value="89NRE5J3DZDCL">
+                                        <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                                        <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                                    </form>
+                                </li>  
+                            </ul>
+                          </div>
                         </li>
                         <li>
                             <a href="" style="cursor: pointer;" id="tableSys7"><i class="fa fa-cogs"></i> Herramientas</a>
