@@ -36,10 +36,10 @@ if($query->num_rows>0){
 		$url2='http://'.getDirUrl(1).'/twitter/post-media.php?'.$url.'';
 	  }
       if($row["red"]=="instagram"){ 
-        //notificaciones
+        //si es instagram notificaciones
         $conn->query("INSERT INTO notificaciones (id_token,receptor,titulo,mensaje,imagen,fecha,red,tipo) VALUES ('".$row["id_token"]."','".$row["identify"]."','Mensaje Programado','".$row["mensaje"]."','".substr($row["images"],0,strlen($row["images"])-1)."','".date("d-m-Y H:i")."','".$row["red"]."','instagram')") OR die("Error: ".mysqli_error($conn));
 	  } else {
-		  //abrimos la url y que la lea que contiene
+		  //si no es instagram abrimos la url para enviar el mensaje programado y que la lea que contiene
 		  $cadena="";
 		  $imagenes="";
 		  $fo= fopen($url2,"r") or die ("false");
@@ -49,58 +49,48 @@ if($query->num_rows>0){
 		  }
 		  fclose ($fo); 
 		  echo ''.$url2.' | '.$cadena.' | ';
-		  $img_array = explode(",",$row["images"]);
-		  foreach($img_array as &$item123){
-			if($item123!=""){
-			  $imagenes=''.$imagenes.'<img src="'.$item123.'"><br /><br />'; 
-			}
-		  }
 	  }
+      /*Sacamos imágenes del queue_msg independientemente de la red que sea*/
+      $img_array = explode(",",$row["images"]);
+      foreach($img_array as &$item123){
+        if($item123!=""){
+            $imagenes=''.$imagenes.'<img src="'.$item123.'"><br /><br />'; 
+        }
+      }
 	  $query4 = $conn->query("SELECT dev_token FROM token WHERE id='".$row["id_token"]."'") OR DIE(mysqli_error($conn));
 	  $row2 = $query4->fetch_assoc();
 	  if($row2["dev_token"] && $row["red"]=="instagram"){
+        /*instagram no manda mail*/
 		$title12 = 'Mensaje Programado';
 		$body12 = 'Instagram a atender';
-	  } else if($row2["dev_token"] && $row["red"]!="instagram"){
+	  } 
+      if($row2["dev_token"] && $row["red"]!="instagram"){
+        /*si no es instagram pero tiene token dev*/
 		$title12 = 'Mensaje Programado';
 		$body12 = 'Enviado Correctamente';
+      }
+      if($row["red"]=="instagram"){
+        /*si es instagram mandamos mail*/
+        //Mandar Mail al usuario
+        $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado: Instagram a atender','<br /><br />Muchas Felicidades ya puedes enviar tu mensaje programado de instagram bajando nuestra app de bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')") OR DIE(mysqli_error($conn));
+        //mandar Mail al admin
+		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado: Instagram a atender','<br /><br />Muchas Felicidades ya puedes enviar tu mensaje programado de instagram bajando nuestra app de bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')") OR DIE(mysqli_error($conn));
+      }
+      if($row["red"]!="instagram"){
+        /*si no es instagram mandamos mail*/
 		//Mensajes Publicados
         $query2=$conn->query("INSERT INTO msg_publicados SELECT * FROM queue_msg WHERE id='".$row["id"]."'") OR DIE(mysqli_error($conn));
-        //Mandar Mail
+        //Mandar Mail al usuario
         $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')") OR DIE(mysqli_error($conn));
+        //mandar Mail al admin
 		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')") OR DIE(mysqli_error($conn));
 		print_r($fo);
 		echo "<br />";
 	  }
 	  if($row2["dev_token"]){
-		$yourApiSecret = $app_secret_key_ionic;
-		$androidAppId = $app_id_ionic;
-		$data = array(
-		  "tokens" => array($row2["dev_token"]),
-		  "notification" => array("alert" => $body12, 
-		                          "android" => array("title" => $title12,
-													 "notId" => $row["id"]),
-								  "ios" => array("title" => $title12,
-													 "notId" => $row["id"])
-								  ),
-		  
-		  //"scheduled" => "1439915098",
-		);
-                echo json_encode($data);
-		$ch = curl_init('https://push.ionic.io/api/v1/push');
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'X-Ionic-Application-Id: '.$androidAppId,
-			'Content-Length: ' . strlen(json_encode($data)),
-			'Authorization: Basic '.base64_encode($yourApiSecret)
-			)
-		);
-		
-		$result = curl_exec($ch);
-		var_dump($result);
+        /*Mandamos PUSH Notification*/
+		include ''.dirname(__FILE__).'/../app/push-notifications.php';
+        pushNotification($row2["dev_token"], $body12, $title12, $row["id"]);
 	  }
 	  //Eliminar Llave
 	  $query2=$conn->query("DELETE FROM queue_msg WHERE id='".$row["id"]."'") OR DIE(mysqli_error($conn));
