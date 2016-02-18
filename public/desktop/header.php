@@ -122,7 +122,7 @@ toastr.options = {
 
 <!--Angular-->
 <script src="angular/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+<script src="angular/angular-sanitize.js"></script>
 <script src="angular/lib/title.js"></script>
 
 <!-- Javascript Libraries -->
