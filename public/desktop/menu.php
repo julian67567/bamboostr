@@ -22,7 +22,7 @@ function menu(){
                         <li id="tableSys12">
                             <a href="stats.php" style="cursor: pointer;" id="tableSys5"><i class="icon-stats-dots"></i> Mis estadísticas</a>
                         </li>
-                        <li>
+                        <li id="tableSys13">
                           <div style="cursor: pointer;" class="dropdown">
                             <a class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="" style="cursor: pointer; padding: 14px 20px 14px 52px; display: block; color: #4C4C4C; font-weight: 500; position: relative;"><i class="fa fa-shopping-cart" style="position: absolute; left: 16px; font-size: 20px; top: 0; width: 25px; text-align: center; padding: 13px 0;"></i> Pagar</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">

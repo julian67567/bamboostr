@@ -107,10 +107,10 @@ app.controller('notsCtrl', function($rootScope, $scope, evt, $filter){
        console.log(response);
        if(response.data.success="true"){
          if(response.data.tipo=="ent" || response.data.tipo=="basic" || response.data.tipo=="pro"){
-           $("#tableSys11").css("display","none");
+           $("#tableSys13").css("display","none");
          }   
        } else {
-         $("#tableSys11").css("display","none"); 
+         $("#tableSys13").css("display","none"); 
        }
      }, function (response) {
        /*ERROR*/
