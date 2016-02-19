@@ -1,6 +1,6 @@
 <?php
 //PHP Version 5.4.34
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $identify=$_GET["identify"];
 $idPost = $_GET["idPost"];
 $messages=$_GET["messages"];
@@ -9,8 +9,8 @@ $description=$_GET["description"];
 $link=$_GET["link"];
 $name=$_GET["screen_name"];
 session_start();
-require_once 'src/Facebook/config.php';
-require_once('autoload.php');
+require_once ''.dirname(__FILE__).'/src/Facebook/config.php';
+require_once(''.dirname(__FILE__).'/autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;

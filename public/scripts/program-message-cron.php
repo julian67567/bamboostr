@@ -32,23 +32,24 @@ if($query->num_rows>0){
 	  if($row["red"]=="facebook"){
 	    $url2='http://'.getDirUrl(1).'/facebook/post-message.php?'.$url.'';
 	  }
-	  else if($row["red"]=="twitter"){
+	  if($row["red"]=="twitter"){
 		$url2='http://'.getDirUrl(1).'/twitter/post-media.php?'.$url.'';
 	  }
+      $cadena="";
+	  $imagenes="";
       if($row["red"]=="instagram"){ 
         //si es instagram notificaciones
         $conn->query("INSERT INTO notificaciones (id_token,receptor,titulo,mensaje,imagen,fecha,red,tipo) VALUES ('".$row["id_token"]."','".$row["identify"]."','Mensaje Programado','".$row["mensaje"]."','".substr($row["images"],0,strlen($row["images"])-1)."','".date("d-m-Y H:i")."','".$row["red"]."','instagram')") OR die("Error: ".mysqli_error($conn));
 	  } else {
 		  //si no es instagram abrimos la url para enviar el mensaje programado y que la lea que contiene
-		  $cadena="";
-		  $imagenes="";
+          echo $url2;
 		  $fo= fopen($url2,"r") or die ("false");
 		  while (!feof($fo)) {
 			$cadena .= fgets($fo);
 			$cadena = preg_replace('/\s+/',' ',$cadena);
 		  }
 		  fclose ($fo); 
-		  echo ''.$url2.' | '.$cadena.' | ';
+		  echo '|'.$url.' | '.$url2.' | '.$cadena.' | ';
 	  }
       /*Sacamos imágenes del queue_msg independientemente de la red que sea*/
       $img_array = explode(",",$row["images"]);

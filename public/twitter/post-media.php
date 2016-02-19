@@ -1,11 +1,11 @@
 <?PHP
   ini_set('max_execution_time', 9000);
-  include 'conexioni.php';
-  require("twitteroauth/twitteroauth.php");
+  include ''.dirname(__FILE__).'/../conexioni.php';
+  require("".dirname(__FILE__)."/twitteroauth/twitteroauth.php");
   session_start();
   // We've got everything we need
   // TwitterOAuth instance, with two new parameters we got in twitter_login.php
-  include 'config-sample.php';
+  include ''.dirname(__FILE__).'/config-sample.php';
   if($_GET["oauth_verifier"] && $_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']){
 	//si hay credenciales en la url
     $twitteroauth = new TwitterOAuth($consumer_key, $consumer_secret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);

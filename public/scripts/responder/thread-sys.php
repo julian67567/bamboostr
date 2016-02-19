@@ -40,5 +40,11 @@ if(strpos($option,"getConversation")!==false){
 if(strpos($option,"setReadDMS")!==false){
   $exec_query=exec('php-cli -f thread-gets.php '.$option.' '.$id_token.' '.$identify.' /dev/null 2>&1',$response,$exit);
 }
+if(strpos($option,"setReadAllDMS")!==false){
+  $exec_query=exec('php-cli -f thread-gets.php '.$option.' '.$id_token.' /dev/null 2>&1',$response,$exit);
+}
+if(strpos($option,"setReadAllAi")!==false){
+  $exec_query=exec('php-cli -f thread-gets.php '.$option.' '.$id_token.' /dev/null 2>&1',$response,$exit);
+}
 print_r($response[0]);
 ?>

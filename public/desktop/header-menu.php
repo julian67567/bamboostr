@@ -55,9 +55,9 @@ function headerMenu($user_image){
                             <div class="listview" id="notifications">
                                 <div class="lv-header">
                                     Asistente Inteligente
-                    
+                                    
                                     <ul class="actions">
-                                        <li class="dropdown">
+                                        <li ng-click="leerAi();"  class="dropdown">
                                             <a href="" data-clear="notification">
                                                 <i class="zmdi zmdi-check-all"></i>
                                             </a>
@@ -65,7 +65,7 @@ function headerMenu($user_image){
                                     </ul>
                                 </div>
                                 <div class="lv-body">
-                                  <a ng-if="z.read=='0'" ng-repeat="z in notificationsMessages4 = (notificationsMessages3 | filter: { read:0, tipo:'asistente'})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(z,3)">
+                                  <a ng-repeat="z in notificationsMessages4 = (notificationsMessages3 | filter: { tipo:'asistente'})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(z,3)">
                                     <div class="media">
                                       <div class="pull-left">
                                         <i ng-if="z.read=='0'" style="font-size: 15px;" class="fa fa-envelope-o"></i>
@@ -105,7 +105,7 @@ function headerMenu($user_image){
                                     Notifications
                     
                                     <ul class="actions">
-                                        <li class="dropdown">
+                                        <li ng-click="leerDMS();"  class="dropdown">
                                             <a href="" data-clear="notification">
                                                 <i class="zmdi zmdi-check-all"></i>
                                             </a>

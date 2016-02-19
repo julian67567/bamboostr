@@ -116,4 +116,24 @@ app.controller('notsCtrl', function($rootScope, $scope, evt, $filter){
        /*ERROR*/
        toastr["error"]("Inténtelo de nuevo más tarde", "ERROR");
      });
+     
+     $scope.leerDMS = function(){
+       console.log("Leer todos DMS"); 
+       ga('send', 'event', 'Abrir Header Menu Leer Todos DMS', 'click', 'Abrir Header Menu Leer Todos DMS');  
+       evt.setReadAllDMS().then(function (response) {
+        }, function (response) {
+            /*ERROR*/
+            toastr["error"]("Inténtelo de nuevo más tarde", "ERROR");
+        }); 
+     };
+     
+     $scope.leerAi = function(){
+       console.log("Leer todos AI"); 
+       ga('send', 'event', 'Abrir Header Menu Leer Todos Ai', 'click', 'Abrir Header Menu Leer Todos Ai');  
+       evt.setReadAllAi().then(function (response) {
+        }, function (response) {
+            /*ERROR*/
+            toastr["error"]("Inténtelo de nuevo más tarde", "ERROR");
+        }); 
+     };
 });

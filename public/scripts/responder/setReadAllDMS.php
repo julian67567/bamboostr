@@ -2,8 +2,8 @@
 ini_set('max_execution_time', 900000);
 include ''.dirname(__FILE__).'/../../conexioni.php';
 $id_token = $_GET["id_token"];
-$identify = $_GET["identify"];
-$query=$conn->query("UPDATE mensajes SET `read`='1' WHERE id_token='".$id_token."' AND identify_sender='".$identify."'") or die(mysqli_error($conn));
+$query=$conn->query("UPDATE mensajes SET `read`='1' WHERE id_token='".$id_token."'") or die(mysqli_error($conn));
+$query=$conn->query("UPDATE notificaciones SET `read`='1' WHERE id_token='".$id_token."' AND tipo='instagram'") or die(mysqli_error($conn));
 if($query===true){
   $obj = new stdclass();
   $obj->success = "true";

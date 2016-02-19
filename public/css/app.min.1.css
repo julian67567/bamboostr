@@ -7311,8 +7311,8 @@ button.close {
 }
 
 .modal-open .modal {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: none;
+  overflow-y: none;
 }
 
 .modal-dialog {

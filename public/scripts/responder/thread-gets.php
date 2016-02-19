@@ -44,6 +44,12 @@ if($option=="setReadDMS"){
   $identify = $argv[3];
   $url='http://'.getDirUrl(1).'/scripts/responder/setReadDMS.php?id_token='.$id_token.'&identify='.$identify.'';
 }
+if($option=="setReadAllDMS"){
+  $url='http://'.getDirUrl(1).'/scripts/responder/setReadAllDMS.php?id_token='.$id_token.'';
+}
+if($option=="setReadAllAi"){
+  $url='http://'.getDirUrl(1).'/scripts/responder/setReadAllAi.php?id_token='.$id_token.'';
+}
 //abrimos la url y que la lea que contiene
 $fo= fopen($url,"r") or die ("false");
 while (!feof($fo)) {

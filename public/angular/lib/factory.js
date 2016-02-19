@@ -67,6 +67,14 @@ app.factory('evt',function($http){
             var url = 'scripts/responder/thread-sys.php';
 			return $http.get(url, { cache: false, params: { identify: x.identify_sender, id_token: id_token, option: 'setReadDMS'} })
 	    },
+        setReadAllDMS:function(){
+            var url = 'scripts/responder/thread-sys.php';
+			return $http.get(url, { cache: false, params: { id_token: id_token, option: 'setReadAllDMS'} })
+	    },
+        setReadAllAi:function(){
+            var url = 'scripts/responder/thread-sys.php';
+			return $http.get(url, { cache: false, params: { id_token: id_token, option: 'setReadAllAi'} })
+	    },
 		getNotificationsMessages:function(){
             var url = "thread-sys.php?identify="+identify+"&red="+red+"&option=notificaciones&option3="+2+"&id_token="+id_token+"";
 			return $http.get(url, { cache: false })

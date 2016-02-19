@@ -493,21 +493,25 @@ function getCalendar(){
         </section>
 
    <!-- Edit Message -->
-    <div style="height: 340px;" class="modal modal-signup" id="edit-message" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div>
-
+    <div style="width: 100%;" class="modal modal-signup" id="edit-message" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="margin: 0px; padding: 0px; margin-top: 20px;">
+            <div class="modal-content" style="height: 400px; overflow-y: auto;">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
+                    <button style="float: left; color: red; opacity: 1;" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 style="text-align: center;" id="signupModalLabel" class="modal-title text-center">Editar Mensaje.</h4>
                     <!--<p class="intro text-center">It only takes 3 minutes!</p>-->
                     <p></p>
                 </div>
-                <div class="modal-body" id="edit-message-body">
-                </div><!--modal-body-->
+                <div class="modal-body col-md-12" id="edit-message-body">
+                </div><!--//modal-body-->
+                <!--
+                <div class="modal-footer">
+                    <p>Already have an account? <a class="login-link" id="login-link" href="http://themes.3rdwavemedia.com/tempo/1.4/#">Log in</a></p>                    
+                </div>--><!--//modal-footer-->
             </div><!--//modal-content-->
-        </div><!--//modal-dialog-->
+        </div><!--//modal-dialog col-md-8-->
+        <div class="col-md-2"></div>
     </div><!--//modal-->
 
     <?PHP include 'footer.php'; footer(); ?>
