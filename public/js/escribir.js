@@ -475,7 +475,7 @@ function enviarBotonComenta2(opcion){
 	    var parametros = { images:imagenesAgregadas, description:contador,
 	    				   identify:redesAdd[i]['id'].substr(0, redesAdd[i]['id'].length-2),
 	    				   idPost:idAccountAdd.substr(0, idAccountAdd.length-2),
-						   screen_name:userTempName
+						   screen_name:userTempName, id_token:id_token
 						 };
 		$.ajax({    data:  parametros,
 					url:   urlPostMassive,

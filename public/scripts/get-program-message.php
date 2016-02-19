@@ -1,6 +1,6 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $c=0;
 $response_array = array();
 $id_token = $_GET["id_token"];

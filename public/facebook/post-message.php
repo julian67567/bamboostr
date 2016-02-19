@@ -8,6 +8,7 @@ $images=$_GET["images"];
 $description=$_GET["description"];
 $link=$_GET["link"];
 $name=$_GET["screen_name"];
+$id_token=$_GET["id_token"];
 session_start();
 require_once ''.dirname(__FILE__).'/src/Facebook/config.php';
 require_once(''.dirname(__FILE__).'/autoload.php');
@@ -122,6 +123,7 @@ if($query->num_rows>0){
 	  $error = 1;
 	} 
 	if($error==0) {
+      //insertar a publicados
 	  print_r($graphObject);
 	} else { 
 	  echo '|'.$name.'|false2';
