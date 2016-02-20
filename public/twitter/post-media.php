@@ -28,6 +28,10 @@
   }
   if($status=="OK"){
       $id_token=$_GET["id_token"];
+      $fecha=$_GET["fecha"];
+      if($fecha=="")
+        $fecha = ''.date("d-m-Y").'';
+      $horario=$_GET["horario"];
 	  $identify=$_GET["identify"];
 	  $idPost = $_GET["idPost"];
 	  $messages=$_GET["messages"];
@@ -54,7 +58,7 @@
 	  }
       if(validar_propiedad($twitter,'errors')===false){
         //insertar a publicados
-        $query3434 = $conn->query("INSERT INTO msg_publicados (id_token,name,identify,id_post,mensaje,images,link,fecha,horario,image_profile,red) VALUES ('".$id_token."','".$screen_name."','".$identify."','".$idPost."','".$description."','".$images."','".$link."','','','".$foto123."','twitter')") OR die("Error insert into msg_publicados: ".mysqli_error($conn)."");
+        $query3434 = $conn->query("INSERT INTO msg_publicados (id_token,name,identify,id_post,mensaje,images,link,image_profile,red,fecha,horario) VALUES ('".$id_token."','".$screen_name."','".$identify."','".$idPost."','".$description."','".$images."','".$link."','".$foto123."','twitter','".$fecha."','".$horario."')") OR die("Error insert into msg_publicados: ".mysqli_error($conn)."");
       }
 	  echo json_encode($twitter);
       $conn->close();

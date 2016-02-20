@@ -9,7 +9,7 @@ include_once ''.dirname(__FILE__).'/../app/push-notifications.php';
 $fechaAS = strtotime(date("d-m-Y H:i"));
 $horarioAS =  substr(date("O"),0,strlen(date("O"))-2);
 echo 'Fecha Actual: '.date("d-m-Y H:i").' '.$horarioAS.'<br /><br />';
-$query=$conn->query("SELECT * FROM queue_msg ORDER BY fecha") OR DIE(mysqli_error($conn));
+$query=$conn->query("SELECT * FROM queue_msg ORDER BY fecha") OR DIE('Select queue_msg: '.mysqli_error($conn).'');
 if($query->num_rows>0){
   $c=1;
   while($row=$query->fetch_assoc()){
@@ -29,9 +29,13 @@ if($query->num_rows>0){
 	  if($row["link"])
 	    $url=''.$url.'link='.$row["link"].'&';
 	  if($row["name"])
-	    $url=''.$url.'screen_name='.$row["name"].'&';
+	    $url=''.$url.'screen_name='.rawurlencode($row["name"]).'&';
       if($row["id_token"])
-	    $url=''.$url.'id_token='.$row["id_token"].'';
+	    $url=''.$url.'id_token='.$row["id_token"].'&';
+      if($row["fecha"])
+	    $url=''.$url.'fecha='.rawurlencode($row["fecha"]).'&';
+      if($row["horario"])
+	    $url=''.$url.'horario='.rawurlencode($row["horario"]).'&';
 	  if($row["red"]=="facebook"){
 	    $url2='http://'.getDirUrl(1).'/facebook/post-message.php?'.$url.'';
 	  }
@@ -61,7 +65,7 @@ if($query->num_rows>0){
             $imagenes=''.$imagenes.'<img src="'.$item123.'"><br /><br />'; 
         }
       }
-	  $query4 = $conn->query("SELECT dev_token FROM token WHERE id='".$row["id_token"]."'") OR DIE(mysqli_error($conn));
+	  $query4 = $conn->query("SELECT dev_token FROM token WHERE id='".$row["id_token"]."'") OR DIE('Dev_Token: '.mysqli_error($conn).'');
 	  $row2 = $query4->fetch_assoc();
 	  if($row2["dev_token"] && $row["red"]=="instagram"){
         /*instagram no manda mail*/
@@ -76,20 +80,18 @@ if($query->num_rows>0){
       if($row["red"]=="instagram"){
         /*si es instagram mandamos mail*/
         //Mandar Mail al usuario
-        $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado: Instagram a atender','<br /><br />Muchas Felicidades ya puedes enviar tu mensaje programado de instagram bajando nuestra app de bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')") OR DIE(mysqli_error($conn));
+        $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado: Instagram a atender','<br /><br />Muchas Felicidades ya puedes enviar tu mensaje programado de instagram bajando nuestra app de bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')") OR DIE('Mail a usuario Instagram: '.mysqli_error($conn).'');
         //mandar Mail al admin
-		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado: Instagram a atender','<br /><br />Muchas Felicidades ya puedes enviar tu mensaje programado de instagram bajando nuestra app de bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')") OR DIE(mysqli_error($conn));
+		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado: Instagram a atender','<br /><br />Muchas Felicidades ya puedes enviar tu mensaje programado de instagram bajando nuestra app de bamboostr.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')") OR DIE('Mail a Admin Instagram: '.mysqli_error($conn).'');
       }
       if($row["red"]!="instagram"){
         /*si no es instagram mandamos mail*/
 		//Mensajes Publicados
-        if($row["red"]!="twitter")
-          $query2=$conn->query("INSERT INTO msg_publicados SELECT * FROM queue_msg WHERE id='".$row["id"]."'") OR DIE('Insertar en msg_publicados: '.mysqli_error($conn).'');
+        //$query2=$conn->query("INSERT INTO msg_publicados SELECT * FROM queue_msg WHERE id='".$row["id"]."'") OR DIE('Insertar en msg_publicados: '.mysqli_error($conn).'');
         //Mandar Mail al usuario
-        $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')") OR DIE(mysqli_error($conn));
+        $conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('".$row["id_token"]."','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>','1')") OR DIE('Mail a usuario no Instagram: '.mysqli_error($conn).'');
         //mandar Mail al admin
-		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')") OR DIE(mysqli_error($conn));
-		print_r($fo);
+		$conn->query("INSERT INTO queue_mail (id_token,titulo,mensaje,prioridad) VALUES ('128','Mensaje Programado Enviado','<br /><br />Muchas Felicidades tu mensaje se a ha enviado con éxito.<br /><br /><center><img src=http://bamboostr.com/images/congrats.png /></center><br /><br />".$row["mensaje"]."<br /><br /><center>".$imagenes."</center>".$url2." | ".$cadena." | ','1')") OR DIE('Mail a Admin no Instagram: '.mysqli_error($conn).'');
 		echo "<br />";
 	  }
 	  if($row2["dev_token"]){
