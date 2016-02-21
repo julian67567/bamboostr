@@ -10,13 +10,13 @@ if($lengua=="")
   $lengua = $_GET["lengua"];
 //$categoria = 1;
 //$lengua = "es";
-include '../conexioni.php';
-include 'funciones.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
+include ''.dirname(__FILE__).'/funciones.php';
 
 $c=0;
 $response_array = [];
 
-$query = $conn->query("SELECT * FROM rss_content WHERE categoria='".$categoria."' AND idioma='".$lengua."'");
+$query = $conn->query("SELECT * FROM rss_content WHERE categoria='".$categoria."' AND idioma='".$lengua."'") or die(mysqli_error($conn));
 if($query->num_rows>0){
   while($row=$query->fetch_assoc()){
     $obj = new stdclass();

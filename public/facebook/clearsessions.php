@@ -1,6 +1,6 @@
 <?php
-include '../conexioni.php';
-include '../scripts/funciones.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
+include ''.dirname(__FILE__).'/../scripts/funciones.php';
 $access_token=$_GET["access_token"];
 $redirect=$_GET["redirect"];
  
@@ -8,7 +8,7 @@ $redirect=$_GET["redirect"];
 if($redirect==1){
   /* Load and clear sessions */
   session_start();
-  $conn->query("DELETE FROM ssid WHERE id_token='".$_SESSION['id_token']."' AND ssid='".$_SESSION["sessionid"]."'");
+  $conn->query("DELETE FROM ssid WHERE id_token='".$_SESSION['id_token']."' AND ssid='".$_SESSION["sessionid"]."'") or die(mysqli_error($conn));
   session_unset();
   session_destroy();
   header('Location: https://www.facebook.com/logout.php?next=http://'.getDirUrl(1).'/redirect.html&access_token='.$access_token.'');

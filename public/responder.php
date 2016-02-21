@@ -247,7 +247,7 @@ function changeTab(tab,name){
                       </div>
                     </div>
                     
-		    		<div id="{{x.id}}" ng-repeat="x in todos = (inbox | filter: {delete:0} | filter:buscadorTab1)" class="responderBloque">
+		    		<div id="{{x.id}}" ng-repeat="x in todos = (inbox | limitTo:100 | filter: {delete:0} | filter:buscadorTab1)" class="responderBloque">
 			        	<div ng-if="x.red=='twitter'" class="row">
                             <div ng-click="abrirMsg(x)" style="text-align: center; padding-top:10px;" class="col-md-1">
                               <img onerror="this.src='images/logo-bamboostr.png'" style="text-align: center; " class="round2" src="{{x.image_user}}" />
@@ -346,7 +346,8 @@ function changeTab(tab,name){
 		    		<div ng-if="key=='0'" class="row responderGlobitoForm" ng-repeat="(key,x) in chat1">
 		    			<form ng-submit="send(x,send2)">
 			    			<div class="input-field col-md-12">
-					         	<input type="text" placeholder="Escribir un Mensaje..." class="validate responderGlobitoInput" ng-model="send2" />
+					         	<input type="text" placeholder="Escribir un Mensaje..." class="col-xs-12 col-sm-12 col-md-12 validate responderGlobitoInput" ng-model="send1" />
+                                <button style="float: right; margin-top: 5px; margin-left: 5px;" class="col-md-2 btn btn-twitter" ng-click="send(x,send2)">Enviar</button>
 					        </div>
 			    		</form>
 		    		</div>
@@ -381,7 +382,7 @@ function changeTab(tab,name){
                       </div>
                     </div>
                     
-		    		<div ng-repeat="x in read =(inbox | filter: { read:0, delete:0} | filter: buscadorTab2)"  class="responderBloque">
+		    		<div ng-repeat="x in read =(inbox | limitTo:100 | filter: { read:0, delete:0} | filter: buscadorTab2)"  class="responderBloque">
 			    		<div ng-if="x.red=='twitter'" class="row">
                             <div ng-click="abrirMsg(x)" style="text-align: center; padding-top:10px;" class="col-md-1">
                               <img onerror="this.src='images/logo-bamboostr.png'" style="text-align: center; " class="round2" src="{{x.image_user}}" />
@@ -482,7 +483,8 @@ function changeTab(tab,name){
                     <div ng-if="key=='0'" class="row responderGlobitoForm" ng-repeat="(key,x) in chat1">
 		    			<form ng-submit="send(x,send3)">
 			    			<div class="input-field col-md-12">
-					         	<input type="text" placeholder="Escribir un Mensaje..." class="validate responderGlobitoInput" ng-model="send3" />
+					         	<input type="text" placeholder="Escribir un Mensaje..." class="col-xs-12 col-sm-12 col-md-12 validate responderGlobitoInput" ng-model="send1" />
+                                <button style="float: right; margin-top: 5px; margin-left: 5px;" class="col-md-2 btn btn-twitter" ng-click="send(x,send3)">Enviar</button>
 					        </div>
 			    		</form>
 		    		</div>
@@ -518,7 +520,7 @@ function changeTab(tab,name){
                       </div>
                     </div>
                     
-		    		<div ng-repeat="x in archivados =(inbox | filter: { pin:1, delete:0} | filter: buscadorTab3)" class="responderBloque">
+		    		<div ng-repeat="x in archivados =(inbox | limitTo:100 | filter: { pin:1, delete:0} | filter: buscadorTab3)" class="responderBloque">
 			    		<div ng-if="x.red=='twitter'" class="row">
                             <div ng-click="abrirMsg(x)" style="text-align: center; padding-top:10px;" class="col-md-1">
                               <img onerror="this.src='images/logo-bamboostr.png'" style="text-align: center; " class="round2" src="{{x.image_user}}" />
@@ -618,7 +620,8 @@ function changeTab(tab,name){
 		    		<div ng-if="key=='0'" class="row responderGlobitoForm" ng-repeat="(key,x) in chat1">
 		    			<form ng-submit="send(x,send4)">
 			    			<div class="input-field col-md-12">
-					         	<input type="text" placeholder="Escribir un Mensaje..." class="validate responderGlobitoInput" ng-model="send4" />
+					         	<input type="text" placeholder="Escribir un Mensaje..." class="col-xs-12 col-sm-12 col-md-12 validate responderGlobitoInput" ng-model="send1" />
+                                <button style="float: right; margin-top: 5px; margin-left: 5px;" class="col-md-2 btn btn-twitter" ng-click="send(x,send4)">Enviar</button>
 					        </div>
 			    		</form>
 		    		</div>
@@ -652,7 +655,7 @@ function changeTab(tab,name){
                       </div>
                     </div>
                     
-		    		<div id="{{x.id}}" ng-repeat="x in eliminados = (inbox | filter: {delete:1, deletePerm:0} | filter: buscadorTab4)" class="responderBloque">
+		    		<div id="{{x.id}}" ng-repeat="x in eliminados = (inbox | limitTo:100 | filter: {delete:1, deletePerm:0} | filter: buscadorTab4)" class="responderBloque">
 			        	<div ng-if="x.red=='twitter'" class="row">
                             <div ng-click="abrirMsg(x)" style="text-align: center; padding-top:10px;" class="col-md-1">
                               <img onerror="this.src='images/logo-bamboostr.png'" style="text-align: center; " class="round2" src="{{x.image_user}}" />
@@ -752,7 +755,8 @@ function changeTab(tab,name){
 		    		<div ng-if="key=='0'" class="row responderGlobitoForm" ng-repeat="(key,x) in chat1">
 		    			<form ng-submit="send(x,send1)">
 			    			<div class="input-field col-md-12">
-					         	<input type="text" placeholder="Escribir un Mensaje..." class="validate responderGlobitoInput" ng-model="send1" />
+					         	<input type="text" placeholder="Escribir un Mensaje..." class="col-xs-12 col-sm-12 col-md-12 validate responderGlobitoInput" ng-model="send1" />
+                                <button style="float: right; margin-top: 5px; margin-left: 5px;" class="col-md-2 btn btn-twitter" ng-click="send(x,send1)">Enviar</button>
 					        </div>
 			    		</form>
 		    		</div>

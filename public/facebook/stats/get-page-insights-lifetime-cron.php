@@ -1,11 +1,11 @@
 <?php
 //PHP Version 5.4.34
-include '../../twitter/conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 $identify=$_GET["identify"];
 $identify_account=substr($_GET["identify_account"],0,strlen($_GET["identify_account"])-2);
 session_start();
-require_once '../src/Facebook/config.php';
-require_once('../autoload.php');
+require_once ''.dirname(__FILE__).'/../src/Facebook/config.php';
+require_once(''.dirname(__FILE__).'/../autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -19,13 +19,13 @@ if(!$identify){
   $query=$conn->query("SELECT tok.*, esta.*, esta.identify as identifyP
  					  FROM token AS tok INNER JOIN estadisticas_facebook AS esta  
 		              ON esta.red='facebook' AND esta.tipo='page' 
-					  AND tok.red='facebook' AND tok.identify=esta.identify_account");
+					  AND tok.red='facebook' AND tok.identify=esta.identify_account") or die(mysqli_error($conn));
 } else {
   $query=$conn->query("SELECT tok.*, esta.*, esta.identify as identifyP
  					  FROM token AS tok INNER JOIN estadisticas_facebook AS esta  
 		              ON esta.red='facebook' AND esta.tipo='page' AND tok.red='facebook' 
 					  AND tok.identify='".$identify."' AND esta.identify='".$identify_account."'
-					  AND esta.identify_account='".$identify."'");
+					  AND esta.identify_account='".$identify."'") or die(mysqli_error($conn));
 }
 if($query->num_rows>0){
   $c=0;
@@ -121,7 +121,7 @@ if($query->num_rows>0){
 		  $query2=$conn->query("UPDATE estadisticas_facebook 
 							   SET lifetime=CONCAT(lifetime,'".$lifetime."')
 							   WHERE identify='".$item[4]."' AND red='facebook'
-							   AND tipo='page'");
+							   AND tipo='page'") or die(mysqli_error($conn));
 		  
 		  echo 'No hay el Mismo Día. Total: '.$lifetime.' '.$item[4].', '.$item[0].'<br />';
 		  
@@ -135,7 +135,7 @@ if($query->num_rows>0){
 		  $query2=$conn->query("UPDATE estadisticas_facebook 
 							   SET lifetime='".$cuentas[$c][3]."'
 							   WHERE identify='".$item[4]."' AND red='facebook'
-							   AND tipo='page'");
+							   AND tipo='page'") or die(mysqli_error($conn));
 		  
 		  echo 'Si hay el mismo día. Total: '.$lifetime.' '.$item[4].', '.$item[0].'<br />';
 		  

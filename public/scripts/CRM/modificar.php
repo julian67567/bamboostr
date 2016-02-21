@@ -1,8 +1,8 @@
 <?PHP
 ini_set('max_execution_time', 9000);
 $id = $_POST["id"];
-include '../../conexioni.php';
-$query = $conn->query("SELECT * FROM crm WHERE id='".$id."' ORDER BY id");
+include ''.dirname(__FILE__).'/../../conexioni.php';
+$query = $conn->query("SELECT * FROM crm WHERE id='".$id."' ORDER BY id") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $c=0;
   $i=1;

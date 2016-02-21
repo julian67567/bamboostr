@@ -3,16 +3,16 @@
   $red=$_GET["red"];
   $id_token=$_GET["id_token"];
   $option=$_GET["option"];
-  include '../conexioni.php';
+  include ''.dirname(__FILE__).'/../conexioni.php';
   $c=0;
   $cont=0;
   $response_array = array();
   if($option==3){
-    $query = $conn->query("SELECT * FROM notificaciones WHERE id_token='".$id_token."' AND tipo='asistente' ORDER BY id DESC");
+    $query = $conn->query("SELECT * FROM notificaciones WHERE id_token='".$id_token."' AND tipo='asistente' ORDER BY id DESC") or die(mysqli_error($conn));
   } else if($option==2){
-    $query = $conn->query("SELECT * FROM notificaciones WHERE id_token='".$id_token."' AND tipo='instagram' ORDER BY id DESC");
+    $query = $conn->query("SELECT * FROM notificaciones WHERE id_token='".$id_token."' AND tipo='instagram' ORDER BY id DESC") or die(mysqli_error($conn));
   } else if($option==1 || $option==""){
-    $query = $conn->query("SELECT * FROM notificaciones WHERE receptor='".$identify."' AND red='".$red."' AND tipo!='instagram' AND tipo!='asistente' ORDER BY id DESC");
+    $query = $conn->query("SELECT * FROM notificaciones WHERE receptor='".$identify."' AND red='".$red."' AND tipo!='instagram' AND tipo!='asistente' ORDER BY id DESC") or die(mysqli_error($conn));
   }
   if($query->num_rows>0) {
     while($row = $query->fetch_assoc()) {

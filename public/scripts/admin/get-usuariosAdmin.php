@@ -1,8 +1,8 @@
 <?PHP
-include '../../conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 // ssid<>'' IS NOT NULL AND identify<>'0'
-$query = $conn->query("DELETE FROM token WHERE identify='0' OR identify=''");
-$query = $conn->query("SELECT tk.id AS id2,tk.identify,tk.screen_name,tk.ssid,tk.social_networks,tk.expire_token,tk.idioma,tk.red,tk.tipo,tk.automatize,tk.last_ssid,tk.first_ssid,ru.profile,ru.notificaciones,ru.stats,ru.share,ru.tools,ru.crm,ru.ads,ru.cuenta,ru.ayuda,ru.adminBB,ru.publicaciones FROM token as tk INNER JOIN rastreo_users as ru ON tk.id=ru.id_token");
+$query = $conn->query("DELETE FROM token WHERE identify='0' OR identify=''") or die(mysqli_error($conn));
+$query = $conn->query("SELECT tk.id AS id2,tk.identify,tk.screen_name,tk.ssid,tk.social_networks,tk.expire_token,tk.idioma,tk.red,tk.tipo,tk.automatize,tk.last_ssid,tk.first_ssid,ru.profile,ru.notificaciones,ru.stats,ru.share,ru.tools,ru.crm,ru.ads,ru.cuenta,ru.ayuda,ru.adminBB,ru.publicaciones FROM token as tk INNER JOIN rastreo_users as ru ON tk.id=ru.id_token") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $c=0;
   $response_array = [];

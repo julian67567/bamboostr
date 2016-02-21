@@ -5,7 +5,7 @@ $option2 = $_GET["option2"];
 $id_token=$_GET["id_token"];
 $obj = new stdclass();
 if($id){
-    $query = $conn->query("SELECT identify_sender, identify_recipient FROM mensajes WHERE id='".$id."'");
+    $query = $conn->query("SELECT identify_sender, identify_recipient FROM mensajes WHERE id='".$id."'") or die(mysqli_error($conn));
     if($query->num_rows>0){
         $row=$query->fetch_assoc();
         if($option2=="1"){

@@ -1,7 +1,7 @@
 <?PHP
 $url = $_GET["url"];
 $id_token = $_GET["id_token"];
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $obj = new stdclass();
 if( (strpos($url,"http://")!==false || strpos($url,"https://")!==false || strpos($url,"www.")!==false) && strpos($url,".")!==false && strlen($url)>6){
   do { 
@@ -176,7 +176,7 @@ if( (strpos($url,"http://")!==false || strpos($url,"https://")!==false || strpos
 	    $c++;
 	  }//fin while
 	  
-    $query = $conn->query("SELECT id FROM acortador WHERE shrink COLLATE utf8_bin='".$shrink."'");
+    $query = $conn->query("SELECT id FROM acortador WHERE shrink COLLATE utf8_bin='".$shrink."'") or die(mysqli_error($conn));
     if($query->num_rows>0){
       $repetir=1;
     } else {
@@ -184,7 +184,7 @@ if( (strpos($url,"http://")!==false || strpos($url,"https://")!==false || strpos
     }
   }
   while($repetir==1); // fin do while
-  $conn->query("INSERT INTO acortador (url,shrink,id_token) VALUES ('".$url."','".$shrink."','".$id_token."')");
+  $conn->query("INSERT INTO acortador (url,shrink,id_token) VALUES ('".$url."','".$shrink."','".$id_token."')") or die(mysqli_error($conn));
   $obj->shrink = $shrink;
   echo json_encode($obj);
 } else {

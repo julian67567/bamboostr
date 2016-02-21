@@ -1,12 +1,12 @@
 <?php
 //PHP Version 5.4.34
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $identify=$_GET["identify"];
 $count=$_GET["count"];
 $until=$_GET["until"];
 session_start();
-require_once 'src/Facebook/config.php';
-require_once('autoload.php');
+require_once ''.dirname(__FILE__).'/src/Facebook/config.php';
+require_once(''.dirname(__FILE__).'/autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -15,7 +15,7 @@ use Facebook\FacebookSDKException;
 use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
-$query=$conn->query("SELECT access_token FROM token WHERE identify='".$identify."' AND red='facebook'");
+$query=$conn->query("SELECT access_token FROM token WHERE identify='".$identify."' AND red='facebook'") or die(mysqli_error($conn));
 if($query->num_rows>0){
 	$row=$query->fetch_assoc();
 	$acces_token = $row["access_token"];

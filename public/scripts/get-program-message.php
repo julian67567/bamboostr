@@ -6,9 +6,9 @@ $response_array = array();
 $id_token = $_GET["id_token"];
 $id = $_POST["id"];
 if($_POST["id"]){
-  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM queue_msg WHERE id='".$id."' ORDER BY Fecha, Hora, Min");
+  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM queue_msg WHERE id='".$id."' ORDER BY Fecha, Hora, Min") or die(mysqli_error($conn));
 } else {
-  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM queue_msg WHERE id_token='".$id_token."' ORDER BY Fecha, Hora, Min");
+  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM queue_msg WHERE id_token='".$id_token."' ORDER BY Fecha, Hora, Min") or die(mysqli_error($conn));
 }
 if($query->num_rows>0){
   while($row=$query->fetch_assoc()){

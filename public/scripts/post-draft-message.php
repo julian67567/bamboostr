@@ -1,5 +1,5 @@
 <?PHP
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $identify=$_GET["identify"];
 $id_token=$_GET["id_token"];
 $idPost = $_GET["idPost"];
@@ -14,6 +14,6 @@ $horario=$_GET["horario"];
 $image_profile=$_GET["image_profile"];
 $query=$conn->query("INSERT INTO drafts 
 					(id_token,name,identify,id_post,mensaje,images,link,fecha,red,horario,image_profile) VALUES 
-					('".$id_token."','".$name."','".$identify."','".$idPost."','".$description."','".$images."','".$link."','".$fecha."','".$red."','".$horario."','".$image_profile."')");
+					('".$id_token."','".$name."','".$identify."','".$idPost."','".$description."','".$images."','".$link."','".$fecha."','".$red."','".$horario."','".$image_profile."')") or die(mysqli_error($conn));
 $conn->close();
 ?>

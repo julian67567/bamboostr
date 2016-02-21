@@ -1,13 +1,13 @@
 <?PHP
 $id_token = $_GET["id_token"];
 $fecha = date("d-m-Y");
-include '../conexioni.php';
-$query = $conn->query("SELECT mail FROM token WHERE id='".$id_token."' AND recordatorioMail='0'");
+include ''.dirname(__FILE__).'/../conexioni.php';
+$query = $conn->query("SELECT mail FROM token WHERE id='".$id_token."' AND recordatorioMail='0'") or die(mysqli_error($conn));
 $row = $query->fetch_assoc();
 
 if($row["mail"]==""){
   /*ssid_story porque si se sale de sesion va a saber que ya había iniciado*/
-  $query = $conn->query("SELECT SUBSTRING(fecha,1,10) as fechaMod FROM ssid_story WHERE id_token='".$id_token."' AND fecha LIKE '%".$fecha."%' AND recordatorioMail='0'");
+  $query = $conn->query("SELECT SUBSTRING(fecha,1,10) as fechaMod FROM ssid_story WHERE id_token='".$id_token."' AND fecha LIKE '%".$fecha."%' AND recordatorioMail='0'") or die(mysqli_error($conn));
   if($query->num_rows>0){
     $c=0;
     while($row=$query->fetch_assoc()){
@@ -16,7 +16,7 @@ if($row["mail"]==""){
       }
     }
     if($c<2){
-      $query = $conn->query("UPDATE ssid_story SET recordatorioMail='1' WHERE id_token='".$id_token."' AND fecha LIKE '%".$fecha."%' AND recordatorioMail='0'");
+      $query = $conn->query("UPDATE ssid_story SET recordatorioMail='1' WHERE id_token='".$id_token."' AND fecha LIKE '%".$fecha."%' AND recordatorioMail='0'") or die(mysqli_error($conn));
       $obj = new stdclass();
       $obj->success = "true";
       $obj->wtf = $query;

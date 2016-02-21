@@ -1,6 +1,6 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $id=$_POST["id"];
 $query=$conn->query("DELETE FROM drafts WHERE id='".$id."'");
 $conn->close();

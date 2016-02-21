@@ -1,5 +1,5 @@
 <?PHP
-include '../../scripts/funciones.php';
+include ''.dirname(__FILE__).'/../../scripts/funciones.php';
 if($argv[4]=="1"){
   $url='http://'.getDirUrl(1).'/facebook/stats/get-page-insights-likes-cron.php?identify='.$argv[1].'&identify_account='.$argv[2].'';
 } else if($argv[4]=="2"){

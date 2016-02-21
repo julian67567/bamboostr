@@ -1,7 +1,7 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include '../../conexioni.php';
-include '../funciones.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
+include ''.dirname(__FILE__).'/../funciones.php';
 $id_token=$_POST["id_token"];
 $nombre=utf8_decode($_POST["nombre"]);
 $apellidoPaterno=utf8_decode($_POST["apellidoPaterno"]);
@@ -22,7 +22,7 @@ $country = obtenerPais($country);
 
 
 $query = $conn->query("INSERT INTO crm (id_token,nombre,apellidoPaterno,apellidoMaterno,sexo,edad,red_social,nombre_de_usuario,empresa,country,estado,direccion,mail,telefono,observaciones) VALUES ('".
-$id_token."','".$nombre."','".$apellidoPaterno."','".$apellidoMaterno."','".$sexo."','".$edad."','".$red."','".$nombreUsuario."','".$empresa."','".$country."','".$estado."','".$direccion."','".$mail."','".$telefono."','".$observaciones."')");
+$id_token."','".$nombre."','".$apellidoPaterno."','".$apellidoMaterno."','".$sexo."','".$edad."','".$red."','".$nombreUsuario."','".$empresa."','".$country."','".$estado."','".$direccion."','".$mail."','".$telefono."','".$observaciones."')") or die(mysqli_error($conn));
 
 $conn->close;
 ?>

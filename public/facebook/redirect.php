@@ -9,9 +9,9 @@ if($liberar==1){
 }
 session_start();
 //include '../conexioni.php';
-include '../scripts/funciones.php';
-require_once 'src/Facebook/config.php';
-require_once('autoload.php');
+include ''.dirname(__FILE__).'/../scripts/funciones.php';
+require_once ''.dirname(__FILE__).'/src/Facebook/config.php';
+require_once(''.dirname(__FILE__).'/autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -36,7 +36,7 @@ if($redirect==1 || $redirect==2){
     //header('Location: '.$facebook->getReRequestUrl(params).'&auth_type=reauthenticate');
     header('Location: '.$facebook->getLoginUrl($params).'&auth_type=reauthenticate');
     /*
-    $query = $conn->query("SELECT tipo,social_networks FROM token WHERE id='".$_SESSION['id_token']."'");
+    $query = $conn->query("SELECT tipo,social_networks FROM token WHERE id='".$_SESSION['id_token']."'") or die(mysqli_error($conn));
     $row = $query->fetch_assoc();
     $num_redes = explode(",",$row['social_networks']);
     $num_redes = (count($num_redes)-1);

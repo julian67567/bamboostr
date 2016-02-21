@@ -4,12 +4,12 @@
 /********************************país**************************************/
 /**************************************************************************/
 ini_set('max_execution_time', 900000);
-include '../../conexioni.php';
-include '../../scripts/funciones.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
+include ''.dirname(__FILE__).'/../scripts/funciones.php';
 $identify=$argv[1];
 $red=$argv[2];
 $query=$conn->query("SELECT screen_name FROM token
-		     WHERE identify='".$identify."' AND red='".$red."'");
+		     WHERE identify='".$identify."' AND red='".$red."'") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $row=$query->fetch_assoc();
   $screen_name=$row["screen_name"];

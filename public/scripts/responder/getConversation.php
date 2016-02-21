@@ -1,5 +1,5 @@
 <?PHP
-include '../../conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 $identify_sender = $_GET["identify_sender"];
 $identify_recipient = $_GET["identify_recipient"];
 $id_token = $_GET["id_token"];

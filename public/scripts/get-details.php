@@ -1,6 +1,6 @@
 <?PHP
-  include '../conexioni.php';
-  include 'funciones.php';
+  include ''.dirname(__FILE__).'/../conexioni.php';
+  include ''.dirname(__FILE__).'/funciones.php';
   $id_token = base_de_datos_scape($conn,$_GET["id_token"]);
   $query = $conn->query("SELECT * FROM token WHERE id='".$id_token."'") OR DIE(mysqli_error($conn));
   if($query->num_rows>0){

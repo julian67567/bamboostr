@@ -1,12 +1,12 @@
 <?PHP
-include '../twitter/conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $identifyP=$_GET["identifyP"];
 $identifyS=$_GET["identifyS"];
 $identifyOther=$_GET["identifyOther"]; //no limpio
 $redP=$_GET["redP"];
 $redS=$_GET["redS"];
 $query=$conn->query("SELECT id FROM token
-				    WHERE identify='".$identifyP."' AND red='".$redP."'");
+				    WHERE identify='".$identifyP."' AND red='".$redP."'") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $row=$query->fetch_assoc();
   $id_token=$row["id"];
@@ -16,7 +16,7 @@ if($query->num_rows>0){
 $c=0;
 $response_array = array();
 $query=$conn->query("SELECT top_tweets FROM estadisticas_".$redS."
-				    WHERE identify='".$identifyS."' AND red='".$redS."' AND id_token='".$id_token."'");
+				    WHERE identify='".$identifyS."' AND red='".$redS."' AND id_token='".$id_token."'") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $row=$query->fetch_assoc();
   $top_tweets_array=explode(",",$row["top_tweets"]);

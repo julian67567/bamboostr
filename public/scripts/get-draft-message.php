@@ -1,14 +1,14 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $c=0;
 $response_array = array();
 $id_token = $_GET["id_token"];
 $id = $_POST["id"];
 if($_POST["id"]){
-  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM drafts WHERE id='".$id."' ORDER BY Fecha, Hora, Min");
+  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM drafts WHERE id='".$id."' ORDER BY Fecha, Hora, Min") or die(mysqli_error($conn));
 } else {
-  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM drafts WHERE id_token='".$id_token."' ORDER BY Fecha, Hora, Min");
+  $query = $conn->query("SELECT *, STR_TO_DATE(fecha,'%d-%m-%Y') as Fecha, SUBSTRING(fecha,12,2) AS Hora, SUBSTRING(fecha,15,3) AS Min FROM drafts WHERE id_token='".$id_token."' ORDER BY Fecha, Hora, Min") or die(mysqli_error($conn));
 }
 if($query->num_rows>0){
   while($row=$query->fetch_assoc()){

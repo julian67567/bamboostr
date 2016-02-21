@@ -4,17 +4,17 @@ $categoria = $_POST["categoria"];
 $lengua = $_POST["lengua"];
 $categoria = 11;
 $lengua = "es";
-include '../conexioni.php';
-include 'funciones.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
+include ''.dirname(__FILE__).'/funciones.php';
 
 // Change character set to utf8
 mysqli_set_charset($conn,"utf8");
 
-$query = $conn->query("SELECT id FROM rss_content ORDER BY id DESC LIMIT 1");
+$query = $conn->query("SELECT id FROM rss_content ORDER BY id DESC LIMIT 1") or die(mysqli_error($conn));
 $row2=$query->fetch_assoc();
 
 while($categoria<=20){
-	$query = $conn->query("SELECT * FROM rss WHERE categoria='".$categoria."' AND idioma='".$lengua."' ORDER BY likes DESC");
+	$query = $conn->query("SELECT * FROM rss WHERE categoria='".$categoria."' AND idioma='".$lengua."' ORDER BY likes DESC") or die(mysqli_error($conn));
 	if($query->num_rows>0){
 	  while($row=$query->fetch_assoc()){
 	
@@ -49,7 +49,7 @@ while($categoria<=20){
 			  $obj->description = utf8_encode(strip_tags(quitar_espacios_extras($noticia->description)));
 			$obj->fecha = date("D M d -0000 H:i:s Y", strtotime($noticia->pubDate));
 	
-			$conn->query("INSERT INTO rss_content (categoria,link,dominio,title,img,description,fecha,idioma) VALUES ('".$categoria."','".utf8_decode($obj->link)."','".$obj->dominio."','".utf8_decode($obj->title)."','".$obj->img."','".msword_conversion(utf8_decode($obj->description))."','".$obj->fecha."','".$lengua."')");
+			$conn->query("INSERT INTO rss_content (categoria,link,dominio,title,img,description,fecha,idioma) VALUES ('".$categoria."','".utf8_decode($obj->link)."','".$obj->dominio."','".utf8_decode($obj->title)."','".$obj->img."','".msword_conversion(utf8_decode($obj->description))."','".$obj->fecha."','".$lengua."')") or die(mysqli_error($conn));
 	
 		  } 
 	

@@ -1,14 +1,14 @@
 <?php
 //PHP Version 5.4.34
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $identify_account=$_POST["identify_account"];
 $identify = $_POST["identify"];
 $id_token=$_POST["id_token"];
 //100004745324034
 //$_GET["identify"]
 session_start();
-require_once 'src/Facebook/config.php';
-require_once('autoload.php');
+require_once ''.dirname(__FILE__).'/src/Facebook/config.php';
+require_once(''.dirname(__FILE__).'/autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -18,9 +18,9 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 if($identify=="")
-  $query=$conn->query("SELECT access_token FROM token WHERE identify='".$identify_account."' AND red='facebook'");
+  $query=$conn->query("SELECT access_token FROM token WHERE identify='".$identify_account."' AND red='facebook'") or die(mysqli_error($conn));
 else
-  $query=$conn->query("SELECT access_token FROM social_share WHERE id_token='".$id_token."' AND identify_account='".$identify_account."' AND identify='".$identify."' AND red='facebook'");
+  $query=$conn->query("SELECT access_token FROM social_share WHERE id_token='".$id_token."' AND identify_account='".$identify_account."' AND identify='".$identify."' AND red='facebook'") or die(mysqli_error($conn));
 if($query->num_rows>0){
 	$row=$query->fetch_assoc();
 	$conn->close();

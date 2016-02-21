@@ -65,7 +65,7 @@ function headerMenu($user_image){
                                     </ul>
                                 </div>
                                 <div class="lv-body">
-                                  <a ng-repeat="z in notificationsMessages4 = (notificationsMessages3 | filter: { tipo:'asistente'})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(z,3)">
+                                  <a ng-repeat="z in notificationsMessages4 = (notificationsMessages3 | limitTo:100 | filter: { tipo:'asistente'})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(z,3)">
                                     <div class="media">
                                       <div class="pull-left">
                                         <i ng-if="z.read=='0'" style="font-size: 15px;" class="fa fa-envelope-o"></i>
@@ -113,7 +113,7 @@ function headerMenu($user_image){
                                     </ul>
                                 </div>
                                 <div class="lv-body">
-                                  <a ng-if="x.read=='0'" ng-repeat="x in notificationsMessages2 = (notificationsMessages | filter: { read:0})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(x,2)">
+                                  <a ng-if="x.read=='0'" ng-repeat="x in notificationsMessages2 = (notificationsMessages | limitTo:100 | filter: { read:0})" class="lv-item" style="cursor: pointer;" ng-click="abrirNotMsg23D(x,2)">
                                     <div class="media">
                                       <div class="pull-left">
                                         <i ng-if="x.read=='0'" style="font-size: 15px;" class="fa fa-envelope-o"></i>
@@ -129,7 +129,7 @@ function headerMenu($user_image){
                                     </div>
                                   </a>
 
-                                  <a ng-if="y.read=='0'" ng-repeat="y in inboxHeader2 = (inboxHeader | filter: { read:0})" class="lv-item" style="cursor: pointer;" href="responder.php">
+                                  <a ng-if="y.read=='0'" ng-repeat="y in inboxHeader2 = (inboxHeader | limitTo:100 | filter: { read:0})" class="lv-item" style="cursor: pointer;" href="responder.php">
                                     <div class="media">
                                       <div class="pull-left">
                                         <i ng-if="y.read=='0'" style="font-size: 15px;" class="fa fa-envelope-o"></i>

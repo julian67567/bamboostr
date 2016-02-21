@@ -1,8 +1,8 @@
 <?php
 //PHP Version 5.4.34
 session_start();
-require_once 'src/Facebook/config.php';
-require_once('autoload.php');
+require_once ''.dirname(__FILE__).'/src/Facebook/config.php';
+require_once(''.dirname(__FILE__).'/autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;

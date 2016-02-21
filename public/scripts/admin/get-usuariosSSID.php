@@ -1,7 +1,7 @@
 <?PHP
-include '../../conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 $query = $conn->query("SELECT ssid_story.id_token as TokenId,ssid_story.screen_name,ssid_story.fecha,token.identify,token.red FROM ssid_story
-                       INNER JOIN token ON ssid_story.id_token=token.id ORDER BY ssid_story.id DESC");
+                       INNER JOIN token ON ssid_story.id_token=token.id ORDER BY ssid_story.id DESC") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $array = array();
   $c=0;

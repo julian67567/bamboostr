@@ -1,11 +1,11 @@
 <?php
 //PHP Version 5.4.34
-include '../../twitter/conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 $identify=$_GET["identify"];
 $identify_account=$_GET["identify_account"];
 session_start();
-require_once '../src/Facebook/config.php';
-require_once('../autoload.php');
+require_once ''.dirname(__FILE__).'/../src/Facebook/config.php';
+require_once(''.dirname(__FILE__).'/../autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -19,13 +19,13 @@ if(!$identify){
   $query=$conn->query("SELECT tok.*, esta.*, tok.identify as identifyP
  					  FROM token AS tok INNER JOIN estadisticas_facebook AS esta  
 		              ON esta.red='facebook' AND esta.tipo='facebook' 
-					  AND tok.red='facebook' AND tok.identify=esta.identify_account");
+					  AND tok.red='facebook' AND tok.identify=esta.identify_account") or die(mysqli_error($conn));
 } else {
   $query=$conn->query("SELECT tok.*, esta.*, tok.identify as identifyP
  					  FROM token AS tok INNER JOIN estadisticas_facebook AS esta  
 		              ON esta.red='facebook' AND esta.tipo='facebook' AND tok.red='facebook' 
 					  AND tok.identify='".$identify."' AND esta.identify='".$identify_account."'
-					  AND esta.identify_account='".$identify."'");
+					  AND esta.identify_account='".$identify."'") or die(mysqli_error($conn));
 }
 if($query->num_rows>0){
   $c=0;
@@ -115,7 +115,7 @@ if($query->num_rows>0){
 	  $query2=$conn->query("UPDATE estadisticas_facebook 
 	                       SET friendslists_name='".$friendslists_names."' 
 						   WHERE identify_account='".$item[4]."' AND red='facebook'
-						   AND tipo='facebook'");
+						   AND tipo='facebook'") or die(mysqli_error($conn));
 	  
 	  echo '<br /><br />'.$cuentas[$c][0].' '.$contFriendsLists.' '.$friendslists_names.'<br /><br />';
 	  
@@ -125,7 +125,7 @@ if($query->num_rows>0){
 		  $query2=$conn->query("UPDATE estadisticas_facebook 
 							   SET friendslists=CONCAT(friendslists,'".$cuentas[$c][3]."')
 							   WHERE identify_account='".$item[4]."' AND red='facebook'
-							   AND tipo='facebook'");
+							   AND tipo='facebook'") or die(mysqli_error($conn));
 		  
 		  echo 'No hay el Mismo Día Friends: '.$cuentas[$c][3].' '.$item[4].'<br />';
 		  
@@ -139,7 +139,7 @@ if($query->num_rows>0){
 		  $query2=$conn->query("UPDATE estadisticas_facebook 
 							   SET friendslists='".$cuentas[$c][3]."'
 							   WHERE identify_account='".$item[4]."' AND red='facebook'
-							   AND tipo='facebook'");
+							   AND tipo='facebook'") or die(mysqli_error($conn));
 		  
 		  echo 'Si hay el mismo día: '.$cuentas[$c][3].' '.$item[4].'<br />';
 		  

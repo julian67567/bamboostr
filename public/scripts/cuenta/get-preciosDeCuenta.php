@@ -1,5 +1,5 @@
 <?PHP
-include '../../conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 $opcion=$_POST["facturacion"];
 $option=$_POST["plan"];
 if($option==1){
@@ -14,7 +14,7 @@ if($opcion==1){
 } else {
   $letra = "".$letra."M";
 }
-$query = $conn->query("SELECT * FROM conf WHERE valor='".$letra."'");
+$query = $conn->query("SELECT * FROM conf WHERE valor='".$letra."'") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $row=$query->fetch_assoc();
   $obj = new stdclass();

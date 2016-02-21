@@ -1,5 +1,5 @@
 <?PHP
-include '../scripts/funciones.php';
+include ''.dirname(__FILE__).'/../scripts/funciones.php';
 $identify = $argv[1];
 $userId = $argv[2];
 $i = $argv[3];

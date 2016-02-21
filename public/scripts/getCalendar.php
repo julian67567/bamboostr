@@ -1,7 +1,7 @@
 <?PHP
-include '../conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $id_token = $_POST["id_token"];
-$query = $conn->query("SELECT * FROM queue_msg WHERE id_token='".$id_token."'");
+$query = $conn->query("SELECT * FROM queue_msg WHERE id_token='".$id_token."'") or die(mysqli_error($conn));
 $c=0;
 $response_array = array();
 if($query->num_rows>0){

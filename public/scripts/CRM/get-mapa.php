@@ -1,8 +1,8 @@
 <?PHP
-include '../../conexioni.php';
-include '../../lenguajes/espanol.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
+include ''.dirname(__FILE__).'/../../lenguajes/espanol.php';
 $id_token = $_POST["id_token"];
-$query = $conn->query("SELECT country FROM crm WHERE id_token='".$id_token."'");
+$query = $conn->query("SELECT country FROM crm WHERE id_token='".$id_token."'") or die(mysqli_error($conn));
 $c=1;
 $response_array = array();
 $obj = new stdclass();

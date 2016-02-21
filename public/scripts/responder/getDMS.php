@@ -1,6 +1,6 @@
 <?PHP
 ini_set('max_execution_time', 900000);
-include '../../conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 $id_token = $_GET["id_token"];
 $query=$conn->query("SELECT n.* FROM (SELECT m.* FROM (SELECT * FROM mensajes WHERE id_token='".$id_token."' ORDER BY id_msg DESC) m GROUP BY m.identify_sender,m.identify_recipient) n ORDER BY fecha DESC") or die(mysqli_error($conn));
 if($query->num_rows>0){

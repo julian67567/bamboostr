@@ -1,5 +1,5 @@
 <?PHP
-include '../scripts/funciones.php';
+include ''.dirname(__FILE__).'/../scripts/funciones.php';
 $option = $argv[1];
 if($option=="getMsgs"){
   $identify = $argv[2];

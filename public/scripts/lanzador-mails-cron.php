@@ -1,7 +1,7 @@
 <?PHP
 ini_set('max_execution_time', 9999999);
 include ''.dirname(__FILE__).'/../conexioni.php';
-$query = $conn->query("SELECT qm.*,tk.screen_name_bamboostr,tk.mail,tk.dev_token FROM queue_mail as qm INNER JOIN token as tk ON qm.id_token=tk.id ORDER BY qm.prioridad");
+$query = $conn->query("SELECT qm.*,tk.screen_name_bamboostr,tk.mail,tk.dev_token FROM queue_mail as qm INNER JOIN token as tk ON qm.id_token=tk.id ORDER BY qm.prioridad") or die(mysqli_error($conn));
 if($query->num_rows>0){
   require ''.dirname(__FILE__).'/../PHPMailer/class.phpmailer.php';
   $server  = "bluehost";
@@ -55,7 +55,7 @@ if($query->num_rows>0){
 	$mail->AltBody = $bodyHTML;
 	if($mail->Send()){
 	  echo ''.$row["id_token"].'<br />';
-          $conn->query("DELETE FROM queue_mail WHERE id='".$row["id"]."'");
+          $conn->query("DELETE FROM queue_mail WHERE id='".$row["id"]."'") or die(mysqli_error($conn));
 	} else { 
 	  echo 'Error: '.$mail->ErrorInfo.' '.$mail->Host.''; 
 	}

@@ -1,6 +1,6 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include '../../conexioni.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
 $id_token=$_POST["id_token"];
 $id=$_POST["id"];
 $nombre=utf8_decode($_POST["nombre"]);
@@ -18,7 +18,7 @@ $mail=utf8_decode($_POST["mail"]);
 $telefono=utf8_decode($_POST["telefono"]);
 $observaciones=utf8_decode($_POST["observaciones"]);
 
-$query = $conn->query("UPDATE crm SET nombre='".$nombre."', apellidoPaterno='".$apellidoPaterno."', apellidoMaterno='".$apellidoMaterno."', sexo='".$sexo."', edad='".$edad."', red_social='".$red."', nombre_de_usuario='".$nombreUsuario."', empresa='".$empresa."', country='".$country."', estado='".$estado."', direccion='".$direccion."', mail='".$mail."', telefono='".$telefono."', observaciones='".$observaciones."' WHERE id='".$id."'");
+$query = $conn->query("UPDATE crm SET nombre='".$nombre."', apellidoPaterno='".$apellidoPaterno."', apellidoMaterno='".$apellidoMaterno."', sexo='".$sexo."', edad='".$edad."', red_social='".$red."', nombre_de_usuario='".$nombreUsuario."', empresa='".$empresa."', country='".$country."', estado='".$estado."', direccion='".$direccion."', mail='".$mail."', telefono='".$telefono."', observaciones='".$observaciones."' WHERE id='".$id."'") or die(mysqli_error($conn));
 
 print_r($query);
 
