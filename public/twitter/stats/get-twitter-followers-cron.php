@@ -1,20 +1,20 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include '../conexioni.php';
-require("../twitteroauth/twitteroauth.php");
-include '../config-sample.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
+require("".dirname(__FILE__)."/../twitteroauth/twitteroauth.php");
+include ''.dirname(__FILE__).'/../config-sample.php';
 $identify=$_GET["identify"];
 session_start();
 $unique_request = '';
 if(!$identify){
   $query=$conn->query("SELECT tok.*, esta.* 
  					  FROM token AS tok INNER JOIN estadisticas_twitter AS esta  
-		              ON esta.red='twitter' AND tok.red='twitter' AND tok.identify=esta.identify");
+		              ON esta.red='twitter' AND tok.red='twitter' AND tok.identify=esta.identify") or die(mysqli_error($conn));
 } else {
   $query=$conn->query("SELECT tok.*, esta.* 
  					  FROM token AS tok INNER JOIN estadisticas_twitter AS esta  
 		              ON esta.red='twitter' AND tok.red='twitter' AND tok.identify='".$identify."'
-					  AND esta.identify='".$identify."'");
+					  AND esta.identify='".$identify."'") or die(mysqli_error($conn));
 }
 if($query->num_rows>0){
   $c=0;
@@ -86,7 +86,7 @@ if($query->num_rows>0){
 								   mlistas=CONCAT(mlistas,'".$cuentas[$c][11]."'),
 								   tweets=CONCAT(tweets,'".$cuentas[$c][12]."'),
 								   tusfavoritos=CONCAT(tusfavoritos,'".$cuentas[$c][13]."')
-							   WHERE identify='".$item[5]."' AND red='twitter'");
+							   WHERE identify='".$item[5]."' AND red='twitter'") or die(mysqli_error($conn));
 		  
 		  echo 'No hay el Mismo Día, http_code: '.$twitteroauth->http_code.': '.$item[0].' Seguidores: '.$cuentas[$c][4].' Siguiendo: '.$cuentas[$c][10].' mlistas: '.$cuentas[$c][11].' tweets: '.$cuentas[$c][12].' tusfavorios: '.$cuentas[$c][13].'<br />';
 		  
@@ -115,7 +115,7 @@ if($query->num_rows>0){
 								   mlistas='".$cuentas[$c][11]."',
 								   tweets='".$cuentas[$c][12]."',
 								   tusfavoritos='".$cuentas[$c][13]."'
-							   WHERE identify='".$item[5]."' AND red='twitter'");
+							   WHERE identify='".$item[5]."' AND red='twitter'") or die(mysqli_error($conn));
 		  
 		  echo 'Si hay el mismo día, http_code: '.$twitteroauth->http_code.': '.$item[0].' Seguidores: '.$cuentas[$c][4].' Siguiendo: '.$cuentas[$c][10].' mlistas: '.$cuentas[$c][11].' tweets: '.$cuentas[$c][12].' tusfavorios: '.$cuentas[$c][13].'<br />';
 		  
@@ -123,7 +123,7 @@ if($query->num_rows>0){
 	} else {
 		echo 'http_code: '.$twitteroauth->http_code.': '.$item[0].'<br />';
 		$query2=$conn->query("UPDATE token SET expire_token=1 
-							 WHERE identify='".$item[5]."' AND red='twitter'");
+							 WHERE identify='".$item[5]."' AND red='twitter'") or die(mysqli_error($conn));
 	}
     $c++;
   }

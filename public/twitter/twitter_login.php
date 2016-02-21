@@ -1,6 +1,6 @@
 <?PHP
-require("twitteroauth/twitteroauth.php");
-require_once('config-sample.php');
+require("".dirname(__FILE__)."/twitteroauth/twitteroauth.php");
+require_once(''.dirname(__FILE__).'/config-sample.php');
 session_start();
 // The TwitterOAuth instance
 $twitteroauth = new TwitterOAuth($consumer_key, $consumer_secret);

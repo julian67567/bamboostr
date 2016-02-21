@@ -1,12 +1,12 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include 'conexioni.php';
-$query = $conn->query("SELECT tipo,identify,id,screen_name,DM FROM token WHERE automatize='1' order by id");
+include ''.dirname(__FILE__).'/../conexioni.php';
+$query = $conn->query("SELECT tipo,identify,id,screen_name,DM FROM token WHERE automatize='1' order by id") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $c=0;
   while($row=$query->fetch_assoc()){
     $tipo[$c] = $row["tipo"];
-    $query2=$conn->query("SELECT tipo FROM grupos WHERE user='".$row["identify"]."'");
+    $query2=$conn->query("SELECT tipo FROM grupos WHERE user='".$row["identify"]."'") or die(mysqli_error($conn));
     while($row2=$query2->fetch_assoc()){
       if($tipo[$c]=="" && $row2["tipo"]=="basic")
         $tipo[$c]="basic";

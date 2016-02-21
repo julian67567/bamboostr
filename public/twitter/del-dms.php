@@ -1,7 +1,7 @@
 <?PHP
   ini_set('max_execution_time', 9000);
-  include 'conexioni.php';
-  require("twitteroauth/twitteroauth.php");
+  include ''.dirname(__FILE__).'/../conexioni.php';
+  require("".dirname(__FILE__)."/twitteroauth/twitteroauth.php");
   session_start();
   // We've got everything we need
   // TwitterOAuth instance, with two new parameters we got in twitter_login.php
@@ -14,21 +14,21 @@
 	//datos del usuario
 	$user_info = $twitteroauth->get('account/verify_credentials');
 	//Almacenar tokens en la base de datos
-	$query = $conn->query("SELECT id FROM token WHERE screen_name='".$user_info->screen_name."'");
+	$query = $conn->query("SELECT id FROM token WHERE screen_name='".$user_info->screen_name."'") or die(mysqli_error($conn));
 	if($query->num_rows>0){
-	  $query2=$conn->query("UPDATE token SET oauth_token='".$credentials['oauth_token']."', oauth_token_secret='".$credentials['oauth_token_secret']."' WHERE screen_name='".$user_info->screen_name."'");
+	  $query2=$conn->query("UPDATE token SET oauth_token='".$credentials['oauth_token']."', oauth_token_secret='".$credentials['oauth_token_secret']."' WHERE screen_name='".$user_info->screen_name."'") or die(mysqli_error($conn));
 	  $screen_name = $user_info->screen_name;
 	  $status = 'OK';
 	}
 	else{
-	  $query2=$conn->query("INSERT INTO token (screen_name,oauth_token,oauth_token_secret) VALUES ('".$user_info->screen_name."','".$credentials['oauth_token']."','".$credentials['oauth_token_secret']."')");
+	  $query2=$conn->query("INSERT INTO token (screen_name,oauth_token,oauth_token_secret) VALUES ('".$user_info->screen_name."','".$credentials['oauth_token']."','".$credentials['oauth_token_secret']."')") or die(mysqli_error($conn));
 	  $screen_name = $user_info->screen_name;
 	  $status = 'OK';
 	}
   }
   else if($argv[1]){
 	  //si no hay credenciales en la url
-	  $query = $conn->query("SELECT tipo,oauth_token,oauth_token_secret FROM token WHERE screen_name='".$argv[1]."'");
+	  $query = $conn->query("SELECT tipo,oauth_token,oauth_token_secret FROM token WHERE screen_name='".$argv[1]."'") or die(mysqli_error($conn));
 	  if($query->num_rows>0){
 	    $row=$query->fetch_assoc();
 		$oauth_token = $row["oauth_token"];

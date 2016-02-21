@@ -1,20 +1,20 @@
 <?PHP
 ini_set('max_execution_time', 9000);
-include '../conexioni.php';
-require("../twitteroauth/twitteroauth.php");
-include '../config-sample.php';
+include ''.dirname(__FILE__).'/../../conexioni.php';
+require("".dirname(__FILE__)."/../twitteroauth/twitteroauth.php");
+include ''.dirname(__FILE__).'/../config-sample.php';
 $identify=$_GET["identify"];
 session_start();
 $unique_request = '';
 if(!$identify){
   $query=$conn->query("SELECT tok.*, esta.* 
  					  FROM token AS tok INNER JOIN estadisticas_twitter AS esta  
-		              ON esta.red='twitter' AND tok.red='twitter' AND tok.identify=esta.identify");
+		              ON esta.red='twitter' AND tok.red='twitter' AND tok.identify=esta.identify") or die(mysqli_error($conn));
 } else {
   $query=$conn->query("SELECT tok.*, esta.* 
  					  FROM token AS tok INNER JOIN estadisticas_twitter AS esta  
 		              ON esta.red='twitter' AND tok.red='twitter' AND tok.identify='".$identify."'
-					  AND esta.identify='".$identify."'");
+					  AND esta.identify='".$identify."'") or die(mysqli_error($conn));
 }
 if($query->num_rows>0){
   $c=0;
@@ -141,7 +141,7 @@ if($query->num_rows>0){
 								   SET notfollowingme=CONCAT(notfollowingme,'".$cuentas[$c][4]."'),
 									   seguimientomutuo=CONCAT(seguimientomutuo,'".$cuentas[$c][10]."'),
 									   fans=CONCAT(fans,'".$cuentas[$c][11]."')
-								   WHERE identify='".$item[5]."' AND red='twitter'");
+								   WHERE identify='".$item[5]."' AND red='twitter'") or die(mysqli_error($conn));
 			 echo 'No hay el mismo día: '.$item[0].': NOTFM: '.$cont.' SM: '.$Sm.' Fans: '.($seguidores-$Sm).'<br />';
 		 } else {
 		   //si hay el mismo día
@@ -169,7 +169,7 @@ if($query->num_rows>0){
 								   SET notfollowingme='".$cuentas[$c][4]."',
 									   seguimientomutuo='".$cuentas[$c][10]."',
 									   fans='".$cuentas[$c][11]."'
-								   WHERE identify='".$item[5]."' AND red='twitter'");
+								   WHERE identify='".$item[5]."' AND red='twitter'") or die(mysqli_error($conn));
 			  echo 'Si hay el mismo día: '.$item[0].': NOTFM: '.$cont.' SM: '.$Sm.' Fans: '.($seguidores-$Sm).'<br />';
 		 }
 	  }//fin if cont

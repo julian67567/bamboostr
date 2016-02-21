@@ -17,7 +17,7 @@ $connection = new TwitterOAuth($consumer_key, $consumer_secret);
 if($_SESSION['sessionid'] && $_SESSION['identify']){
   /* Limitar número de cuentas a vincular
   
-  $query = $conn->query("SELECT tipo,social_networks FROM token WHERE id='".$_SESSION['id_token']."'");
+  $query = $conn->query("SELECT tipo,social_networks FROM token WHERE id='".$_SESSION['id_token']."'") or die(mysqli_error($conn));
   $row = $query->fetch_assoc();
   $num_redes = explode(",",$row['social_networks']);
   $num_redes = (count($num_redes)-1);

@@ -1,12 +1,12 @@
 <?PHP
   ini_set('max_execution_time', 9000);
   header('Content-type: text/html; charset=utf-8');
-  include 'conexioni.php';
-  require("twitteroauth/twitteroauth.php");
+  include ''.dirname(__FILE__).'/../conexioni.php';
+  require("".dirname(__FILE__)."/twitteroauth/twitteroauth.php");
   session_start();
   // We've got everything we need
   // TwitterOAuth instance, with two new parameters we got in twitter_login.php
-  include 'config-sample.php';
+  include ''.dirname(__FILE__).'/config-sample.php';
   if($_GET["oauth_verifier"] && $_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']){
     //si hay credenciales en la url
     $twitteroauth = new TwitterOAuth($consumer_key, $consumer_secret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
@@ -15,19 +15,19 @@
     //datos del usuario
     $user_info = $twitteroauth->get('account/verify_credentials');
     //Almacenar tokens en la base de datos
-    $query = $conn->query("SELECT id FROM token WHERE screen_name='".$user_info->screen_name."'");
+    $query = $conn->query("SELECT id FROM token WHERE screen_name='".$user_info->screen_name."'") or die(mysqli_error($conn));
     if($query->num_rows>0){
-      $query2=$conn->query("UPDATE token SET oauth_token='".$credentials['oauth_token']."', oauth_token_secret='".$credentials['oauth_token_secret']."' WHERE screen_name='".$user_info->screen_name."'");
+      $query2=$conn->query("UPDATE token SET oauth_token='".$credentials['oauth_token']."', oauth_token_secret='".$credentials['oauth_token_secret']."' WHERE screen_name='".$user_info->screen_name."'") or die(mysqli_error($conn));
       $screen_name = $user_info->screen_name;
       $status = 'OK';
     } else {
-      $query2=$conn->query("INSERT INTO token (screen_name,oauth_token,oauth_token_secret) VALUES ('".$user_info->screen_name."','".$credentials['oauth_token']."','".$credentials['oauth_token_secret']."')");
+      $query2=$conn->query("INSERT INTO token (screen_name,oauth_token,oauth_token_secret) VALUES ('".$user_info->screen_name."','".$credentials['oauth_token']."','".$credentials['oauth_token_secret']."')") or die(mysqli_error($conn));
       $screen_name = $user_info->screen_name;
       $status = 'OK';
     }
   } else if($_GET["screen_name"]) {
     //si no hay credenciales en la url
-    $query = $conn->query("SELECT oauth_token,oauth_token_secret FROM token WHERE screen_name='".$_GET["screen_name"]."'");
+    $query = $conn->query("SELECT oauth_token,oauth_token_secret FROM token WHERE screen_name='".$_GET["screen_name"]."'") or die(mysqli_error($conn));
     if($query->num_rows>0){
       $row=$query->fetch_assoc();
       $oauth_token = $row["oauth_token"];
@@ -136,12 +136,12 @@
     //print_r($users_profiles_error);
     $users_profiles = (array)$users_profiles_error;
     foreach($users_profiles as $item2){
-      $query = $conn->query("SELECT id FROM big_data_tw WHERE id='".$item2->id_str."'");
+      $query = $conn->query("SELECT id FROM big_data_tw WHERE id='".$item2->id_str."'") or die(mysqli_error($conn));
       if($query->num_rows>0){
         $conn->query("UPDATE big_data_tw SET perfil='".$item2->profile_image_url."', screen_name='".$item2->screen_name."', nombre='".$item2->name."', location='".$item2->location."', total_tweets='".$item2->statuses_count."', followers='".$item2->followers_count."', following='".$item2->friends_count."', ultimo_tweet='".$item2->status->created_at."', language='".$item2->lang."', listas='".$item2->listed_count."', created_at='".$item2->created_at."', verified='".$item2->verified."', protected='".$item2->protected."', description='".$item2->description."', order_last_tweet='".date("Y-m-d",strtotime($item2->status->created_at))."', order_last_tweet_hr='".date("H",strtotime($item2->status->created_at))."', order_last_tweet_min='".date("i",strtotime($item2->status->created_at))."'
-							WHERE id='".$item2->id_str."'");
+							WHERE id='".$item2->id_str."'") or die(mysqli_error($conn));
       } else {
-	$conn->query("INSERT INTO big_data_tw (id,perfil,screen_name,nombre,location,total_tweets,followers,following,ultimo_tweet,language,listas,created_at,verified,protected,description,order_last_tweet,order_last_tweet_hr,order_last_tweet_min) VALUES ('".$item2->id_str."','".$item2->profile_image_url."','".$item2->screen_name."','".$item2->name."','".$item2->location."','".$item2->statuses_count."','".$item2->followers_count."','".$item2->friends_count."','".$item2->status->created_at."','".$item2->lang."','".$item2->listed_count."','".$item2->created_at."','".$item2->verified."','".$item2->protected."','".$item2->description."','".date("Y-m-d",strtotime($item2->status->created_at))."','".date("H",strtotime($item2->status->created_at))."','".date("i",strtotime($item2->status->created_at))."')");
+	$conn->query("INSERT INTO big_data_tw (id,perfil,screen_name,nombre,location,total_tweets,followers,following,ultimo_tweet,language,listas,created_at,verified,protected,description,order_last_tweet,order_last_tweet_hr,order_last_tweet_min) VALUES ('".$item2->id_str."','".$item2->profile_image_url."','".$item2->screen_name."','".$item2->name."','".$item2->location."','".$item2->statuses_count."','".$item2->followers_count."','".$item2->friends_count."','".$item2->status->created_at."','".$item2->lang."','".$item2->listed_count."','".$item2->created_at."','".$item2->verified."','".$item2->protected."','".$item2->description."','".date("Y-m-d",strtotime($item2->status->created_at))."','".date("H",strtotime($item2->status->created_at))."','".date("i",strtotime($item2->status->created_at))."')") or die(mysqli_error($conn));
       }
     }//fin foreach
     //obtener utf_8 en $users_profiles json_encode
@@ -201,12 +201,12 @@
       $users_profiles = (array)$twitteroauth->get("users/lookup.json?user_id=".implode(',',$array)."");
       //print_r($users_profiles);
       foreach($users_profiles as $item2){
-        $query = $conn->query("SELECT id FROM big_data_tw WHERE id='".$item2->id_str."'");
+        $query = $conn->query("SELECT id FROM big_data_tw WHERE id='".$item2->id_str."'") or die(mysqli_error($conn));
 	if($query->num_rows>0){
 	  $conn->query("UPDATE big_data_tw SET perfil='".$item2->profile_image_url."', screen_name='".$item2->screen_name."', nombre='".$item2->name."', location='".$item2->location."', total_tweets='".$item2->statuses_count."', followers='".$item2->followers_count."', following='".$item2->friends_count."', ultimo_tweet='".$item2->status->created_at."', language='".$item2->lang."', listas='".$item2->listed_count."', created_at='".$item2->created_at."', verified='".$item2->verified."', protected='".$item2->protected."', description='".$item2->description."', order_last_tweet='".date("Y-m-d",strtotime($item2->status->created_at))."', order_last_tweet_hr='".date("H",strtotime($item2->status->created_at))."', order_last_tweet_min='".date("i",strtotime($item2->status->created_at))."'
-							WHERE id='".$item2->id_str."'");
+							WHERE id='".$item2->id_str."'") or die(mysqli_error($conn));
         } else {
-	  $conn->query("INSERT INTO big_data_tw (id,perfil,screen_name,nombre,location,total_tweets,followers,following,ultimo_tweet,language,listas,created_at,verified,protected,description,order_last_tweet,order_last_tweet_hr,order_last_tweet_min) VALUES ('".$item2->id_str."','".$item2->profile_image_url."','".$item2->screen_name."','".$item2->name."','".$item2->location."','".$item2->statuses_count."','".$item2->followers_count."','".$item2->friends_count."','".$item2->status->created_at."','".$item2->lang."','".$item2->listed_count."','".$item2->created_at."','".$item2->verified."','".$item2->protected."','".$item2->description."','".date("Y-m-d",strtotime($item2->status->created_at))."','".date("H",strtotime($item2->status->created_at))."','".date("i",strtotime($item2->status->created_at))."')");
+	  $conn->query("INSERT INTO big_data_tw (id,perfil,screen_name,nombre,location,total_tweets,followers,following,ultimo_tweet,language,listas,created_at,verified,protected,description,order_last_tweet,order_last_tweet_hr,order_last_tweet_min) VALUES ('".$item2->id_str."','".$item2->profile_image_url."','".$item2->screen_name."','".$item2->name."','".$item2->location."','".$item2->statuses_count."','".$item2->followers_count."','".$item2->friends_count."','".$item2->status->created_at."','".$item2->lang."','".$item2->listed_count."','".$item2->created_at."','".$item2->verified."','".$item2->protected."','".$item2->description."','".date("Y-m-d",strtotime($item2->status->created_at))."','".date("H",strtotime($item2->status->created_at))."','".date("i",strtotime($item2->status->created_at))."')") or die(mysqli_error($conn));
          }
       }//fin foreach
     }//fin if get hoja
@@ -221,7 +221,7 @@
       }
     }//fin foreach
     $query=$conn->query("SELECT id,screen_name,location,perfil,following,followers,ultimo_tweet,nombre,language,listas,created_at,total_tweets,verified,protected,description
-                                 FROM big_data_tw WHERE id IN (".implode(',',$array).")");
+                                 FROM big_data_tw WHERE id IN (".implode(',',$array).")") or die(mysqli_error($conn));
     $i=0;
     while($row=$query->fetch_assoc()){
       $obj[$i] = new stdclass();

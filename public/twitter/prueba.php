@@ -1,6 +1,6 @@
 <?PHP
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-require("twitteroauth/twitteroauth.php");
+require("".dirname(__FILE__)."/twitteroauth/twitteroauth.php");
 session_start();
 // The TwitterOAuth instance
 $twitteroauth = new TwitterOAuth('4BMx416r1Vb7NfPivDDQSt1PH', 'L7gfhI4jU9ehyJWhxbKDcxabdry2JCUdWHtrhfO3IiN30yE45U');

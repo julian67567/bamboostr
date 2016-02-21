@@ -1,7 +1,7 @@
 <?PHP
-include 'conexioni.php';
+include ''.dirname(__FILE__).'/../conexioni.php';
 $screen_name = $_GET["screen_name"];
-$query = $conn->query("SELECT automatize,DM FROM token WHERE screen_name='".$screen_name."'");
+$query = $conn->query("SELECT automatize,DM FROM token WHERE screen_name='".$screen_name."'") or die(mysqli_error($conn));
 if($query->num_rows>0){
   $row=$query->fetch_assoc();
   $conn->close();
